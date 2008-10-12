@@ -5,7 +5,7 @@ Dokumentace
 
 --> [Příklady | Examples]
 
---> [API reference | http://api.nette.org/] ([ke stažení | http://files.nette.org/apidoc.7z])
+--> [API reference | http://api.nette.org/] ([ke stažení | http://files.nette.org/apidoc.zip])
 
 
 *Dokumentace se stále rodí...*
@@ -19,6 +19,7 @@ Dokumentace
 - [Nette\IO\SafeStream]
 - [Nette\Debug] - Laděnka, každodenní pomocnice PHP programátora
 - [Nette\Security\Permission] - řízení přístupových práv
+- [Nette\String] - užitečné funkce pro práci s řetězci
 - [Nette\Templates] - šablony
 - [Nette\Web\Html] - HTML elementy
 - [Nette\Web\HttpRequest] & [Nette\Web\HttpResponse]
