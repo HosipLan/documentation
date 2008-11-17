@@ -1,11 +1,9 @@
 Dokumentace
 ***********
 
---> [Quick Start]
-
---> [Příklady | Examples]
-
---> [API reference | http://api.nette.org/] ([ke stažení | http://files.nette.org/apidoc.zip])
+- [Quick Start]
+- [Příklady | Examples]
+- [API reference | http://api.nette.org/] ([ke stažení | http://files.nette.org/apidoc.zip])
 
 
 *Dokumentace se stále rodí...*
@@ -18,7 +16,7 @@ Dokumentace
 - [Nette\Loaders] - autoloading
 - [Nette\IO\SafeStream]
 - [Nette\Debug] - Laděnka, každodenní pomocnice PHP programátora
-- [Nette\Security\Permission] - řízení přístupových práv
+- [Nette\Security] - řízení přístupových práv
 - [Nette\String] - užitečné funkce pro práci s řetězci
 - [Nette\Templates] - šablony
 - [Nette\Web\Html] - HTML elementy
@@ -27,6 +25,8 @@ Dokumentace
 - [Nette\Web\User] - autentizace a autorizace uživatelů
 - [Nette\Application] - robustní webové aplikace
   - [Suggested directory structure]
+  - [Slovník]
+  - [Model-View-Presenter]
   - [Routování]
   - [Fully qualified view]
   - [View vs. Scene]
