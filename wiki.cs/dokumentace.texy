@@ -1,6 +1,9 @@
 Dokumentace
 ***********
 
+- [API reference | http://api.nette.org/] ([ke stažení | http://files.nette.org/apidoc.zip])
+
+
 - [Quick Start] - rychlý úvod do Nette Framework
   - [Začínáme | Quick Start]
   - [Adresářová struktura | Quick Start 2]
@@ -68,5 +71,8 @@ Dokumentace
 - [Nette\Web\User] - autentizace a autorizace uživatelů
 
 
-- [API reference | http://api.nette.org/] ([ke stažení | http://files.nette.org/apidoc.zip])
+- [SVN Commit Policy]
+
+/--comment
 - [Coding standard]
+\--
