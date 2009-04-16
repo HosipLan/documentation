@@ -1,15 +1,17 @@
 Nette - Dokumentační projekt
 ***********
 
-/--div [note]
-Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Foundation | http://nettefoundation.com/] nyní intenzívně pracuje na jejím dokončení. Dokonce byl za tímto účelem ustanoven "dokumentační tým":.
+/--div .[note]
+Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Foundation | http://nettefoundation.com/] nyní intenzívně pracuje na jejím dokončení. Dokonce byl za tímto účelem ustanoven [dokumentační tým | http://forum.nette.org/cs/viewtopic.php?pid=9518#p9518].
 
 Sledujte:
 * [Roadmap | roadmap] (plán vývoje)
 * [Definice | definition] (z čeho se bude dokumentace skládat)
-* [Cíle a požadavky | cile]
+* [Cíle a požadavky | goals] (co si NDP((Nette - Dokumentační projekt)) klade za cíl a jaké požadavky jsou kladeny na něj)
 * [Fórum | http://forum.nette.org/cs/viewforum.php?id=32] (související téma na fóru)
-
+* [Konvence | conventions] (jaké dodržovat konvence při psaní dokumentace)
+* [Jak používat Nette-Wiki | cs/wiki] (jak používat Nette-Wiki engine)
+* [Stará verze dokumentace | old]
 \--
 
 [Quick Start]
@@ -18,13 +20,13 @@ Sledujte:
 Rychlý úvod do Nette Framework
 
 
-The Definitive Guide
+[The Definitive Guide]
 --------------------
 
 *Na dokumentaci se usilovně pracuje*
 
 
-Programmer's Reference Guide
+[Programmer's Reference Guide]
 ----------------------------
 
 - Core
@@ -40,7 +42,13 @@ Programmer's Reference Guide
 - Image Handling
 
 
-[API reference | http://api.nette.org/]
+[API((Application Programer's Interface)) Reference | http://api.nette.org/]
 ---------
 
 [Online | http://api.nette.org/] a [ke stažení | http://files.nette.org/apidoc.zip]
+
+[Viz. také | see-also]:
+--------
+* [FAQ | faq] (často kladené dotazy)
+* [Fórum | http://forum.nette.org/] (diskuzní fórum, kde můžete řešit individuální problémy)
+* [Stará verze dokumentace | old]
