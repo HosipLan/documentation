@@ -10,6 +10,7 @@ Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Found
 **Sledujte:**
 * [Roadmap | roadmap] *(plán vývoje dokumentace)*
  * [Priority | priorities]
+* [To-Do | todo] *(co je třeba aktuálně udělat)*
 * [Definice | definition] *(z čeho se bude dokumentace skládat)*
 * [Cíle a požadavky | goals] *(co si "NDP"((Nette - Dokumentační projekt)) klade za cíl a jaké požadavky jsou kladeny na něj)*
  * [Účel //Quick Start//? | goal-qs]
@@ -58,9 +59,9 @@ Rychlý úvod do Nette Framework
 
 [Související | see-also]:
 --------
-* [Videotutoriály (Screencasty) | screencasts] *(videotutoriály k Nette Framework)*
+* [Videotutoriály (Screencasty) | http://tomik.jmx.cz/nettecast/] *(videotutoriály k Nette Framework)*
 * [Tutoriály | cookbook] *(jak programovat v Nette Framework krok za krokem)*
 * [Kuchařka | cookbook] *(jak správně psát v Nette Framework)*
-* [FAQ((Frequelntly Asked Questions)) | faq] *(často kladené dotazy)*
+* [FAQ((Frequently Asked Questions)) | faq] *(často kladené dotazy)*
 * [Fórum | http://forum.nette.org/] *(řešení individuálních potíží, tipy a triky)*
 * [Stará dokumentace | old] *(stará verze dokumentace)*
