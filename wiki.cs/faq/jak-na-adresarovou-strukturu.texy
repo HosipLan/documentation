@@ -1,0 +1,56 @@
+Jak na adresářovou strukturu?
+*****************************
+
+Stránka je součástí sekce [Často kladených otázek | FAQ]. .[perex]
+
+Adresářová struktura v Nette je plně nastavitelná. Jak ji změnit si ukážeme na následujícím příkladu.
+
+Při umístění aplikačních složek do `document_rootu` je dobré do nich zakázat přístup přes soubor `.htaccess`. .[caution]
+
+Budeme chtít mít následující strukturu ve složce **/www/nase-aplikace/**
+- **libraries/** – Nette a knihovny třetích stran
+- **log/**
+- **models/**
+- **presenters/**
+- **sessions/**
+- **templates/jmeno-skinu/** – šablony aplikace s podporou skinování
+- **tmp/** – dočasné soubory (keš, kompilované šablony,...)
+- **www/** – původní `document_root`
+
+Jak vidíte, chceme změnit umístění složek *knihoven*, *dočasných souborů* (původně `temp`), `document_rootu` a šablonám přidat *možnost skinování*. Také chceme mít vše pěkně v jedné složce - tu využijeme jako původní složku `app`.
+
+Změna config.ini
+================
+
+/--
+[common]
+; Jméno výchozího skinu, jeho změnu si ošetřujeme v aplikaci
+variable.skin = "default"
+
+; Adresář pro šablony s podporou skinování
+; (layout výchozího skinu bude %appDir%/templates/default/@layout.phtml)
+variable.templatesDir = "%appDir%/templates/%skin%"
+
+; Adresář pro dočasné soubory (keš, zkompilované šablony,...)
+variable.tempDir = "%appDir%/tmp"
+\--
+
+Změna v souboru index.php
+=========================
+
+/--php
+// absolute filesystem path to the web root
+define('WWW_DIR', dirname(__FILE__));
+
+// absolute filesystem path to the application root
+define('APP_DIR', WWW_DIR . '/..');
+
+// absolute filesystem path to the libraries
+define('LIBS_DIR', APP_DIR . '/libraries');
+
+// ...
+\--
+
+A máme to. Podobně lze vytvořit libovolnou strukturu.
+
+Po změně struktury pamatujte na vymazání všech dočasných souborů (obvykle složka `temp`). .[note]
