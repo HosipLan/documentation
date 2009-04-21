@@ -10,10 +10,10 @@ Ladění - Nette\Debug
 
 Formuláre
 ---------
-- továrnička (+text výnimky, ktorú to vyhadzuje)
-	- http://forum.nette.org/cs/1285-zpracovani-formulare-asi-to-moc-nechapu#p6928
-	- http://forum.nette.org/cs/1297-prepareview-vs-renderview
-	- http://forum.nette.org/cs/1456-jak-na-odeslani-formulare-z-komponenty
+- Výnimka pri odoslaní formulára: [The signal receiver component ‘***’ is not found. | FAQ/Správne vytváranie formulárov]
+
+--------
+
 - nevykreslenie niektorého prvku formulára (= nefungujúce setRendered(TRUE))
 	- http://forum.nette.org/cs/1438-nevykresleni-prvku-ve-formulari
 	- http://forum.nette.org/cs/1017-problem-u-setrendered
