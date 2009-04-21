@@ -2,6 +2,7 @@ Nette - Dokumentační projekt
 ***********
 
 /--div .[note]
+**Info:**
 Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Foundation | http://nettefoundation.com/] nyní intenzívně pracuje na jejím dokončení. Dokonce byl za tímto účelem ustanoven [dokumentační tým | http://forum.nette.org/cs/viewtopic.php?pid=9518#p9518].
 
 **Průběh:**
@@ -26,6 +27,8 @@ Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Found
 * [Jak používat Nette-Wiki | cs/wiki] *(jak používat Nette-Wiki engine)*
 * [Stará verze dokumentace | old] *(stará verze dokumentace)*
 \--
+
+**Upozornění!** V této developerské verzi dokumentace se můžete často setkat se zkratkami QS((Quick Start)), TDG((The Definitive Guide)), PRG((Programmer's Reference Guide)) a API((Application Programmer's Interface)). Tyto jsou zkratkami názvů níže uvedených jednotlivých částí dokumentace... .[caution]
 
 [Quick Start | quickstart]
 -----------
