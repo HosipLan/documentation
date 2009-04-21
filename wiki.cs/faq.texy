@@ -2,14 +2,18 @@ FAQ((Frequently Asked Questions)) - Často kladené otázky
 ********************
 Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdete svoji otázku a odpověď na ni. .[perex]
 
+Aplikace
+--------
+- [Jak na adresářovou strukturu? | FAQ/jak-na-adresarovou-strukturu] *aneb jak lehce změnit původní rozmístění adresářů k obrazu svému.*
+
 Formuláre
 ---------
 - Výnimka pri odoslaní formulára: [The signal receiver component ‘***’ is not found. | FAQ/Správne vytváranie formulárov]
 
 Ladění - Nette\Debug
 -------
-* [Jak na režimy a módy? | jak-na-rezimy-a-mody]
-* [Jak zjistit výskyt chyby na produkčním (ostrém) serveru? | jak-zjistit-vyskyt-chyby-na-produkcnim-ostrem-serveru]
+* [Jak na režimy a módy? | FAQ/jak-na-rezimy-a-mody]
+* [Jak zjistit výskyt chyby na produkčním (ostrém) serveru? | FAQ/jak-zjistit-vyskyt-chyby-na-produkcnim-serveru]
 * [Jak v Laděnce číst? | ]
 
 --------
@@ -98,8 +102,7 @@ Routovanie
 
 Ostatné
 -------
-- adresárová štruktúra
-	- http://forum.nette.org/cs/1571-adresarova-struktura
+- <del>adresárová štruktúra</del>
 - použitie samostatných častí Nette
 	- http://forum.nette.org/cs/1229-provozovani-casti-nette
 - sessions
