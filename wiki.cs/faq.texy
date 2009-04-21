@@ -2,6 +2,12 @@ FAQ((Frequently Asked Questions)) - Často kladené otázky
 ********************
 Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdete svoji otázku a odpověď na ni. .[perex]
 
+Formuláre
+---------
+- Výnimka pri odoslaní formulára: [The signal receiver component ‘***’ is not found. | FAQ/Správne vytváranie formulárov]
+
+--------
+
 Ladění - Nette\Debug
 -------
 * "Jak na režimy a módy?":
@@ -10,10 +16,7 @@ Ladění - Nette\Debug
 
 Formuláre
 ---------
-- Výnimka pri odoslaní formulára: [The signal receiver component ‘***’ is not found. | FAQ/Správne vytváranie formulárov]
-
---------
-
+- <del>továrnička (+text výnimky, ktorú to vyhadzuje)</del>
 - nevykreslenie niektorého prvku formulára (= nefungujúce setRendered(TRUE))
 	- http://forum.nette.org/cs/1438-nevykresleni-prvku-ve-formulari
 	- http://forum.nette.org/cs/1017-problem-u-setrendered
