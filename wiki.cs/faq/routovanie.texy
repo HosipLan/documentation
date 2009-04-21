@@ -1,0 +1,129 @@
+Routovanie
+**********
+
+Stránka je súčasťou sekcie [Často kladených otázok | FAQ]. .[perex]
+
+V Nette nie je problém napísať aplikáciu bez čo i len priblíženia sa k routovaniu. Predvolený jednoduchý mechanizmus zvláda takmer všetko, čo potrebujeme. No v prípade že chceme viac, povedzme "cool URL"((pekné URL adresy -- napr. http://example.com/uvod/o-nas)), musíme sa do tajov routovania ponoriť. Zatajíme dych a ideme na to...
+
+mod_rewrite + .htaccess
+-------------------------
+
+Najzákladnejším predpokladom pre pekné adresy je podpora zo strany servera -- potrebujeme server, ktorý podporuje "mod_rewrite"((dynamické prepisovanie adries)). Vo väčšine prípadov sa pravidlá prepisovania nastavujú konfiguračným súborom `.htaccess`.
+
+*príklad súboru .htaccess pre Nette:*
+
+/--
+# ...
+
+RewriteEngine On
+# RewriteBase /
+
+# front controller
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !\.(pdf|js|ico|gif|jpg|png|css|rar|zip|tar\.gz)$ index.php [L]
+\--
+
+/--comment
+premenovať "zavádzací súbor" na niečo pochopiteľnejšie
+\--
+
+Nette na routovanie nepoužíva priamo pravidlá mod_rewrite, používa vlastný mechanizmus. Uvedený súbor zapne prepisovanie adries a poručí všetkým adresám, ktoré nesmerujú na nejaký súbor/adresár, aby ich spracovalo Nette. Predpokladáme, že súbor `index.php` je zavádzací súbor našej aplikácie.
+
+V príklade je zakomentovaná direktíva `RewriteBase`, pretože zväčša nie je potrebná, no v prípade, že naša aplikácia sa "nenachádza v koreni servera"((nachádza sa napr. na http://example.com/projekty/moja-aplikacia)), **treba ju nastaviť** na cestu((v našom prípade na /projekty/moja-aplikacia/)), ktorá k nej od koreňa vedie. .[note]
+
+Routovacie pravidlá
+-------------------
+
+Routovanie zvykneme nastavovať ako posledné pred spustením aplikácie v súbore `bootstrap.php`. Na nastavenie routovania používame objekty triedy `Route`.
+
+*jednoduchý príklad routovania:*
+
+/--php
+$application = Environment::getApplication();
+$router = $application->getRouter();
+
+$router[] = new Route('<presenter>/<action>', array(
+	'presenter' => 'Uvod',
+	'action' => 'informacie',
+));
+\--
+
+Prvým parametrom routy je *maska* a podľa nej routa spracuje všetky((všetky, ktoré nesmerujú na súbor či adresár)) požiadavky tvaru
+/--
+http://example.com/urob/nieco
+\--
+a odovzdá ich akcii **nieco** v prezenteri **Urob**.
+
+Druhým parametrom je *pole predvolených hodnôt*, ktoré sa použije v prípade, ak požiadavke niektorý z parametrov chýba, napríklad výsledok zadania požiadaviek
+/--
+http://example.com/
+http://example.com/uvod/
+http://example.com/uvod/informacie
+\--
+je rovnaký. Navyše sa dlhšie formy presmeruje na najkratšiu -- teda nedochádza k duplicitám v indexoch vyhľadávačov.
+
+/--comment
+TODO: je to dáke dlhé -- skrátiť/prepísať/zvoliť iný záver
+\--
+
+Spätná kompatibilita
+--------------------
+
+Stránka nášho spolku pivárov-amatérov doteraz fungovala na jednoduchých URL adresách tvaru
+/--
+http://example.com/index.php?stranka=clenovia
+http://example.com/index.php?stranka=planovane-zrazy
+\--
+Na poslednej členskej schôdzi sme sa uzniesli, že takéto adresy patria dávno minulosti a chceme nové -- cool URL -- v tvare
+/--
+http://example.com/clenovia
+http://example.com/planovane-zrazy
+\--
+Zároveň ale chceme zachovať platnosť terajších, keďže asi stovka našich spriatelených spolkov z blízkeho okolia má na svojich stránkach rôzne odkazy smerujúce na tú našu -- bola by škoda o ne len tak prísť. To, čo potrebujeme, je plošná zmena URL so zachovaním spätnej kompatibility...
+
+Nové adresy už popísať vieme -- jednoduchým routrom
+
+/--php
+$router[] = new Route('<stranka>', array(
+	'presenter' => 'Default',
+	'action' => 'default',
+	'stranka' => 'uvodna-stranka',
+));
+\--
+
+Použijeme jediný prezenter "Default" a jednu akciu "default", ktorá podľa parametra *stranka* zobrazí žiadanú stránku. V prípade, že parameter stránka nie je zadaný, použije sa predvolená hodnota "uvodna-stranka".
+
+Na staré adresy použijeme tzv. jednosmerný router -- vychytávku práve na takéto situácie. Jednosmerný router síce prijíma URL a správne routuje požiadavky, no pri generovaní odkazov sa preskakuje.
+
+/--php
+$router[] = new Route('index.php ? stranka=<stranka>', array(
+	'presenter' => 'Default',
+	'action' => 'default',
+	'stranka' => 'uvodna-stranka',
+), Route::ONE_WAY);
+\--
+
+Parameter *stranka* má opäť predvolenú hodnotu, to znamená, že adresa
+/--
+http://example.com/index.php
+\--
+sa nám presmeruje na úvodnú stránku -- tam, kam chceme.
+
+**Dôležité je poradie**, v akom routy uvedieme, totiž v takom poradí sa budú i vyhodnocovať. Staré adresy je vhodné odfiltrovať ako prvé. Inak by sa mohlo stať, že vyhovejú niektorej novej route a namiesto spätnej kompatibility máme kopec hlášok o neexistujúcich stránkach.
+
+*výsledná definícia routra:*
+
+/--php
+$router[] = new Route('index.php ? stranka=<stranka>', array(
+	'presenter' => 'Default',
+	'action' => 'default',
+	'stranka' => 'uvodna-stranka',
+), Route::ONE_WAY);
+
+$router[] = new Route('<stranka>', array(
+	'presenter' => 'Default',
+	'action' => 'default',
+	'stranka' => 'uvodna-stranka',
+));
+\--

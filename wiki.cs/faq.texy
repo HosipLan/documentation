@@ -6,14 +6,18 @@ Formuláre
 ---------
 - Výnimka pri odoslaní formulára: [The signal receiver component ‘***’ is not found. | FAQ/Správne vytváranie formulárov]
 
---------
-
 Ladění - Nette\Debug
 -------
 * [Jak na režimy a módy? | jak-na-rezimy-a-mody]
 * [Jak zjistit výskyt chyby na produkčním (ostrém) serveru? | jak-zjistit-vyskyt-chyby-na-produkcnim-ostrem-serveru]
 * [Jak v Laděnce číst? | ]
 
+--------
+
+Ladenie
+-------
+- režimy a módy
+- ako zistiť chybu na ostrom serveri
 
 Formuláre
 ---------
@@ -105,6 +109,8 @@ Ostatné
 	- http://forum.nette.org/cs/817-schema-jazykovych-mutaci
 - slovník pojmov
 	- http://forum.nette.org/cs/1217-control-vs-controller-vs-komponenta
+- <ins>použitie komponentov Zendu spolu s Nette</ins>
+	- http://forum.nette.org/cs/1608-pouziti-zend-mail-v-nette
 
 
 Rôzne poznámky
