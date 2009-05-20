@@ -17,18 +17,18 @@ Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Found
  * [Účel //Quick Start//? | goal-qs]
  * [Účel //The Definitive Guide// | goal-tdg]
  * [Účel //Programmer's Reference Guide// | goal-prg]
- * [Účel //API((Application Programer's Interface)) Reference// | goal-api]
+ * [Účel //API((Application Programming's Interface)) Reference// | goal-api]
 * [Fórum | http://forum.nette.org/cs/viewforum.php?id=32] *(související téma na fóru)*
 * [Konvence | conventions] *(jaké dodržovat konvence při psaní dokumentace)*
  * [Jak psát //Quick Start//? | doku-qs]
  * [Jak psát //The Definitive Guide// | doku-tdg]
  * [Jak psát //Programmer's Reference Guide// | doku-prg]
- * [Jak psát //API((Application Programer's Interface)) Reference// | doku-api]
+ * [Jak psát //API((Application Programming's Interface)) Reference// | doku-api]
 * [Jak používat Nette-Wiki | cs/wiki] *(jak používat Nette-Wiki engine)*
 * [Stará verze dokumentace | old] *(stará verze dokumentace)*
 \--
 
-**Upozornění!** V této developerské verzi dokumentace se můžete často setkat se zkratkami QS((Quick Start)), TDG((The Definitive Guide)), PRG((Programmer's Reference Guide)) a API((Application Programmer's Interface)). Tyto jsou zkratkami názvů níže uvedených jednotlivých částí dokumentace... .[caution]
+**Upozornění!** V této developerské verzi dokumentace se můžete často setkat se zkratkami QS((Quick Start)), TDG((The Definitive Guide)), PRG((Programmer's Reference Guide)) a API((Application Programming's Interface)). Tyto jsou zkratkami názvů níže uvedených jednotlivých částí dokumentace... .[caution]
 
 [Quick Start | quickstart]
 -----------
@@ -55,7 +55,7 @@ Rychlý úvod do Nette Framework
 - Image Handling
 
 
-[API((Application Programer's Interface)) Reference | http://api.nette.org/]
+[API((Application Programming's Interface)) Reference | http://api.nette.org/]
 ---------
 * [Online verze | http://api.nette.org/]
 * [Offline verze ke stažení | http://files.nette.org/apidoc.zip]
