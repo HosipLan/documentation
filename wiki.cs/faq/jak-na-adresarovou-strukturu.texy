@@ -1,7 +1,7 @@
 Jak na adresářovou strukturu?
 *****************************
 
-Stránka je součástí sekce [Často kladených otázek | FAQ]. .[perex]
+Stránka je součástí sekce [Často kladených otázek | faq]. .[perex]
 
 Adresářová struktura v Nette je plně nastavitelná. Jak ji změnit si ukážeme na následujícím příkladu.
 
@@ -54,3 +54,9 @@ define('LIBS_DIR', APP_DIR . '/libraries');
 A máme to. Podobně lze vytvořit libovolnou strukturu.
 
 Po změně struktury pamatujte na vymazání všech dočasných souborů (obvykle složka `temp`). .[note]
+
+---
+
+.[see]
+Téma bylo probíráno ve fóru v těchto vláknech:
+- [Adresářová struktura | http://forum.nette.org/cs/1571-adresarova-struktura]
