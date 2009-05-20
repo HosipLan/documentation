@@ -1,0 +1,94 @@
+Správne vytváranie formulárov
+*****************************
+
+Stránka je súčasťou sekcie [Často kladených otázok | FAQ]. .[perex]
+
+Častým problémom pri formulároch býva výnimka: **The signal receiver component '***' is not found.** Tá je zväčša spôsobená vytváraním formulára vo fáze vykresľovania (render), kedy je už neskoro.
+
+*príklad nesprávneho vytvárania:*
+
+/--php
+class UvodPresenter extends BasePresenter
+{
+	// ...
+
+	public function renderNieco()
+	{
+		$form = new AppForm($this, 'form1');
+		$form->addText('meno', 'Meno:');
+		$form->addSubmit('odoslat', 'Odoslať');
+
+		$this->template->form = $form;
+	}
+}
+\--
+
+/--comment
+TODO: rozpísať nasledujúci odsek, pomalšie a kratšie vety, je trochu nepochopiteľný
+\--
+
+Pri zobrazení formulára je všetko v poriadku, problémy nastávajú, keď formulár odošleme. Pri "spracovaní odoslania formulára"((vo fáze spracovania signálov)), ktoré logicky predchádza vykresľovaniu, samotný formulár ešte neexistuje. Musíme ho preto vytvárať skôr.
+
+Možné riešenia:
+
+1. presunúť vytváranie formulára do skoršej fázy prípravy na signál (prepare)
+2. vytváranie formulára nechať na továrničku. */odporúča 9 z 10 Nettistov/*
+
+*presunutie do skoršej fázy:*
+
+/--php
+class UvodPresenter extends BasePresenter
+{
+	// ...
+
+	public function prepareNieco()
+	{
+		$form = new AppForm($this, 'form1');
+		$form->addText('meno', 'Meno:');
+		$form->addSubmit('odoslat', 'Odoslať');
+	}
+
+	public function renderNieco()
+	{
+		// getComponent získa pridaný formulár podľa jeho názvu
+		$this->template->form = $this->getComponent('form1');
+	}
+}
+\--
+
+Továrnička ide ešte o kúsok ďalej -- vytvorenie formulára neviaže s konkrétnou fázou prezenteru. Vytvára ho v momente, keď je "prvýkrát potrebný"((lazy loading)). Navyše, ak potebný nie je, nevytvorí ho vôbec.
+
+*prezenter s továrničkou:*
+
+/--php
+class UvodPresenter extends BasePresenter
+{
+	// ...
+
+	protected function createComponent($name)
+	{
+		switch ($name) {
+		case 'form1': // názov formulára
+			$form = new AppForm($this, $name);
+			$form->addText('meno', 'Meno:');
+			$form->addSubmit('odoslat', 'Odoslať');
+			return;
+		default:
+			parent::createComponent($name);
+			return;
+		}
+	}
+
+	public function renderNieco()
+	{
+		// getComponent získa pridaný formulár podľa jeho názvu
+		$this->template->form = $this->getComponent('form1');
+	}
+}
+\--
+
+Na fóre sa o tom diskutovalo vo viacerých vláknach.
+- [Zpracování formuláře – asi to moc nechápu | http://forum.nette.org/cs/1285-zpracovani-formulare-asi-to-moc-nechapu]
+- [prepareView vs. renderView | http://forum.nette.org/cs/1297-prepareview-vs-renderview]
+- [Jak na odeslání formuláře z komponenty | http://forum.nette.org/cs/1456-jak-na-odeslani-formulare-z-komponenty]
+- "Enhancement: Co takhle create<componen­tName>($name) ?":http://forum.nette.org/cs/1494-enhancement-co-takhle-create-componentname-name
