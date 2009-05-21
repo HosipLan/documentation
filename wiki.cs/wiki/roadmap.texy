@@ -9,7 +9,14 @@ Aktuální stav:
 =============
 Jako součást dokumentace je nyní k dispozici:
 * Diskusní fórum
-* Podivná dokumentace *typu* QS, ale moc jako blok, neaktuální a neúplná
+* Podivná dokumentace *typu* QS, ale moc jako blog, neaktuální a neúplná
+* Velmi dobře zpracované API
 
+Plán vývoje:
+===========
+1. David musí upgradnout nette wiki systém pro lepší podporu vývoje (mluvili jsme o tom na poslední sobotě)
+2. Inza musí napsat roadmap (seznam deadlinů na ty které části dokumentace)
+3. Inza musí napsat specifikace tvorby PRG, QS a API (examples)
+4. Každý může tvořit dokumentaci
 
 *dokončím později...*
