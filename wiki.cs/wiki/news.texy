@@ -1,0 +1,6 @@
+Nette - Dokumentační projekt - Novinky
+*********
+Aktuální změny v dokumentaci Nette a seznam novinek ohledně organizace NDP((Nette - Dokumentačního projektu))
+
+* 29. 5. 2009 - Inza dokončil [Roadmap | wiki/roadmap], vytvořil tuto stránku a vytvořil první verzi nové dokumentace
+* 25. 4. 2009 - Na poslední sobotě v Brně byla finálně stanovena definitivní struktura NDP. NPD bude tvořit QS, API a PRG. TNG bude do PRG integrován (jeho menší část a jeho větší část pak Inza vydá jako knihu) - podobně jako to mají vyřešeno na webu [JQuery | http://docs.jquery.com/Main_Page] - ale u nás to samo bude ještě lepší;-). NDP bude celkově více koncipován tak, že hranice mezi tím, kde QS a PRG začíná a končí, budou nezřetelné, neboť chceme aby byl NDP, stejně jako Nette samo KISS((Keep It Simple, Stupid)).

@@ -12,11 +12,20 @@ Jako součást dokumentace je nyní k dispozici:
 * Podivná dokumentace *typu* QS, ale moc jako blog, neaktuální a neúplná
 * Velmi dobře zpracované API
 
-Plán vývoje:
+Plán vývoje (v bodech, chronologicky):
 ===========
 1. David musí upgradnout nette wiki systém pro lepší podporu vývoje (mluvili jsme o tom na poslední sobotě)
 2. Inza musí napsat roadmap (seznam deadlinů na ty které části dokumentace)
 3. Inza musí napsat specifikace tvorby PRG, QS a API (examples)
-4. Každý může tvořit dokumentaci
+4. Inza musí vytvořit novou homepage dokumentace
+5. Každý může tvořit dokumentaci
+6. Inza bude také (hlavně) tvořit dokumentaci
+7. Je třeba aktualizovat starou (současnou) dokumentaci:
+ - po stránce obsahové
+ - po stránce srozumitlenosti
+ - po stránce efektivity předávání informací
+8. Je třeba dopsat chybějící části dokumentace
 
+Plán vývoje (v deadlinech):
+===============
 *dokončím později...*
