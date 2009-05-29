@@ -6,7 +6,7 @@ Nette - Dokumentační projekt
 Toto je developerská verze nové dokumentace k *Nette Frameworku*. [Nette Foundation | http://nettefoundation.com/] nyní intenzívně pracuje na jejím dokončení. Dokonce byl za tímto účelem ustanoven [dokumentační tým | http://forum.nette.org/cs/viewtopic.php?pid=9518#p9518].
 
 **Průběh:**
-* Dokumentace je hotova z **3%** procent
+* Dokumentace je hotova z **10%** procent
 
 **Novinky:**
 * [Novinky | wiki/news]
@@ -70,4 +70,3 @@ Rychlý úvod do Nette Framework
 * [Kuchařka | cookbook] *(jak správně psát v Nette Framework)*
 * [FAQ((Frequently Asked Questions)) | faq] *(často kladené dotazy)*  / [devFAQ | dev-faq] - developerská verze
 * [Fórum | http://forum.nette.org/] *(řešení individuálních potíží, tipy a triky)*
-* [Stará dokumentace | old] *(stará verze dokumentace)*
