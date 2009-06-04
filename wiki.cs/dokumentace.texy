@@ -23,26 +23,10 @@ Nettecast
 - [První kroky s Nette Framework | http://tomik.jmx.cz/nettecast/]
 \--
 
-Komponenty a doplňky
+Seriály
 =======
+- [Začínáme s Nette Framework | http://zdrojak.root.cz/serialy/zaciname-s-nette-framework/] na serveru [Zdroják | http://zdrojak.root.cz]
 
-- [Repozitář komponent a pluginů | addons:cs/]
-
-
-Podpora
-=======
-
-- [Fórum | http://forum.nette.org/]
-- [Příklady | Examples]
-- [FAQ]
-- [Tutoriály]
-- [Školení | http://www.skoleniphp.cz/]
-- [Práce a zakázky | http://forum.nette.org/cs/f30-prace-a-zakazky]
-\---
-
-
-
-/---div .[col2]
 Průvodce programátora
 =====================
 
@@ -54,10 +38,28 @@ API Reference
 
 - [API reference pro PHP 5.2 | http://api.nette.org/]
 - [API reference pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/]
+\---
 
 
-O Frameworku
-============
+
+/---div .[col2]
+Podpora
+-------
+
+- [Fórum | http://forum.nette.org/]
+- [Příklady | Examples]
+- [FAQ]
+- [Tutoriály]
+- [Školení | http://www.skoleniphp.cz/]
+- [Práce a zakázky | http://forum.nette.org/cs/f30-prace-a-zakazky]
+
+Komponenty a doplňky
+--------------------
+
+- [Repozitář komponent a pluginů | addons:cs/]
+
+O frameworku
+------------
 
 - [Co je Nette Framework?]
 - [Proč zvolit Nette Framework?]
@@ -68,7 +70,7 @@ O Frameworku
 
 
 Další
-=====
+-----
 
 - [Changelog | http://forum.nette.org/cs/f31-changelog]
 - [Poslední sobota | http://phpfashion.com/posledni-sobota-sraz-nette-framework]
