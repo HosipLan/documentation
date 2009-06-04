@@ -1,78 +1,84 @@
 Dokumentace
 ***********
 
-- [API reference | http://api.nette.org/] ([s prefixy tříd | http://api.nette.org/0.9prefixed/])
+/---div .[col2]
+Rychlý start
+============
 
+- [Jak stáhnout Nette Framework?]
+- [Adresářová struktura | Quick Start 2]
+- [Vytvoření presenteru | Quick Start 3]
+- [Připojení šablony | Quick Start 4]
+- [Tvorba odkazů | Quick Start 5]
+- [Hezčí šablony | Quick Start 6]
+- [Zobrazení tabulky | Quick Start 7]
+- [Stránkování a řazení | Quick Start 8]
+- [Tvoříme komponentu | Quick Start 9]
+- [Ajax kde se podíváš | Quick Start 10]
 
-- [Quick Start] - rychlý úvod do Nette Framework
-  - [Začínáme | Quick Start]
-  - [Adresářová struktura | Quick Start 2]
-  - [Vytvoření presenteru | Quick Start 3]
-  - [Připojení šablony | Quick Start 4]
-  - [Tvorba odkazů | Quick Start 5]
-  - [Hezčí šablony | Quick Start 6]
-  - [Zobrazení tabulky | Quick Start 7]
-  - [Stránkování a řazení | Quick Start 8]
-  - [Tvoříme komponentu | Quick Start 9]
-  - [Ajax kde se podíváš | Quick Start 10]
-  - [Příklady | Examples]
-
-- [Nette\Annotations] - podpora phpDoc/JavaDoc anotací
-- [Nette\Application] - MVC implementace pro robustní webové aplikace
-  - [Suggested directory structure]
-  - [Slovník]
-  - [Model-View-Presenter]
-  - [Routování]
-  - [Fully qualified action]
-  - [Action vs. View]
-  - [Ajax & snippety]
-  - [Generování odkazů] a [Neplatné odkazy]
-  - [Application | Nette\Application]
-  - [AppForm | Nette\Application\AppForm]
-  - [Control | Nette\Application\Control]
-  - [Presenter | Nette\Application\Presenter]
-  - [PresenterComponent | Nette\Application\PresenterComponent]
-  - [PresenterRequest | Nette\Application\PresenterRequest]
-  - [Routování]
-  - [MultiRouter | Nette\Application\MultiRouter]
-  - [Route | Nette\Application\Route]
-  - [SimpleRouter | Nette\Application\SimpleRouter]
-
-- [Nette\Caching] - kešování
-- [Nette\Component] - komponenty a kontejnery
-- [Nette\Debug] - Laděnka, každodenní pomocnice PHP programátora
-  - [Základy | Nette\Debug]
-  - [Logování chyb | Nette\Debug Logování chyb]
-  - [Firebug | Nette\Debug Firebug]
-
-- [Nette\Environment] - běhové prostředí
-- [Nette\Forms] - webové formuláře
-- [Nette\Image]
-- [Nette\IO\SafeStream] - bezpečná práce se soubory na disku
-- [Nette\Loaders] - autoloading tříd
-- [Nette\Object] - taťka všech objektů
-- [Nette\Security] - přihlašování a přístupová práva
-  - [Bezpečnost aplikací | Nette\Security]
-  - [Identity | Nette\Security\Identity]
-  - [SimpleAuthenticator | Nette\Security\SimpleAuthenticator]
-  - [Permission | Nette\Security\Permission]
-  - [Dynamická správa rolí a zdrojů]
-
-- [Nette\String] - užitečné funkce pro práci s řetězci
-- [Nette\Templates] - šablony
-  - [Template | Nette\Templates]
-  - [Template Filters]
-  - [Template Helpers]
-- [Nette\Web\Ftp]
-- [Nette\Web\Html] - HTML elementy
-- [Nette\Web\HttpRequest] - HTTP požadavek
-- [Nette\Web\HttpResponse] - HTTP odpověď
-- [Nette\Web\Session] - správa sezení
-- [Nette\Web\User] - autentizace a autorizace uživatelů
-
-
-- [SVN Commit Policy]
 
 /--comment
-- [Coding standard]
+Nettecast
+=========
+- [První kroky s Nette Framework | http://tomik.jmx.cz/nettecast/]
 \--
+
+Komponenty a doplňky
+=======
+
+- [Repozitář komponent a pluginů | addons:cs/]
+
+
+Podpora
+=======
+
+- [Fórum | http://forum.nette.org/]
+- [Příklady | Examples]
+- [FAQ]
+- [Tutoriály]
+- [Školení | http://www.skoleniphp.cz/]
+- [Práce a zakázky | http://forum.nette.org/cs/f30-prace-a-zakazky]
+\---
+
+
+
+/---div .[col2]
+Průvodce programátora
+=====================
+
+- [Kompletní dokumentace | pruvodce]
+
+
+API Reference
+==============
+
+- [API reference pro PHP 5.2 | http://api.nette.org/]
+- [API reference pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/]
+
+
+O Frameworku
+============
+
+- [Co je Nette Framework?]
+- [Proč zvolit Nette Framework?]
+- [Jak se naučit Nette Framework?]
+- Kdo vyvíjí Nette Framework?
+- Historie Nette Frameworku
+- [Kdo používá Nette Framework? | reference]
+
+
+Další
+=====
+
+- [Changelog | http://forum.nette.org/cs/f31-changelog]
+- [Poslední sobota | http://phpfashion.com/posledni-sobota-sraz-nette-framework]
+- [Dokumentační projekt|wiki]
+- [Diskuse k dokumentaci | http://forum.nette.org/cs/f32-dokumentace]
+- [Politika práce s komunitním SVN((Subversion)) | svn-commit-policy]
+- [Právní doložka|pravni-dolozka]
+- [Nette Foundation | http://nettefoundation.com/]
+- [Coding standard]
+\---
+
+
+---------
