@@ -1,0 +1,29 @@
+Tutoriál Akrabat
+*********************
+
+Klasický Zend Framework Tutorial přepsaný pro Nette.
+
+|Demo | http://nette.org/examples/akrabat/
+|Autor | David Grudl
+|Licence | New BSD License
+
+Popis
+---------
+
+Příklad demonstruje velmi důležitý rys Nette Frameworku: v rámci aplikace a to včetně šablon
+se nepoužívají URL. Ty jsou záležitostí routeru a mohou se kdykoliv měnit. Cílem odkazu je vždy
+kombinace "Presenter:action" nebo "Presenter:signal!".
+
+Pro přihlášení použijte
+- username: demo
+- password: xxx
+
+Zdroj: http://akrabat.com/zend-framework-tutorial/ (Getting Started with the Zend Framework 1.0 and Zend Framework 1.5)
+
+
+{{extras}}
+
+{{attachment: tutorial.akrabat-1.5.zip Akrabat 1.5 s formuláři}}
+{{attachment: tutorial.akrabat-1.0.zip Akrabat 1.0 bez formulářů}}
+
+{{tags: tutorial}}
