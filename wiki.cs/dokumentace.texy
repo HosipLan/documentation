@@ -43,7 +43,7 @@ API Reference
 
 /---div .[col2]
 Podpora
--------
+=======
 
 - [Fórum | http://forum.nette.org/]
 - [Příklady | Examples]
@@ -53,12 +53,12 @@ Podpora
 - [Práce a zakázky | http://forum.nette.org/cs/f30-prace-a-zakazky]
 
 Komponenty a doplňky
---------------------
+====================
 
 - [Repozitář komponent a pluginů | addons:cs/]
 
 O frameworku
-------------
+============
 
 - [Co je Nette Framework?]
 - [Proč zvolit Nette Framework?]
@@ -69,7 +69,7 @@ O frameworku
 
 
 Další
------
+=====
 
 - [Changelog | http://forum.nette.org/cs/f31-changelog]
 - [Poslední sobota | http://phpfashion.com/posledni-sobota-sraz-nette-framework]
