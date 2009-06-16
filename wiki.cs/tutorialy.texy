@@ -1,6 +1,6 @@
 Tutoriály
 *********
-Zde naleznete seznam tutoriálů pro Nette Framework, u každého tutoriálu je specifikována jeho obtížnost a seznam všech komponent, které jsou k němu potřeba *(jsou-li nějaké kromě samotného frameworku potřeba)* - všechny případně potřebné komponenty naleznete ke stažení v [repozitáři komponent a pluginů | addons:cs]. Také můžete [vytvořit vlastní tutoriál | tutorials/howto]. .[perex]
+Zde naleznete seznam tutoriálů pro Nette Framework, u každého tutoriálu je specifikována jeho obtížnost a seznam všech komponent, které jsou k němu potřeba *(jsou-li nějaké kromě samotného frameworku potřeba)* - všechny případně potřebné komponenty naleznete ke stažení v [repozitáři komponent a rozšíření | addons:cs]. Také můžete [vytvořit vlastní tutoriál | tutorials/howto]. .[perex]
 
 |---------------------------------
 | Název | Popis | Obtížnost | Procvičuje | Používá*
