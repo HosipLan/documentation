@@ -6,20 +6,14 @@ Začínáme
 ========
 
 - [Jak stáhnout Nette Framework?]
-- [Adresářová struktura | Quick Start 2]
-- [Vytvoření presenteru | Quick Start 3]
-- [Připojení šablony | Quick Start 4]
-- [Tvorba odkazů | Quick Start 5]
-- [Hezčí šablony | Quick Start 6]
-- [Zobrazení tabulky | Quick Start 7]
-- [Stránkování a řazení | Quick Start 8]
-- [Tvoříme komponentu | Quick Start 9]
-- [Ajax kde se podíváš | Quick Start 10]
+- [Kudy kam? (základy, aneb co a jak)]
+
+- [Starý QuickStart | stary-quick-start]
 
 
 Nettecast
 =========
-- [screencast/Stáhnutí a zprovoznění Nette Framework]
+- Část 1: [Stáhnutí a zprovoznění Nette Framework | screencast/Stáhnutí a zprovoznění Nette Framework]
 
 
 Seriály
@@ -52,7 +46,7 @@ Podpora
 - [Školení | http://www.skoleniphp.cz/]
 - [Práce a zakázky | http://forum.nette.org/cs/f30-prace-a-zakazky]
 
-Komponenty a doplňky
+Něco navíc
 ====================
 
 - [Repozitář komponent a pluginů | addons:cs/]
