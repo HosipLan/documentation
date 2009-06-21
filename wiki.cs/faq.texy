@@ -2,19 +2,24 @@ Frequently Asked Questions - Často kladené otázky
 ********************
 Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdete svoji otázku a odpověď na ni. .[perex]
 
-Aplikace
+MVC Aplikace
 --------
-- [Jak na adresářovou strukturu? | FAQ/jak-na-adresarovou-strukturu] *aneb jak lehce změnit původní rozmístění adresářů k obrazu svému.*
+- [Jak na adresářovou strukturu? | faq/jak-na-adresarovou-strukturu] aneb jak lehce změnit původní rozmístění adresářů k obrazu svému.
+- [Jak používat dibi společně s Nette Frameworkem? | faq/pouziti-db-layeru-dibi]
+	- http://forum.nette.org/cs/1321-zprovozneni-mysql-databaze
+	- http://forum.nette.org/cs/1276-model-a-pripojeni-k-db
+	- http://forum.nette.org/cs/1670-model-a-pripojeni-k-db
+	- http://forum.nette.org/cs/1203-jak-na-model-v-nette
 
-Formuláre
+Formuláře
 ---------
-- Výnimka pri odoslaní formulára: [The signal receiver component ‘***’ is not found. | FAQ/Správne vytváranie formulárov]
+- [Jak na správné vytváření formulářů? | faq/spravne-vytvaranie-formularov]
 
-Ladění - Nette\Debug
+Ladění
 -------
-* [Jak na režimy a módy? | FAQ/jak-na-rezimy-a-mody]
-* [Jak zjistit výskyt chyby na produkčním (ostrém) serveru? | FAQ/jak-zjistit-vyskyt-chyby-na-produkcnim-serveru]
-* [Jak v Laděnce číst? | ]
+- [Jak na režimy a módy? | faq/jak-na-rezimy-a-mody]
+- [Jak zjistit výskyt chyby na produkčním serveru? | faq/jak-zjistit-vyskyt-chyby-na-produkcnim-serveru]
+- [Jak číst v Laděnce? | faq/jak-cist-v-ladence]
 
 --------
 
@@ -44,6 +49,8 @@ Formuláre
 	- plánovaný RepeaterControl
 - vlastnosti prvkov formulára (class, id)
 	- http://forum.nette.org/cs/1513-kombinace-normalni-html-formular-zpracovani-appformem?pid=9126#p9126
+- uživatelská validace formulářových prvků
+	- http://forum.nette.org/cs/1881-validace-formulare-vypis-form-hodnoty-do-message
 - groups
 - datePicker
 	- http://addons.nette.org/cs/datepicker
@@ -92,6 +99,7 @@ Routovanie
 - snippety & zavináčová mágia
 - include -- úvodzovky
 	- http://forum.nette.org/cs/1459-rychly-dotaz-jak-includovat-sablonu-ktera-je-o-adr-vys
+	- http://forum.nette.org/cs/1803-problem-s-include
 - nový koncept -- dedenie šablón (experimentálne)
 	- http://forum.nette.org/cs/1131-sablona-a-layout-renderovani-v-opacnem-poradi-zruseno#p6321
 - block + extends => nefungujúce snippety
@@ -100,6 +108,10 @@ Routovanie
 	- http://forum.nette.org/cs/1505-nefunkcni-snippety-pri-dedicnosti-sablon
 - iný šablónovací systém
 	- http://forum.nette.org/cs/1236-jiny-sablonovaci-system
+- vypnutí filtru CurlyBrackets v šablonách, podpora `{literal}`
+	- http://forum.nette.org/cs/1261-curlybracketsfilter-a-js-promenna
+	- http://forum.nette.org/cs/1918-jak-do-sablony-napsat-slozenou-zavorku
+	- http://forum.nette.org/cs/1854-nette-templates-navrh-na-rozsireni-filtru-curlybracketsfilter
 
 
 Ostatné
@@ -130,3 +142,5 @@ Rôzne poznámky
 	- http://forum.nette.org/cs/1286-za-objekty-hloupejsi
 - otázky začiatočníka pred prechodom na Nette
 	- http://forum.nette.org/cs/1181-nette-pohled-zacatecnika-splni-ma-ocekavani
+- licencování
+	- http://forum.nette.org/cs/1779-licence-licencovani-nette-extras
