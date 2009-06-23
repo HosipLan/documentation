@@ -101,6 +101,7 @@ Routovanie
 	- http://forum.nette.org/cs/1459-rychly-dotaz-jak-includovat-sablonu-ktera-je-o-adr-vys
 	- http://forum.nette.org/cs/1803-problem-s-include
 - nový koncept -- dedenie šablón (experimentálne)
+	- Q: **Funguji už snippety v kombinaci s dedenim sablon?** A: <span style="color:red">**Ne**</span> (23.6.2009).
 	- http://forum.nette.org/cs/1131-sablona-a-layout-renderovani-v-opacnem-poradi-zruseno#p6321
 - block + extends => nefungujúce snippety
 	- http://forum.nette.org/cs/1291-curlybrackets-dedeni-sablon-extends-bug
