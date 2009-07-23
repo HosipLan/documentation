@@ -31,7 +31,7 @@ Pri zobrazení formulára je všetko v poriadku, problémy nastávajú, keď for
 
 Možné riešenia:
 
-1. presunúť vytváranie formulára do skoršej fázy prípravy na signál (prepare)
+1. presunúť vytváranie formulára do skoršej fázy prípravy na signál (action)
 2. vytváranie formulára nechať na továrničku. */odporúča 9 z 10 Nettistov/*
 
 *presunutie do skoršej fázy:*
@@ -41,7 +41,7 @@ class UvodPresenter extends BasePresenter
 {
 	// ...
 
-	public function prepareNieco()
+	public function actionNieco()
 	{
 		$form = new AppForm($this, 'form1');
 		$form->addText('meno', 'Meno:');
@@ -65,30 +65,22 @@ class UvodPresenter extends BasePresenter
 {
 	// ...
 
-	protected function createComponent($name)
+	protected function createComponentForm1()
 	{
-		switch ($name) {
-		case 'form1': // názov formulára
-			$form = new AppForm($this, $name);
-			$form->addText('meno', 'Meno:');
-			$form->addSubmit('odoslat', 'Odoslať');
-			return;
-		default:
-			parent::createComponent($name);
-			return;
-		}
+		$form = new AppForm;
+		$form->addText('meno', 'Meno:');
+		$form->addSubmit('odoslat', 'Odoslať');
+		return $form;
 	}
 
 	public function renderNieco()
 	{
 		// getComponent získa pridaný formulár podľa jeho názvu
-		$this->template->form = $this->getComponent('form1');
+		$this->template->form = $this['form1'];
 	}
 }
 \--
 
 Na fóre sa o tom diskutovalo vo viacerých vláknach.
 - [Zpracování formuláře – asi to moc nechápu | http://forum.nette.org/cs/1285-zpracovani-formulare-asi-to-moc-nechapu]
-- [prepareView vs. renderView | http://forum.nette.org/cs/1297-prepareview-vs-renderview]
 - [Jak na odeslání formuláře z komponenty | http://forum.nette.org/cs/1456-jak-na-odeslani-formulare-z-komponenty]
-- "Enhancement: Co takhle create<componen­tName>($name) ?":http://forum.nette.org/cs/1494-enhancement-co-takhle-create-componentname-name
