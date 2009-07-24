@@ -75,7 +75,8 @@ class UvodPresenter extends BasePresenter
 
 	public function renderNieco()
 	{
-		// getComponent získa pridaný formulár podľa jeho názvu
+		// pridaný formulár získame podľa jeho názvu: $this['form1'],
+		// je to len skrátený zápis $this->getComponent('form1')
 		$this->template->form = $this['form1'];
 	}
 }
