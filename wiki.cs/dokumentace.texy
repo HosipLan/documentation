@@ -52,7 +52,10 @@ Jak tu metodu použít? Jaká má argumety? A co vrací? Použití API není pra
 - [API reference verze 0.8 pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/] .{font-size: smaller}
 - [API reference verze 0.9 pro PHP 5.2 | http://api.nette.org/0.9/] .{font-size: smaller}
 - [API reference verze 0.9 pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/] .{font-size: smaller}
+\---
 
+
+/---div .[col2]
 Podpora
 =======
 Kde hledat radu a kam se obrátit... .[perex]
@@ -68,11 +71,8 @@ Kde hledat radu a kam se obrátit... .[perex]
 - [Školení | http://www.skoleniphp.cz/]
 - [Práce a zakázky | http://forum.nette.org/cs/f30-prace-a-zakazky]
 \--
-\---
 
-
-/---div .[col2]
-Něco navíc
+Něco navíc .{clear: both}
 ====================
 Máte pocit že toho Nette Framework umí málo? Mýlíte se... .[perex]
 - [Repozitář komponent a rozšíření | addons:cs/]
