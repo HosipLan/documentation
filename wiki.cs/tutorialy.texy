@@ -5,6 +5,6 @@ Zde naleznete seznam tutoriálů pro Nette Framework, u každého tutoriálu je 
 |---------------------------------
 | Název | Popis | Obtížnost | Procvičuje | Používá*
 |---------------------------------
-| [Akrabat | tutorialy/akrabat] | Klasický Zend Framework Tutorial přepsaný pro Nette. | Začátečník | [Nette\Forms], *doplnit* | - |
+| [Akrabat | tutorialy/akrabat] | Klasický Zend Framework Tutorial přepsaný pro Nette. | Začátečník | [Nette\Forms], Triviální autentizaci | - |
 
-<em>* kromě Nette Framework</em>
+<em>* kromě Nette Frameworku</em>
