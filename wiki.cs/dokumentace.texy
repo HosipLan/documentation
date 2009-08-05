@@ -4,7 +4,7 @@ Dokumentace je stále ve vývoji (bouřlivém), mějte proto prosím pochopení 
 /---div .[col2]
 Začínáme
 ========
-Začátečníci? Začněte zde... .[perex]
+Začátečníci? Začněte zde... .[perex]{font-size: smaller}
 - [Jak stáhnout Nette Framework?]
 - [Jak začít pracovat s Nette Frameworkem?]
 
@@ -16,17 +16,17 @@ Začátečníci? Začněte zde... .[perex]
 
 Screencast .{clear: both}
 =========
-Jak se rychle zorientovat? Screencast je volba! .[perex]
+Jak se rychle zorientovat? Screencast je volba! .[perex]{font-size: smaller}
 - [Stáhnutí a zprovoznění Nette Framework | screencast/Stáhnutí a zprovoznění Nette Framework]
 
 Seriály
 =======
-Vyhovuje vám pomalejší a zábavná forma výuky? Seriály jsou odpovědí! .[perex]
-- [Začínáme s Nette Framework | http://zdrojak.root.cz/serialy/zaciname-s-nette-framework/] na serveru [Zdroják | http://zdrojak.root.cz] .{font-size: smaller}
+Vyhovuje vám pomalejší a zábavná forma výuky? Seriály jsou odpovědí! .[perex]{font-size: smaller}
+- [Začínáme s Nette Framework | http://zdrojak.root.cz/serialy/zaciname-s-nette-framework/] na serveru [Zdroják | http://zdrojak.root.cz]
 
 Průvodce programátora
 =====================
-Jak to udělat? Jak to funguje? Názorný průvodce vždy rád poradí... .[perex]
+Jak to udělat? Jak to funguje? Názorný průvodce vždy rád poradí... .[perex]{font-size: smaller}
 
 **Jak na to:**
 - [Autentizace vs. Autorizace]
@@ -47,18 +47,18 @@ Jak to udělat? Jak to funguje? Názorný průvodce vždy rád poradí... .[pere
 
 API Reference .{clear: both}
 ==============
-Jak tu metodu použít? Jaká má argumety? A co vrací? Použití API není prací... .[perex]
-- [API reference verze 0.8 pro PHP 5.2 | http://api.nette.org/0.9/] .{font-size: smaller}
-- [API reference verze 0.8 pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/] .{font-size: smaller}
-- [API reference verze 0.9 pro PHP 5.2 | http://api.nette.org/0.9/] .{font-size: smaller}
-- [API reference verze 0.9 pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/] .{font-size: smaller}
+Jak tu metodu použít? Jaká má argumety? A co vrací? Použití API není prací... .[perex]{font-size: smaller}
+- [API reference verze 0.8 pro PHP 5.2 | http://api.nette.org/0.9/]
+- [API reference verze 0.8 pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/]
+- [API reference verze 0.9 pro PHP 5.2 | http://api.nette.org/0.9/]
+- [API reference verze 0.9 pro PHP 5.2 s prefixy tříd | http://api.nette.org/0.9prefixed/]
 \---
 
 
 /---div .[col2]
 Podpora
 =======
-Kde hledat radu a kam se obrátit... .[perex]
+Kde hledat radu a kam se obrátit... .[perex]{font-size: smaller}
 /--div .{float: left}
 - [Fórum | http://forum.nette.org/]
 - [Online chat]
@@ -74,12 +74,12 @@ Kde hledat radu a kam se obrátit... .[perex]
 
 Něco navíc .{clear: both}
 ====================
-Máte pocit že toho Nette Framework umí málo? Mýlíte se... .[perex]
+Máte pocit že toho Nette Framework umí málo? Mýlíte se... .[perex]{font-size: smaller}
 - [Repozitář komponent a rozšíření | addons:cs/]
 
 O frameworku
 ============
-Na počátku bylo slovo: "Chybí mi PHP framework"... .[perex]
+Na počátku bylo slovo: "Chybí mi PHP framework"... .[perex]{font-size: smaller}
 - [Co je Nette Framework?]
 - [Proč zvolit Nette Framework?]
 - [Jak se naučit Nette Framework?]
@@ -90,7 +90,7 @@ Na počátku bylo slovo: "Chybí mi PHP framework"... .[perex]
 
 Další
 =====
-Další zdroje informací... .[perex]
+Další zdroje informací... .[perex]{font-size: smaller}
 - [Changelog | http://forum.nette.org/cs/f31-changelog]
 - [Poslední sobota | http://phpfashion.com/posledni-sobota-sraz-nette-framework]
 - [Dokumentační projekt|wiki]
