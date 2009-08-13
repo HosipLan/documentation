@@ -2,6 +2,12 @@ Frequently Asked Questions - Často kladené otázky
 ********************
 Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdete svoji otázku a odpověď na ni. .[perex]
 
+- [Jak na adresářovou strukturu? | faq/jak-na-adresarovou-strukturu] aneb jak lehce změnit původní rozmístění adresářů k obrazu svému.
+
+- [Jak na správné vytváření formulářů? | faq/spravne-vytvaranie-formularov]
+
+- [Zobrazuje sa mi biela stránka, čo mám robiť? | FAQ/Biela stránka]
+
 /--div .[note]
 **Todo:**
 * Tohleto se musí zrefaktorovat...
@@ -9,16 +15,11 @@ Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdet
 
 MVC Aplikace
 --------
-- [Jak na adresářovou strukturu? | faq/jak-na-adresarovou-strukturu] aneb jak lehce změnit původní rozmístění adresářů k obrazu svému.
 - [Jak používat dibi společně s Nette Frameworkem? | faq/pouziti-db-layeru-dibi]
 	- http://forum.nette.org/cs/1321-zprovozneni-mysql-databaze
 	- http://forum.nette.org/cs/1276-model-a-pripojeni-k-db
 	- http://forum.nette.org/cs/1670-model-a-pripojeni-k-db
 	- http://forum.nette.org/cs/1203-jak-na-model-v-nette
-
-Formuláře
----------
-- [Jak na správné vytváření formulářů? | faq/spravne-vytvaranie-formularov]
 
 Ladění
 -------
