@@ -50,8 +50,9 @@ class UvodPresenter extends BasePresenter
 
 	public function renderNieco()
 	{
-		// getComponent získa pridaný formulár podľa jeho názvu
-		$this->template->form = $this->getComponent('form1');
+		// pridaný formulár získame podľa jeho názvu: $this['form1'],
+		// je to len skrátený zápis $this->getComponent('form1')
+		$this->template->form = $this['form1'];
 	}
 }
 \--
@@ -72,14 +73,18 @@ class UvodPresenter extends BasePresenter
 		$form->addSubmit('odoslat', 'Odoslať');
 		return $form;
 	}
-
-	public function renderNieco()
-	{
-		// pridaný formulár získame podľa jeho názvu: $this['form1'],
-		// je to len skrátený zápis $this->getComponent('form1')
-		$this->template->form = $this['form1'];
-	}
 }
+\--
+
+Navyše už nie je nutné používať renderNieco() metódy na napĺňanie šablóny komponentmi, formulár možno vykresliť i jednoduchšie:
+
+*vykreslenie formulára v šablóne:*
+
+/--html
+<!-- ... -->
+<div id="some_container">
+    {control form1}
+</div>
 \--
 
 Na fóre sa o tom diskutovalo vo viacerých vláknach.
