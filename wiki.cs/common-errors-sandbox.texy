@@ -1,0 +1,8 @@
+Časté nebo wtf chyby
+*********************
+
+Shromaždiště typických problémů, u nichž by zřejmě prospěla [rozšířená informace o vyjímkách | http://forum.nette.org/cs/2179-rozsirit-informaci-o-chybach-a-vyjimkach] .[perex]
+
+- [The signal receiver component 'xxx' is not found. | http://api.nette.org/0.9/source-Application.Presenter.php.html#320] , [typický problém | http://forum.nette.org/cs/2446-komponenta-nenalezena?pid=17094#p17094]
+
+- [Regular expression '$arg' must be JavaScript compatible. | http://api.nette.org/0.9/source-Forms.RenderersInstantClientScript.php.html#285]
