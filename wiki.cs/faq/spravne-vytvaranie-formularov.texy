@@ -1,7 +1,7 @@
 Správne vytváranie formulárov
 *****************************
 
-Stránka je súčasťou sekcie [Často kladených otázok | FAQ]. .[perex]
+Stránka je súčasťou sekcie [ Často kladených otázok | FAQ ]. .[perex]
 
 Častým problémom pri formulároch býva výnimka: **The signal receiver component '***' is not found.** Tá je zväčša spôsobená vytváraním formulára vo fáze vykresľovania (render), kedy je už neskoro.
 
