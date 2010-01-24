@@ -31,12 +31,13 @@ Pokud už na nějaké části dokumentace pracujete a nejste uvedeni v tabulce n
 |         | Verzování dokumentace vůči verzím Nette                                        | David Grudl
 |         | Vytvořit [Jak přidat vlastní rozšíření | addons:howto]                         |
 |         | [dev:Dědičnost šablon]                                                    | Honza Tvrdík
-|         | Tutoriál: [wiki:Tutoriály/Můj první web v Nette]                               | 22
+|         | Tutoriál: [wiki:Tutoriály/Statický web v Nette]                                | 22
 | Hotovo  | Tutoriál: [wiki:Tutoriály/Návštěvní kniha v Nette s testy (TDD)]               | Ola
 |         | Přepsat / smazat [Co dělá widget | wiki:faq/widgety] (integrovat do [doc:Latte filter]) |
-|	  | Vytvořit [Jak vytvořit vlastní tutoriál | tutorialy/howto]                     |
+|	  | Vytvořit [Jak vytvořit vlastní tutoriál | tutorialy/howto]                     | Inza
 |         | Předělat [doc:Doporučená adresářová struktura], přidat víc teorie, udělat méně geeky |
 |	  | Vytvořit [doc:Jak na Moduly] 					           |
+|	  | Předělat dokumentaci k tutoriálu [tutorialy/Akrabat]			   |					           |
 
 Viz také
 ========
