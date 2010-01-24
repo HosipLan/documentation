@@ -1,30 +1,46 @@
 Tutoriály
 *********
-Zde naleznete seznam tutoriálů pro Nette Framework, u každého tutoriálu je specifikována jeho obtížnost a seznam všech komponent, které jsou k němu potřeba *(jsou-li nějaké kromě samotného frameworku potřeba)* - všechny případně potřebné komponenty naleznete ke stažení v [repositáři komponent a rozšíření | addons:cs]. Také můžete [vytvořit vlastní tutoriál | tutorialy/howto]. .[perex]
+Zde naleznete seznam tutoriálů pro Nette Framework, u každého tutoriálu je specifikována jeho obtížnost a seznam všech komponent, které jsou k němu potřeba *(jsou-li nějaké kromě samotného frameworku potřeba)* - všechny případně potřebné komponenty naleznete ke stažení v [repositáři komponent a rozšíření | addons:cs]. Pokud tutoriál předpokládá znalost jiného tutoriálu je to u něj rovněž uvedeno. Také vy můžete [vytvořit vlastní tutoriál | tutorialy/howto]. .[perex]
 
 
 
 [* next-48x48.png .[icon] *]
 
-[Quick start | doc:quickstart]
+[Quick Start | doc:quickstart]
 ------------
-První krůčky s Nette Frameworkem.
- Obtížnost: začátečník
+První krůčky s Nette Frameworkem. .{font-size:larger}
+
+* Předpokládané znalosti: *žádné*
+* Obtížnost: *začátečník*
+
+
+[* next-48x48.png .[icon] *]
+
+[tutorialy/Statický web v Nette]
+------------
+Jak vytvořit v Nette Frameworku statický web snadno a rychle. .{font-size:larger}
+
+* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Obtížnost: *začátečník*
 
 
 [* next-48x48.png .[icon] *]
 
 [tutorialy/Akrabat]
 ------------
-Klasický Zend Framework Tutorial přepsaný pro Nette.
- Obtížnost: začátečník
+Klasický *Zend Framework tutorial* přepsaný pro Nette. .{font-size:larger}
+
+* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Obtížnost: *začátečník*
 
 [* next-48x48.png .[icon] *]
 
 [tutorialy/Návštěvní kniha v Nette s testy (TDD)]
 ------------
+Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Developement)) (Programování řízené testy) .{font-size:larger}
 
- Obtížnost: lehce pokročilý
+* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Obtížnost: *lehce pokročilý*
 
 
 {{theme: bigicons}}
