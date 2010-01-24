@@ -1,0 +1,3 @@
+Co přesně dělá volání `{widget ...}` v šabloně?
+*********
+Protože se šablona překládá pomocí různých filtrů (typicky LatteFilter) na čistý PHP kód který se poté kešuje, volání `{widget ...}` se nahradí za `$presenter->getComponent(...)->render()`. Jakmile se skript dostane k příkazu getComponent, hledá se vhodná metoda, která vytvoří komponentu s názvem uvedeným v makru widget. Takovou je typicky metoda presenteru/controly - `createComponentNazevKomponenty`, která MUSÍ VRÁTIT POTOMKA CONTROL/COMPONENT. Na ní se poté zavolá metoda render a vykreslený kód se vloží do šablony webu.
