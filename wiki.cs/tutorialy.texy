@@ -1,14 +1,18 @@
 Tutoriály
 *********
-Zde naleznete seznam tutoriálů pro Nette Framework, u každého tutoriálu je specifikována jeho obtížnost a seznam všech komponent, které jsou k němu potřeba *(jsou-li nějaké kromě samotného frameworku potřeba)* - všechny případně potřebné komponenty naleznete ke stažení v [repositáři komponent a rozšíření | addons:cs]. Pokud tutoriál předpokládá znalost jiného tutoriálu je to u něj rovněž uvedeno. Také vy můžete [vytvořit vlastní tutoriál | tutorialy/howto]. .[perex]
 
+.[perex]
+Seznam tutoriálů pro Nette Framework. U každého tutoriálu je specifikována jeho obtížnost a předpokládané znalosti. I vy můžete [vytvořit vlastní tutoriál | tutorialy/howto].
 
+/--comment
+U každého tutoriálu je specifikována jeho obtížnost a seznam všech komponent, které jsou k němu potřeba *(jsou-li nějaké kromě samotného frameworku potřeba)* - všechny případně potřebné komponenty naleznete ke stažení v [repositáři komponent a rozšíření | addons:cs]. Pokud tutoriál předpokládá znalost jiného tutoriálu je to u něj rovněž uvedeno. Také vy můžete [vytvořit vlastní tutoriál | tutorialy/howto].
+\--
 
 [* next-48x48.png .[icon] *]
 
 [Quick Start | doc:quickstart]
-------------
-První krůčky s Nette Frameworkem. .{font-size:larger}
+--------------------------------
+První krůčky s Nette Frameworkem.
 
 * Předpokládané znalosti: *žádné*
 * Obtížnost: *začátečník*
@@ -17,8 +21,8 @@ První krůčky s Nette Frameworkem. .{font-size:larger}
 [* next-48x48.png .[icon] *]
 
 [tutorialy/Statický web v Nette]
-------------
-Jak vytvořit v Nette Frameworku statický web snadno a rychle. .{font-size:larger}
+--------------------------------
+Jak vytvořit v Nette Frameworku statický web snadno a rychle.
 
 * Předpokládané znalosti: [Quick Start | doc:quickstart]
 * Obtížnost: *začátečník*
@@ -28,7 +32,7 @@ Jak vytvořit v Nette Frameworku statický web snadno a rychle. .{font-size:larg
 
 [tutorialy/Akrabat]
 ------------
-Klasický *Zend Framework tutorial* přepsaný pro Nette. .{font-size:larger}
+Klasický *Zend Framework tutoriál* přepsaný pro Nette.
 
 * Předpokládané znalosti: [Quick Start | doc:quickstart]
 * Obtížnost: *začátečník*
@@ -37,12 +41,12 @@ Klasický *Zend Framework tutorial* přepsaný pro Nette. .{font-size:larger}
 
 [tutorialy/Návštěvní kniha v Nette s testy (TDD)]
 ------------
-Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Developement)) (Programování řízené testy) .{font-size:larger}
+Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Developement - Programování řízené testy)).
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Předpokládané znalosti: [Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]
 * Obtížnost: *lehce pokročilý*
 
 
-{{theme: bigicons}}
 
+{{theme: bigicons}}
 {{themeicon: icon-lamplight1.png}}
