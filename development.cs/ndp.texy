@@ -21,9 +21,10 @@ Pokud už na nějaké části dokumentace pracujete a nejste uvedeni v tabulce n
 |         | Napsat workflow pro práci s tagy (jaký tag pro jakou situaci)                  | David Grudl
 |         | Aktualizovat [Quick start | doc:quickstart] (odstranit největší nedostatky) | Inza
 | Hotovo  | Aktualizovat QS - [doc:quickstart/Jak stáhnout nette framework]		   | Inza
-| Skoro	  | Aktualizovat QS - [Homepage|doc:quickstart]		   		   | Inza
+| Hotovo  | Aktualizovat QS - [Homepage|doc:quickstart]		   		   | Inza
 | Hotovo  | Aktualizovat QS - [doc:quickstart/Co budeme potřebovat?]		  	   | Inza
-| 	  | Aktualizovat QS - [doc:quickstart/Adresářová struktura]		  	   | Inza
+| Hotovo  | Aktualizovat QS - [doc:quickstart/Adresářová struktura]		  	   | Inza
+| 	  | Aktualizovat QS - [doc:quickstart/Vytvoření databáze]		  	   | Inza
 | Hotovo  | Aktualizovat Průvodce - [wiki:Jak se naučit Nette Framework?]		   | Inza
 |         | Sepsat FAQ (pořádně) – [1 | wiki:faq],  [2 | dev:faq]                     |
 |         | [doc:Template Filters] refactoring (asi rozřezat na více stránek -> [doc:Latte filter]) |
