@@ -41,7 +41,7 @@ Klasický *Zend Framework tutoriál* přepsaný pro Nette.
 
 [tutorialy/Návštěvní kniha v Nette s testy (TDD)]
 ------------
-Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Developement - Programování řízené testy)).
+Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Development - Programování řízené testy)).
 
 * Předpokládané znalosti: [Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]
 * Obtížnost: *lehce pokročilý*
