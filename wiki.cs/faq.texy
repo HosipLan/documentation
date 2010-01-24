@@ -11,6 +11,8 @@ Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdet
 
 - [Nefunguje mi routovanie, kde môže byť chyba? | FAQ/Routovanie]
 
+- [Co přesně dělá volání `{widget nazevKomponenty}` v šabloně? | FAQ/Widgety]
+
 /--div .[note]
 **Todo:**
 * Tohleto se musí zrefaktorovat...
