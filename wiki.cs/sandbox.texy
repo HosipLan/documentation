@@ -12,7 +12,24 @@ Titulek
 Nieco
 -----
 
+Lorem ipsum dolor sit amep...
 
+*Soubor: `document_root/index.php`*
+/--php
+<?php
+
+//cesta k aplikace
+define('WWW_DIR', dirname(__FILE__));
+
+//cesta k aplikačním souborům
+define('APP_DIR', WWW_DIR . '/../app');
+
+//cesta k aplikačním knihovnam - typicky loader.php, dibi.min.php
+define('LIBS_DIR', WWW_DIR . '/../libs');
+
+//starter aplikaci
+require APP_DIR . '/bootstrap.php';
+\--
 
 Dady's home
 
