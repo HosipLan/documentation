@@ -1,0 +1,27 @@
+Statický web - přihlašování, administrace
+*****
+
+.[perex]
+Tento tutoriál vám předvede, jak snadno lze v Nette implementovat přihlašení, autentizaci autorizace a administraci webu.
+
+Co budete potřebovat?
+===
+- aplikaci [statický web v Nette|http://wiki.nette.org/cs/tutorialy/staticky-web-v-nette]. Ke stažení je na konci stránky tutoriálu.
+- zvládnutí tutoriálu **Statický web v Nette**
+
+Registrační formulář
+===
+
+Připojení a zápis do databáze
+===
+
+Chráněný obsah webu - přihlašování
+===
+
+Správa uživatelů
+===
+
+Správa webu
+===
+
+{{tags: tutorial}}
