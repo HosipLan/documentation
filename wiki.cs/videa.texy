@@ -6,14 +6,15 @@ Všechna zveřejněná videa o Nette Frameworku, kromě [screencastů | screenca
 |----------------------------------------------------------
 | Název | Datum | Obsah | Délka (min) | Přednášející | MB | Další info
 |----------------------------------------------------------
-| "David na ČVUT":http://www.avc-cvut.cz/download.php?mode=1&id=5507 ("online":http://www.avc-cvut.cz/avc.php?id=5258) | 27.10.2007 | základy frameworku, formuláře, šablony, předávání proměnných mezi jednotlivými požadavky | 111 | David Grudl | 878 | "více":#david-na-cvut
-| "PHP frameworky jaro 2008":http://www.avc-cvut.cz/download.php?mode=1&id=7135 ("online":http://www.avc-cvut.cz/avc.php?id=7098) | 12.04.2008 | ??? | 77 | David Grudl | 510 | "více":#php-frameworky-jaro-2008
-| "Nové šablony":http://nette.vrtak-cz.net/sablony.mp4 ("online":http://blip.tv/file/2514636) | 27.6.2009 | nové šablony a jejich užití | 70 | David Grudl | 1085 | "více":#nove-sablony
-| "Texyla":http://nette.vrtak-cz.net/texyla.mp4 ("online":http://blip.tv/file/2516840) | 27.6.2009 | Texyla | 41 | Jan Marek | 639 | "více":#texyla
-| "WebExpo 2009":http://nette.vrtak-cz.net/webexpo2009.avi ("online":http://blip.tv/file/2734931/) | 17.10.2009 | AJAX(J), RIA, živě programovaný "e-shop" | 82 | David Grudl | 614 | "více":#webexpo-2009
+| "David na ČVUT":http://www.avc-cvut.cz/download.php?mode=1&id=5507 ("online":http://www.avc-cvut.cz/avc.php?id=5258) | 27.10.2007 | základy frameworku, formuláře, šablony, předávání proměnných mezi jednotlivými požadavky | 111 | David Grudl | 878 | "více":#toc-david-na-cvut
+| "PHP frameworky jaro 2008":http://www.avc-cvut.cz/download.php?mode=1&id=7135 ("online":http://www.avc-cvut.cz/avc.php?id=7098) | 12.04.2008 | ??? | 77 | David Grudl | 510 | "více":#toc-php-frameworky-jaro-2008
+| "Nové šablony":http://nette.vrtak-cz.net/sablony.mp4 ("online":http://blip.tv/file/2514636) | 27.6.2009 | nové šablony a jejich užití | 70 | David Grudl | 1085 | "více":#toc-nove-sablony
+| "Texyla":http://nette.vrtak-cz.net/texyla.mp4 ("online":http://blip.tv/file/2516840) | 27.6.2009 | Texyla | 41 | Jan Marek | 639 | "více":#toc-texyla
+| "WebExpo 2009":http://nette.vrtak-cz.net/webexpo2009.avi ("online":http://blip.tv/file/2734931/) | 17.10.2009 | AJAX(J), RIA, živě programovaný "e-shop" | 82 | David Grudl | 614 | "více":#toc-webexpo-2009
+| "Básnička":http://nette.vrtak-cz.net/basnicka.mp4 ("online":http://blip.tv/file/2913362) | 31.10.2009 | básnička | 5 | Tomáš Jukin | 82 | "více":#toc-basnicka
+| "Barcamp Vsetín 2010" ("online":http://vimeo.com/9016224) | 16.01.2010 | Budoucnost PHP? Frameworky a Nette především! Konkrétní výhody Nette z praxe. | 35 | Vítek Ježek, Jan Tvrdík | 46 | "více":#toc-barcamp-2010
 
 /--comment
-| "Básnička":http://nette.vrtak-cz.net/basnicka.mp4 ("online":http://blip.tv/file/2913362) | 31.10.2009 | básnička | 5 | Tomáš Jukin | 82 | "více":#basnicka
 | "Enterprise Architect":http://nette.vrtak-cz.net/ea.mp4 ("online":http://blip.tv/file/2913204) | 31.10.2009 | Enterprise Architect | 31 | Tomáš Jukin | 490 | "více":#enterprise-architect
 | "Adobe Fireworks":http://nette.vrtak-cz.net/fireworks.mp4 ("online":http://blip.tv/file/2913242) | 31.10.2009 | Adobe Fireworks | 27 | Viliam Kopecký | 416 | "více":#adobe-fireworks
 \--
@@ -74,7 +75,6 @@ Všechna zveřejněná videa o Nette Frameworku, kromě [screencastů | screenca
 - místo: ČZU - Developer Hall (SIC)
 - točili:  AVC ČVUT
 
-/--comment
 "Básnička":http://nette.vrtak-cz.net/basnicka.mp4 ("online":http://blip.tv/file/2913362) .[#toc-basnicka]
 ===================================================================================================
 - MP4
@@ -86,6 +86,19 @@ Všechna zveřejněná videa o Nette Frameworku, kromě [screencastů | screenca
 - místo: Poslední sobota 10 - Halloweenská - Praha
 - točil: Tomik
 
+
+"Barcamp Vsetín 2010" ("online":http://vimeo.com/9016224) .[#toc-barcamp-2010]
+===================================================================================================
+- ?netuším co?
+- 45.4 MB
+- přednášející: Vítek Ježek, Jan Tvrdík
+- obsah: Budoucnost PHP? Frameworky a Nette především! Konkrétní výhody Nette z praxe.
+- délka: 35 minut
+- natočeno: 16.01.2010
+- místo: Podnikatelský inkubátor Maštaliska, Horní náměstí 3, Vsetín
+- točili:  ???
+
+/--comment
 "Enterprise Architect":http://nette.vrtak-cz.net/ea.mp4 ("online":http://blip.tv/file/2913204) .[#toc-enterprise-architect]
 ===================================================================================================
 - MP4
