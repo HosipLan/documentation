@@ -13,7 +13,7 @@ Všechna zveřejněná videa o Nette Frameworku, kromě [screencastů | screenca
 | "WebExpo 2009":http://nette.vrtak-cz.net/webexpo2009.avi ("online":http://blip.tv/file/2734931/) | 17.10.2009 | AJAX(J), RIA, živě programovaný "e-shop" | 82 | David Grudl | 614 | "více":#toc-webexpo-2009
 | "Básnička":http://nette.vrtak-cz.net/basnicka.mp4 ("online":http://blip.tv/file/2913362) | 31.10.2009 | básnička | 5 | Tomáš Jukin | 82 | "více":#toc-basnicka
 | "Barcamp Vsetín 2010" ("online":http://vimeo.com/9016224) | 16.01.2010 | Budoucnost PHP? Frameworky a Nette především! Konkrétní výhody Nette z praxe. | 35 | Vítek Ježek, Jan Tvrdík | 46 | "více":#toc-barcamp-2010
-| "Blog za 5minut":http://nette.vrtak-cz.net/ormion.mp4 ("online":http://blip.tv/file/3162310) | 30.01.2010 | Blog za 5minut za použití Nette,dibi a Ormionu | 36 | Jan Marek | 1132 | "více":#toc-blog-za-5-min
+| "Blog za 5 minut":http://nette.vrtak-cz.net/ormion.mp4 ("online":http://blip.tv/file/3162310) | 30.01.2010 | Blog za 5 minut za použití Nette, dibi a Ormionu | 36 | Jan Marek | 1132 | "více":#toc-blog-za-5-min
 | "Nella CMS":http://nette.vrtak-cz.net/nella.mp4 ("online":http://blip.tv/file/3162071) | 30.01.2010 | Nella CMS - Co tam chcete a co ne? + Co to zatím umí a jak to co řeší | 35 | Patrik Votoček | 1686 | "více":#toc-nella-cms
 
 /--comment
@@ -100,16 +100,18 @@ Všechna zveřejněná videa o Nette Frameworku, kromě [screencastů | screenca
 - místo: Podnikatelský inkubátor Maštaliska, Horní náměstí 3, Vsetín
 - točili:  ???
 
-"Blog za 5minut":http://nette.vrtak-cz.net/ormion.mp4 ("online":http://blip.tv/file/3162310) .[#toc-blog-za-5-min]
+"Blog za 5 minut":http://nette.vrtak-cz.net/ormion.mp4 ("online":http://blip.tv/file/3162310) .[#toc-blog-za-5-min]
 ===================================================================================================
 - MP4
 - 1.1 GB
 - přednášející: Jan Marek
-- obsah: Blog za 5minut za použití Nette,dibi a Ormionu
+- obsah: Blog za 5 minut za použití Nette, dibi a Ormionu
 - délka: 36 minut
 - natočeno: 30.01.2010
 - místo: Poslední sobota 13 - Paraskevidekatriafobní - Velvet, Pardubice
 - točili:  nAS
+- demo: http://ormiondemo.janmarek.net/
+- kód ukázky: http://github.com/janmarek/OrmionExample
 
 "Nella CMS":http://nette.vrtak-cz.net/nella.mp4 ("online":http://blip.tv/file/3162071) .[#toc-nella-cms]
 ===================================================================================================
