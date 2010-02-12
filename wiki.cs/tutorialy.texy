@@ -47,6 +47,15 @@ Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((
 * Obtížnost: *lehce pokročilý*
 
 
+[* next-48x48.png .[icon] *]
+
+[tutorialy/Nette & Doctrine]
+------------
+Ako na spoluprácu Nette Framework s ORM Doctrine.
+
+* Předpokládané znalosti: [Quick Start | doc:quickstart], PHP5 OOP
+* Obtížnost: *pokročilý*
+
 
 {{theme: bigicons}}
 {{themeicon: icon-lamplight1.png}}
