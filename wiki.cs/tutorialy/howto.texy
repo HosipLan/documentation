@@ -1,8 +1,8 @@
-Statický web - přihlašování, administrace
-*****
+Nette & Doctrine
+****************
 
 .[perex]
-Tento tutoriál vám předvede, jak snadno lze v Nette implementovat přihlašení, autentizaci autorizace a administraci webu.
+V tomto tutoriáli sa naučíte sprevádzkovať spoluprácu Nette s ORM Doctrine. Doctrine bude následne vo vašej aplikácii vystupovať ako Model.
 
 Co budete potřebovat?
 ===
