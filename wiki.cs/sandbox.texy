@@ -6,4 +6,10 @@ Pískoviště
 - `[Nette\Object::getReflection() | api:]` -> [Nette\Object::getReflection() | api:]
 - `[api:Nette\Object::getReflection()]` -> [api:Nette\Object::getReflection()]
 
+- [api:0.9\Nette\Object::getReflection()]
+- [api:0.9:Nette\Object::getReflection()]
+- [api\0.9:Nette\Object::getReflection()]
+- [api\0.9\Nette\Object::getReflection()]
+- [api1.0:Nette\Object::getReflection()]
+
 {{tags: nette-0.9}}
