@@ -57,5 +57,15 @@ Ako na spoluprácu Nette Framework s ORM Doctrine.
 * Obtížnost: *pokročilý*
 
 
+[* next-48x48.png .[icon] *]
+
+[tutorialy/Statické ACL v modulárnej aplikácii]
+------------
+Vytvorenie modulárnej aplikácie (Frontend/Admin) a využitie ACL na riadenie prístupu.
+
+* Předpokládané znalosti: [Quick Start | doc:quickstart], [Akrabat | wiki:tutorialy/akrabat], PHP5 OOP
+* Obtížnost: *pokročilý*
+
+
 {{theme: bigicons}}
 {{themeicon: icon-lamplight1.png}}
