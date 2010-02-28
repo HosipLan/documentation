@@ -14,7 +14,7 @@ U každého tutoriálu je specifikována jeho obtížnost a seznam všech kompon
 --------------------------------
 První krůčky s Nette Frameworkem.
 
-* Předpokládané znalosti: *žádné*
+* Předpokládané znalosti: *PHP 5 OOP*
 * Obtížnost: *začátečník*
 
 
@@ -24,7 +24,7 @@ První krůčky s Nette Frameworkem.
 --------------------------------------------
 Jednoduchá a nenáročná kniha s podporou AJAXu.
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Předpokládané znalosti: *[Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]*
 * Obtížnost: *začátečník*
 
 
@@ -34,7 +34,7 @@ Jednoduchá a nenáročná kniha s podporou AJAXu.
 --------------------------------
 Jak vytvořit v Nette Frameworku statický web snadno a rychle.
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Předpokládané znalosti: *[Quick Start | doc:quickstart]*
 * Obtížnost: *začátečník*
 
 
@@ -44,7 +44,7 @@ Jak vytvořit v Nette Frameworku statický web snadno a rychle.
 ------------
 Klasický *Zend Framework tutoriál* přepsaný pro Nette.
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Předpokládané znalosti: *[Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]*
 * Obtížnost: *začátečník*
 
 [* next-48x48.png .[icon] *]
@@ -53,7 +53,7 @@ Klasický *Zend Framework tutoriál* přepsaný pro Nette.
 ------------
 Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Development - Programování řízené testy)).
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]
+* Předpokládané znalosti: *[Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]*
 * Obtížnost: *lehce pokročilý*
 
 
@@ -63,7 +63,7 @@ Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((
 ------------
 Ako na spoluprácu Nette Framework s ORM Doctrine.
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart], PHP5 OOP
+* Předpokládané znalosti: *[Quick Start | doc:quickstart]*
 * Obtížnost: *pokročilý*
 
 
@@ -73,7 +73,7 @@ Ako na spoluprácu Nette Framework s ORM Doctrine.
 ------------
 Vytvorenie modulárnej aplikácie (Frontend/Admin) a využitie ACL na riadenie prístupu.
 
-* Předpokládané znalosti: [Quick Start | doc:quickstart], [Akrabat | wiki:tutorialy/akrabat], PHP5 OOP
+* Předpokládané znalosti: *[Akrabat | wiki:tutorialy/akrabat]*
 * Obtížnost: *pokročilý*
 
 
