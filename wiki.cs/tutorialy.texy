@@ -20,6 +20,16 @@ První krůčky s Nette Frameworkem.
 
 [* next-48x48.png .[icon] *]
 
+[tutorialy/Návštěvní kniha využívající AJAX]
+--------------------------------------------
+Jednoduchá a nenáročná kniha s podporou AJAXu.
+
+* Předpokládané znalosti: [Quick Start | doc:quickstart]
+* Obtížnost: *začátečník*
+
+
+[* next-48x48.png .[icon] *]
+
 [tutorialy/Statický web v Nette]
 --------------------------------
 Jak vytvořit v Nette Frameworku statický web snadno a rychle.
