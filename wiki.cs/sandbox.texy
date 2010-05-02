@@ -1,7 +1,7 @@
 {{title:Pískoviště}}
 
 Pískoviště
-----------
+**********
 
 - `[Nette\Object::getReflection() | api:]` -> [Nette\Object::getReflection() | api:]
 - `[api:Nette\Object::getReflection()]` -> [api:Nette\Object::getReflection()]
@@ -27,5 +27,18 @@ Pískoviště
 {{base: doc:}}
 
 [Šablony]
+
+.[#test1]
+Nadpis
+======
+
+.[#test2]
+Lorem ipsum
+
+Nadpis
+====== .[#test3]
+
+Nadpis .[#toc-ěšč]
+======
 
 {{tags: nette-0.9}}
