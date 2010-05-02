@@ -1,8 +1,6 @@
 Jak na adresářovou strukturu?
 *****************************
 
-Stránka je součástí sekce [ Často kladených otázek | FAQ ]. .[perex]
-
 Adresářová struktura v Nette je plně nastavitelná. Jak ji změnit si ukážeme na následujícím příkladu.
 
 Při umístění aplikačních složek do `document_rootu` je dobré do nich zakázat přístup přes soubor `.htaccess`. .[caution]
