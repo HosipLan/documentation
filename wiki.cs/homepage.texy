@@ -9,23 +9,58 @@ Wiki neslouží jako technická podpora. Otázky pokládejte prosím na "fóru":
 
 
 Kategorie a články na wiki
-------------------
+--------------------------
 
-- [FAQ]
-- [Tutoriály]
-- [Screencasty]
-- [Kuchařka]
-- [Záznamy z PS a videa o Nette | Videa]
+/---div .[bigicons]
+[* icon-faq.png .[icon] *]
+
+[FAQ aneb časté dotazy | wiki:faq]
+----------------
+Odpovědi na často kladené otázky. V případě potíží navštivte tento zdroj jako první.
+
+
+
+[* lamplight1-48x48.png .[icon] *]
+
+[Tutoriály | wiki:tutorialy ]
+-------
+Návody pro začátečníky, nejsnazší způsob, jak se ponořit do vod Nette Frameworku.
+
+
+
+[* movie-48x48.png .[icon] *]
+
+[Screencasty | wiki:screencasty ]
+-------
+Videa pro začátečníky.
+
+
+
+[* ruler-pen-48x48.png .[icon] *]
+
+[Kuchařka]
+-------
+Krátké návody jak nejsnáze řešit jednotlivé problémy
+
+
+
+[* movie-48x48.png .[icon] *]
+
+[Záznamy z PS a videa o Nette | Videa]
+-------
+Záznamy přednášek o *Nette Frameworku* z nejrůznějších akcí
+
+\---
 
 
 Pravidla a doporučení
---------------------
+---------------------
 
 Pokud byste rádi přispěli do wiki, přečtěte si prosím [nápovědu | nápověda], jak editovat stránky. Přispívat mohou pouze registrovaní uživatelé, takže pokud nemáte účet, "zaregistrujte se":http://forum.nette.org/cs/register.php.
 
 
 Autorská práva a licence obsahu
-------------------
+-------------------------------
 
 Veškerý obsah na webových stránkách Nette Framework je uveřejněn pod licencí "Creative Commons Attribution Share-Alike License":http://creativecommons.org/licenses/by-sa/3.0/cz/.
 
