@@ -77,5 +77,16 @@ Vytvorenie modulárnej aplikácie (Frontend/Admin) a využitie ACL na riadenie p
 * Obtížnost: *pokročilý*
 
 
+[* next-48x48.png .[icon] *]
+
+[tutorialy/TinyMCE]
+--------------------------------------------
+Zprovoznění TinyMCE.
+
+* Předpokládané znalosti: *[Akrabat | wiki:tutorialy/akrabat]*
+* Obtížnost: *pokročilý*
+
+
+
 {{theme: bigicons}}
 {{themeicon: icon-lamplight1.png}}
