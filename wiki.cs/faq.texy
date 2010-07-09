@@ -1,155 +1,195 @@
 FAQ aneb časté dotazy
-********************
+*********************
+Zde naleznete odpovědi na nejčastěji kladené dotazy. Pokud vám nejsou jasné některé používané pojmy koukněte se do [slovníčku pojmů | doc:cs:Slovník]. .[perex]
 
-Máte nějaký konkrétní dotaz? Nevíte si s něčím rady? Možná zde najdete svoji otázku a odpověď na ni. .[perex]
+Libs & App v document rootu
+---------------------------
+Některé webhostingové společnosti nedovolují umístit soubory vaší webové aplikace jinam než do *document rootu*. [* 49.png *]
+ Jednoduše přesuneme složky *app* a *libs* do *document_root* a upravíme *index.php*
+/--php
+<?php
 
-- [Jak na adresářovou strukturu? | faq/jak-na-adresarovou-strukturu] aneb jak lehce změnit původní rozmístění adresářů k obrazu svému.
+// absolute filesystem path to the web root
+define('WWW_DIR', __DIR__);
 
-- [Jak na správné vytváření formulářů? | faq/spravne-vytvaranie-formularov]
+// absolute filesystem path to the application root
+define('APP_DIR', WWW_DIR . '/app');
 
-- [Zobrazuje sa mi biela stránka, čo mám robiť? | FAQ/Biela stránka]
+// absolute filesystem path to the libraries
+define('LIBS_DIR', WWW_DIR . '/libs');
 
-- [Nefunguje mi routovanie, kde môže byť chyba? | FAQ/Routovanie]
+// load bootstrap file
+require APP_DIR . '/bootstrap.php';
+\--
+Nezapomeňte zkontrolovat zda *app* a *libs* obsahují *".htaccess"((pokud používáte IIS tak se jedná o web.config))*. Se zákazem přístupu do této složky. Aby vám někdo nemohl přečíst config. (http://example.com/app/config.ini) .[note]
 
-- [Co přesně dělá volání `{widget nazevKomponenty}` v šabloně? | FAQ/Widgety]
-
-/--div .[note]
-**Todo:**
-* Tohleto se musí zrefaktorovat...
+Změna adresářové struktury
+--------------------------
+Základní používaná adresářová struktura vám nemusí zcela vyhovovat. Potřebujete ji tedy upravit.
+[* 50.png *]
+ Upravíme tedy *config.ini*.
+/--code
+; variables
+variable.tempDir = "%appDir%/../temp"
+variable.logDir = "%appDir%/.../log"
 \--
 
-MVC Aplikace
---------
-- [Jak používat dibi společně s Nette Frameworkem? | faq/pouziti-db-layeru-dibi]
-	- http://forum.nette.org/cs/1321-zprovozneni-mysql-databaze
-	- http://forum.nette.org/cs/1276-model-a-pripojeni-k-db
-	- http://forum.nette.org/cs/1670-model-a-pripojeni-k-db
-	- http://forum.nette.org/cs/1203-jak-na-model-v-nette
+Správné vytváření formulářů
+---------------------------
+Formuláře vytváříme pomocí továrniček na komponenty. Jedná se o metodu presenteru začínající `createComponent`.
+/--php
+protected function createComponentFooForm($name)
+{
+	$form = new Nette\Application\AppForm($this, $name);
+	$form->addText('test', "Test: ");
+	$form->addSubmit('sub', "Uložit");
+}
+\--
+I když se metoda v presenteru jmenuje createComponent**FooForm** jmenuje se její instance **fooForm** (`$this['fooForm']` nebo `{control fooForm}`) .[note]
 
-Ladění
--------
-- [Jak na režimy a módy? | faq/jak-na-rezimy-a-mody]
-- [Jak zjistit výskyt chyby na produkčním serveru? | faq/jak-zjistit-vyskyt-chyby-na-produkcnim-serveru]
-- [Jak číst v Laděnce? | faq/jak-cist-v-ladence]
+Bílá stránka po nahrání na hosting
+----------------------------------
+Postupně projdu tyto kroky:
+1) Smažu *temp*
+2) Zkontroluji zda je povolen zápis tam kam má být povolen
+3) Zkusím odkomentovat `RewriteBase` v *.htaccess*
+4) [zapnu laděnku | #Zapnutí laděnky na produkčním serveru]
 
-Formuláre
----------
-- <del>továrnička (+text výnimky, ktorú to vyhadzuje)</del>
-- nevykreslenie niektorého prvku formulára (= nefungujúce setRendered(TRUE))
-	- http://forum.nette.org/cs/1438-nevykresleni-prvku-ve-formulari
-	- http://forum.nette.org/cs/1017-problem-u-setrendered
-- setDefaults (= po novom netreba if(!$form->isSubmitted()) { ... })
-	- http://forum.nette.org/cs/1520-form-issubmitted-a-form-setdefaults
-- pole inputov (kontajnery)
-	- http://forum.nette.org/cs/1022-vice-inputu-pod-jednim-jmenem-ala
-- vlastné vykresľovanie formulárov
-	- http://forum.nette.org/cs/1162-moznost-vypisu-jednotlivych-polozek-v-radiolistu
-	- http://forum.nette.org/cs/1191-vypisovani-jednotlivych-poli
-	- http://forum.nette.org/cs/1241-vice-prvku-na-jednom-radku
-- rozklikávacie formuláre
-	- http://forum.nette.org/cs/1137-nekonecny-rozklikavaci-formular
-- js-generované formuláre / dynamický počet inputov
-	- http://forum.nette.org/cs/1570-formular-s-dynamickym-poctem-vstupu
-	- plánovaný RepeaterControl
-- vlastnosti prvkov formulára (class, id)
-	- http://forum.nette.org/cs/1513-kombinace-normalni-html-formular-zpracovani-appformem?pid=9126#p9126
-- uživatelská validace formulářových prvků
-	- http://forum.nette.org/cs/1881-validace-formulare-vypis-form-hodnoty-do-message
-- groups
-- datePicker
-	- http://addons.nette.org/cs/datepicker
-- dateTimePicker
-	- http://addons.nette.org/cs/datetimepicker
-- [Použití TinyMCE | FAQ/TinyMCE]
-- [Použití CKEditoru | http://forum.nette.org/cs/3547-ckeditor-ve-formulari]
+Zapnutí laděnky na produkčním serveru
+-------------------------------------
+Při nasazování aplikace na hosting se nám může hodit dočasně vynutit stejné chování laděnky na jaké jsme zvyklí z vývoje. Upravíme tedy *bootstrap.php*.
+/--php
+Nette\Debug::enable(Nette\Debug::DEVELOPMENT);
+//...
+$application = Nette\Environment::getApplication();
+$application->catchExceptions = FALSE;
+\--
 
-Aplikácia
----------
-- absolútne odkazy -- rýchlo a jednoducho
-	- http://forum.nette.org/cs/1188-absolutni-odkaz
-- rušenie perzistentného parametra
-	- http://forum.nette.org/cs/1504-jakym-zpusobem-zrusit-predani-parametru-u-odkazu
-- detekcia perzistentného parametra (problémy s anotáciami s eAcceleratorom + nové riešenie)
-	- http://forum.nette.org/cs/887-persistentni-parametry
-	- http://forum.nette.org/cs/909-hosting-explorer-a-persistentni-parametry-presenteru
-	- http://forum.nette.org/cs/1470-deklarace-persistentnich-parametru-a-komponent-bez-anotaci
-- fully qualified action (+ absolútne & relatívne cesty v moduloch)
-	- http://forum.nette.org/cs/1531-odkaz-na-modul
-- nefungujúci redirect
-	- http://forum.nette.org/cs/1388-redirect-z-jedoho-conrtoleru-na-druhy
+Připojení k databázi pomocí dibi a údajů v configu
+--------------------------------------------------
+Mějme v konfiguračním souboru nastaveno:
+/--code
+; database
+[common.database]
+driver = mysqli
+hostname = "localhost"
+username = "root"
+password = "xxx"
+database = "nette"
+charset = "utf8"
+\--
+K databázi se poté připojíme pomocí:
+/--php
+dibi::connect(Nette\Environment::getConfig('database');
+\--
+
+Zapnutí dibi profileru
+----------------------
+Dibi profiler zapneme jednoduše pomocí konfigurační direktivy
+/--code
+; database
+[common.database]
+; ...
+profiler = TRUE
+\--
+
+Absolutní odkazy
+----------------
+Používáte šablony třeba pro odesílání e-mailu a potřebujete aby odkazy byly absolutní? Lze toho docílit celkem snadno.
+/--html
+<a href="{plink Default:default}">Relativní odkaz</a>
+<a href="{plink //Default:default}">Absolutní odkaz</a>
+\--
+
+Modelová část aplikace
+----------------------
+Nette Framework v současné době nedisponuje jednotnou správou modelové části aplikace. Každý si tuto část implementuje sám.
+
+Nastavení výchozích hodnot formuláře
+------------------------------------
+/--php
+protected function createComponentFooForm($name)
+{
+	$form = new Nette\Application\AppForm($this, $name);
+	$form->addHidden('id');
+	$form->addTextArea('text', "Text: ");
+	$form->addSubmit('sub', "Uložit");
+}
+
+public function actionFooEdit($id)
+{
+	//...
+	$this['fooForm']->setDefaults(array('id' => $id, 'text' => $model->text));
+}
+\--
+
+Vlastní validace formulářového prvku
+------------------------------------
+/--php
+protected function createComponentFooForm($name)
+{
+	$form = new Nette\Application\AppForm($this, $name);
+	$form->addText('test', "Test: ")
+		->addRule(function ($control) { return $control->value % 2; }, "Hodnota test musí být sudé číslo");
+}
+\--
+
+Nastavení class prvku formuláře
+-------------------------------
+/--php
+protected function createComponentFooForm($name)
+{
+	$form = new Nette\Application\AppForm($this, $name);
+	$form->addText('test', "Test: ")->getControlPrototype()->class = "bar";
+}
+\--
+
+Zrušení persistentního parametru
+--------------------------------
+/--php
+/** @persistent int */
+public $page = 0; // 0 bude výchozí, tudiž místo URL ?param=whatever&page=0 se vygeneruje jen ?param=whatever
+// vynulování persistentního parametru
+{link someAction 'page' => NULL}
+\--
+
+Okazování v modulech
+--------------------
+/--php
+{* Relativní odkaz na modul *}
+{plink Foo:Default:default}
+{* Absolutní odkaz na modul *}
+{plink :Foo:Default:default}
+\--
+
+Použítí `{}` v šabloně
+--------------------
+Latte filter používá `{}` jako "řídící" znaky. Pokud potřebujete v šabloně napsat `{}` (například u javascriptu) musíte za `{` udělat mezeru pak následující část nebude brána jako makro.
+
+Ruční vykreslování formulářů v šabloně
+--------------------------------------
+/--html
+{control fooForm begin}
+{control fooForm errors}
+{var form => $control['fooForm']}
+{$form['test']->label}
+{$form['test']->control}
+{control fooForm end}
+\--
 
 
-Routovanie
-----------
-- RoutingDebugger
-	- http://forum.nette.org/cs/1186-routing-debugger
-- SimpleRouter(obmedzenia, premenna module, regexpy parametrov)
-	- http://forum.nette.org/cs/1351-mozna-chyba-v-routovani#p7568
-- lomka v parametri -- štýly parametrov routovania
-	- http://forum.nette.org/cs/1399-routovani-styly-a-defaultni-hodnoty
-	- http://forum.nette.org/cs/1477-nepovinne-argumenty-u-routovani
-- nody -- dynamické routy
-	- http://forum.nette.org/cs/1478-nody-dynamicke-routy
-- vlastný router
-	- http://forum.nette.org/cs/1067-viceurovnove-routy#p5259
-- veľkosť písmen v názve prezentera a akcie
-	- http://forum.nette.org/cs/1493-beginner-problem-s-routovanim-404
-- súbor .htaccess
-	- http://forum.nette.org/cs/1555-routovani-pouze-odkazy-vytvari
-- IIS (+ nekonečná presmerovacia slučka)
-	- http://forum.nette.org/cs/1464-smycka-pri-presmerovani
-	- http://forum.nette.org/cs/940-nette-a-iis-7-0
+Jak na snippety
+---------------
+"zavináčová magie":http://forum.nette.org/cs/2451-zavinacova-magie-v-praxi
+
+Lokalizace aplikace
+-------------------
+"Kompletní lokalizace Nette aplikací – GettextExtractor v2":http://forum.nette.org/cs/2798-kompletni-lokalizace-nette-aplikaci-gettextextractor-v2
+
+Dynamické formuláře
+-------------------
+"Dynamický počet položek ve formuláři":http://forum.nette.org/cs/3121-dynamicky-pocet-polozek-ve-formulari
 
 
-Šablóny
--------
-- snippety & zavináčová mágia
-	- http://forum.nette.org/cs/2451-zavinacova-magie-v-praxi
-- include -- úvodzovky
-	- http://forum.nette.org/cs/1459-rychly-dotaz-jak-includovat-sablonu-ktera-je-o-adr-vys
-	- http://forum.nette.org/cs/1803-problem-s-include
-- nový koncept -- dedenie šablón (experimentálne)
-	- Q: **Funguji už snippety v kombinaci s dedenim sablon?** A: <span style="color:red">**Ne**</span> (23.6.2009). (Funguje ale neco takoveho: http://forum.nette.org/cs/1946-lze-poslat-vice-snippetu-pomoci-jedne-sablony)
-	- http://forum.nette.org/cs/1131-sablona-a-layout-renderovani-v-opacnem-poradi-zruseno#p6321
-- block + extends => nefungujúce snippety
-	- http://forum.nette.org/cs/1291-curlybrackets-dedeni-sablon-extends-bug
-	- http://forum.nette.org/cs/1305-sablony-includy-blocky-bug-nebo-feature
-	- http://forum.nette.org/cs/1505-nefunkcni-snippety-pri-dedicnosti-sablon
-- iný šablónovací systém
-	- http://forum.nette.org/cs/1236-jiny-sablonovaci-system
-- vypnutí filtru CurlyBrackets v šablonách, podpora `{literal}`
-	- http://forum.nette.org/cs/1261-curlybracketsfilter-a-js-promenna
-	- http://forum.nette.org/cs/1918-jak-do-sablony-napsat-slozenou-zavorku
-	- http://forum.nette.org/cs/1854-nette-templates-navrh-na-rozsireni-filtru-curlybracketsfilter
-
-
-Ostatné
--------
-- <del>adresárová štruktúra</del>
-- použitie samostatných častí Nette
-	- http://forum.nette.org/cs/1229-provozovani-casti-nette
-- sessions
-	- http://forum.nette.org/cs/1155-sessionid-po-prihlaseni
-	- http://forum.nette.org/cs/1252-nette-security-samostatne-pro-praci-se-sessions
-- viacjazyčnosť
-	- http://forum.nette.org/cs/817-schema-jazykovych-mutaci
-- slovník pojmov
-	- http://forum.nette.org/cs/1217-control-vs-controller-vs-komponenta
-- <ins>použitie komponentov Zendu spolu s Nette</ins>
-	- http://forum.nette.org/cs/1608-pouziti-zend-mail-v-nette
-
-
-Rôzne poznámky
---------------
-- viacnásobné lomítka
-	- http://forum.nette.org/cs/1462-presenter-canonicalize-ignoruje-vicenasobna-lomitka
-- nová štruktúra dokumentácie
-	- http://forum.nette.org/cs/1146-restrukturalizace-dokumentace
-- vývoj & roadmap
-	- http://forum.nette.org/cs/1324-vydavani-verzi#p7290
-- plánované zmeny v skrytých závislostiach
-	- http://forum.nette.org/cs/1286-za-objekty-hloupejsi
-- otázky začiatočníka pred prechodom na Nette
-	- http://forum.nette.org/cs/1181-nette-pohled-zacatecnika-splni-ma-ocekavani
-- licencování
-	- http://forum.nette.org/cs/1779-licence-licencovani-nette-extras
+{{themeicon: icon-help-button.png}}
+{{toc: no}}
