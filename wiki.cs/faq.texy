@@ -177,6 +177,32 @@ Ruční vykreslování formulářů v šabloně
 {control fooForm end}
 \--
 
+Texy!
+-----
+Na statické *Texy!* je filter:
+/--php
+public function templatePrepareFilters($template)
+{
+	parent::templatePrepareFilters($template);
+
+	$texy = new Texy();
+
+	$template->registerFilter(callback($texy, 'process'));
+}
+\--
+Na dynamické *Texy!* je helper:
+/--php
+protected function createTemplate()
+{
+	$template = parent::createTemplate();
+
+	$texy = new Texy();
+
+	$template->registerHelper('texy', callback($texy, 'process'));
+
+	return $template;
+}
+\--
 
 Jak na snippety
 ---------------
@@ -189,7 +215,6 @@ Lokalizace aplikace
 Dynamické formuláře
 -------------------
 "Dynamický počet položek ve formuláři":http://forum.nette.org/cs/3121-dynamicky-pocet-polozek-ve-formulari
-
 
 {{themeicon: icon-help-button.png}}
 {{toc: no}}
