@@ -31,7 +31,7 @@ Základní používaná adresářová struktura vám nemusí zcela vyhovovat. Po
 /--code
 ; variables
 variable.tempDir = "%appDir%/../temp"
-variable.logDir = "%appDir%/.../log"
+variable.logDir = "%appDir%/../log"
 \--
 
 Správné vytváření formulářů
