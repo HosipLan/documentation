@@ -49,6 +49,16 @@ Klasický *Zend Framework tutoriál* přepsaný pro Nette.
 
 [* next-48x48.png .[icon] *]
 
+
+[tutorialy/Blog]
+------------
+Triviální blog
+
+* Předpokládané znalosti: *[dibi | http://dibiphp.com/cs/quick-start]*
+* Obtížnost: *začátečník*
+
+[* next-48x48.png .[icon] *]
+
 [tutorialy/Návštěvní kniha v Nette s testy (TDD)]
 ------------
 Jak vytvořit jednoduchou návštěvní knihu v Nette Frameworku metodikou TDD((Test Driven Development - Programování řízené testy)).
