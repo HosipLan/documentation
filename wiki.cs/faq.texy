@@ -204,6 +204,14 @@ protected function createTemplate()
 }
 \--
 
+Vypnutí automatického odhlašování
+---------------------------------
+/--php
+$user = Nette\Environment::getUser();
+$user->setExpiration("+ 365 days", FALSE);
+\--
+Nezapomeňte že musíte změnit i expiraci samotné session na vyšší časový interval než je u uživatele `Nette\Environment::getSession()->setExpiration("+ 365 days");` .[caution]
+
 Jak na snippety
 ---------------
 "zavináčová magie":http://forum.nette.org/cs/2451-zavinacova-magie-v-praxi
