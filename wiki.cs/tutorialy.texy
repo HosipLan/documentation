@@ -30,6 +30,16 @@ Jednoduchá a nenáročná kniha s podporou AJAXu.
 
 [* next-48x48.png .[icon] *]
 
+[tutorialy/Blog]
+------------
+Triviální blog
+
+* Předpokládané znalosti: *[dibi | http://dibiphp.com/cs/quick-start]*
+* Obtížnost: *začátečník*
+
+
+[* next-48x48.png .[icon] *]
+
 [tutorialy/Statický web v Nette]
 --------------------------------
 Jak vytvořit v Nette Frameworku statický web snadno a rychle.
@@ -47,15 +57,6 @@ Klasický *Zend Framework tutoriál* přepsaný pro Nette.
 * Předpokládané znalosti: *[Quick Start | doc:quickstart], [dibi | http://dibiphp.com/cs/quick-start]*
 * Obtížnost: *začátečník*
 
-[* next-48x48.png .[icon] *]
-
-
-[tutorialy/Blog]
-------------
-Triviální blog
-
-* Předpokládané znalosti: *[dibi | http://dibiphp.com/cs/quick-start]*
-* Obtížnost: *začátečník*
 
 [* next-48x48.png .[icon] *]
 
