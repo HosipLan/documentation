@@ -80,7 +80,7 @@ charset = "utf8"
 \--
 K databázi se poté připojíme pomocí:
 /--php
-dibi::connect(Nette\Environment::getConfig('database');
+dibi::connect(Nette\Environment::getConfig('database'));
 \--
 
 Zapnutí dibi profileru
