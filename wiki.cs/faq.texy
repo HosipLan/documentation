@@ -168,6 +168,7 @@ Odkazování v modulech
 Použítí `{}` v šabloně
 --------------------
 Latte filter používá `{}` jako "řídící" znaky. Pokud potřebujete v šabloně napsat `{}` (například u javascriptu) musíte za `{` udělat mezeru pak následující část nebude brána jako makro.
+ Lze také použít latte macra `{l}` resp. `{r}` pro vykreslení levé resp. pravé závorky.
 
 Ruční vykreslování formulářů v šabloně
 --------------------------------------
