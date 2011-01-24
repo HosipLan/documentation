@@ -1,0 +1,32 @@
+Kuchařka
+*********
+
+.[perex]
+Krátké návody jak nejsnáze řešit jednotlivé problémy
+
+
+Tato stránka si klade za cíl vytvořit sbírku příkladů a hotových řešení, které zahrnou část otázek typu "jak mám udělat ...?". Předpokladem je, že jako programátorům by se nám měl lépe číst zdrojový kód než článek. Proto by měl každý příklad odpovídat na jednu takovou otázku a měl by být co nejmenší. Tato řešení píší pokročilí uživatelé Nette.
+
+Do této sekce patří všechny články, ve kterých je více zdrojového kódu než článků (komentáře se počítají jako zdrojový kód)
+
+
+Jak se zapojit?
+================
+
+Pokud se chcete zapojit do projektu, založte stránku s tutoriálem a zarezervujte si zde odkaz, v některé z kategorií, popřípadě si vytvořte novou.
+
+Pokud máte nápad na otázku, nebo jakkoliv složitý problém, se kterým si nevíte rady, můžete založit stránku taky a označit ji jako žádost, třeba se jí někdo ujme a pomůžete tím všem co přijdou po vás. Samozřejmostí je co nejdetailněji popsat problém. Pokud se na to necítíte, napište svůj problém na fórum. Až vám někdo poradí, požádejte ho jestli by nechtěl přidat radu do kuchařky, pokud tu ještě není.
+
+
+Kategorie
+==========
+
+Model-View-Presenter a problémy kolem návrhu
+---------------------------------------------
+
+- "Jak na MVC jednoduše?":http://doc.nette.org/cs/cookbook/jak-na-mvc-jednoduse (HosipLan)
+
+
+
+
+{{themeicon: ruler-pen-48x48.png}}
