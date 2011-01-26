@@ -1,0 +1,17 @@
+Nápadník
+********
+
+.[perex]
+Seznam zatím nezpracovaných nápadů do Kuchařky.
+
+Nápadník je pouze neuspořádaný seznam nápadů, ze kterých by mohly vzniknout příklady do kuchařky "Kuchařky":http://wiki.nette.org/cs/cookbook. Může sloužit jako rozcestník pro zkušené uživatele, kteří chtějí přispět příkladem, ale hledají vhodné téma. Nebo začátečníkům, které napadlo vhodné téma, ale netroufnou si na zpracování.
+
+V případě, že si téma vyberete, tak ho prosím z tohoto seznamu odstraňte.
+
+Seznam nápadů
+=============
+- jak zobrazit menu na každé stránce?
+- jak zobrazit stránku pouze pro přihlášené?
+- jak vytvořit a zaregistrovat vlastní helper?
+
+{{tags: cookbook}}
