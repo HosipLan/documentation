@@ -21,10 +21,17 @@ Pokud máte nápad na otázku, nebo jakkoliv složitý problém, se kterým si n
 Kategorie
 ==========
 
+
 Model-View-Presenter a problémy kolem návrhu
 ---------------------------------------------
 
 - "Jak na MVC jednoduše?":http://doc.nette.org/cs/cookbook/jak-na-mvc-jednoduse (HosipLan)
+
+
+Routování
+----------
+- Jak předat callbacku pro filtrování, více parametrů, třeba jazyk? (HosipLan)
+
 
 Nápadník
 ========
