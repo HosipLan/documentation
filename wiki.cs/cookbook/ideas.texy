@@ -14,5 +14,8 @@ Seznam nápadů
 - jak zobrazit stránku pouze pro přihlášené?
 - jak vytvořit a zaregistrovat vlastní helper?
 - webová verze programu textroom - psaní rozsáhlych textů pomoci Texy!
+- jednoduchý statický web  (jeden presenter)
+ a) *jednoduchá verze*:  co view, to stránka, ruční generovaná navigace
+ b) *složitější*: S použitím Navigation, články získává např prohledáním složky "`templates/Static/`"((eventuelně cachuje))
 
 {{tags: cookbook}}
