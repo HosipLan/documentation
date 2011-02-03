@@ -17,5 +17,12 @@ Seznam nápadů
 - jednoduchý statický web  (jeden presenter)
  a) *jednoduchá verze*:  co view, to stránka, ruční generovaná navigace
  b) *složitější*: S použitím Navigation, články získává např prohledáním složky "`templates/Static/`"((eventuelně cachuje))
+- jak udělat jiný vzhled v administrační části?
+- jak po přihlášení/odhlášení zobrazit stejnou stránku?
+- jak odeslat formulář bez reloadu celé stránky?
+- jak s pomocí formuláře nahrát soubor?
+- jak umožnit stáhnout soubor?
+- jak načítat routy z databáze?
+- jak udělat složitější routy? (/vytvořit vlastní router?)
 
 {{tags: cookbook}}
