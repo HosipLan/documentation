@@ -10,9 +10,25 @@ První krůčky s Nette Frameworkem.
 
 
 [* film-play-button-48x48.png .[icon] *]
-"Statické stránky a menu":http://www.youtube.com/watch?v=vPOEZj41gXc
+1. Stiahnutie a spustenie skeletonu (ver. 2.0)
 ----------------------------------------------------
-Vytvorenie statických stránok s menu (na každej z nich).
+- stiahnutie NETTE Framework
+- spustenie skeletonu (predpripravená kostra aplikácie)
+
+[* film-play-button-48x48.png .[icon] *]
+"2. Statické stránky a menu":http://www.youtube.com/watch?v=vPOEZj41gXc
+----------------------------------------------------
+- menu zobrazujúce sa na viacerých stránkach
+- vytvorenie statických stránok (domov, o nás, kontakt)
+
+[* film-play-button-48x48.png .[icon] *]
+3. Kontaktný formulár
+----------------------------------------------------
+- vytvorenie kontaktného formulára
+- jeho spracovanie a odoslanie na mail podľa konfigurácie (config.ini)
+
+pre testovanie na `localhost`-e je potrebné mať nainštalovaný **mail server**, ako na to (používatelia Windows) nájdete napr. "http://www.phpeasystep.com/phptu/23.html":http://www.phpeasystep.com/phptu/23.html .[caution]
+
 
 
 
