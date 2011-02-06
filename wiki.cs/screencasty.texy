@@ -1,36 +1,40 @@
 Screencasty
 ***********
 
-
+/--comment
 [* film-play-button-48x48.png .[icon] *]
-
 [screencasty/Stáhnutí a zprovoznění Nette Framework]
 ----------------------------------------------------
-První krůčky s Nette Frameworkem.
-
-
-[* film-play-button-48x48.png .[icon] *]
-1. Stiahnutie a spustenie skeletonu (ver. 2.0)
-----------------------------------------------------
+První krůčky s Nette Frameworkem
 - stiahnutie NETTE Framework
 - spustenie skeletonu (predpripravená kostra aplikácie)
+\--
 
 [* film-play-button-48x48.png .[icon] *]
-"2. Statické stránky a menu":http://www.youtube.com/watch?v=vPOEZj41gXc
-----------------------------------------------------
-- menu zobrazujúce sa na viacerých stránkach
-- vytvorenie statických stránok (domov, o nás, kontakt)
+[screencasty/Statický web s menu]
+---------------------------------
+Jednoduchý statický web s menu
 
+/--comment
 [* film-play-button-48x48.png .[icon] *]
-3. Kontaktný formulár
+Kontaktný formulár
 ----------------------------------------------------
 - vytvorenie kontaktného formulára
 - jeho spracovanie a odoslanie na mail podľa konfigurácie (config.ini)
 
 pre testovanie na `localhost`-e je potrebné mať nainštalovaný **mail server**, ako na to (používatelia Windows) nájdete napr. "http://www.phpeasystep.com/phptu/23.html":http://www.phpeasystep.com/phptu/23.html .[caution]
+\--
 
 
 
+Archiv
+******
+
+[* film-play-button-48x48.png .[icon] *]
+
+[screencasty/Stáhnutí a zprovoznění Nette Framework]
+----------------------------------------------------
+První krůčky s Nette Frameworkem
 
 Podívejte se i na [ostatní zveřejněná videa | videa] o Nette Frameworku. .{margin: 30px 0px 0px 0px}
 
