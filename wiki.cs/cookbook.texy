@@ -31,7 +31,7 @@ Model-View-Presenter a problémy kolem návrhu
 
 Routování
 ----------
-- Jak předat callbacku pro filtrování, více parametrů, třeba jazyk? (HosipLan)
+- "Jak předat callbacku pro filtrování, více parametrů, třeba jazyk?":http://wiki.nette.org/cs/cookbook/routovani-vice-parametru-ve-filtru
 
 
 Nápadník
