@@ -25,6 +25,7 @@ Kategorie
 Model-View-Presenter a problémy kolem návrhu
 ---------------------------------------------
 
+- "Model: Entity-Repository-Mapper":http://wiki.nette.org/cs/cookbook/model-entity-repository-mapper
 - "Jak na MVC jednoduše?":http://doc.nette.org/cs/cookbook/jak-na-mvc-jednoduse (HosipLan)
 
 
