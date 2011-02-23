@@ -27,6 +27,7 @@ Model-View-Presenter a problémy kolem návrhu
 
 - "Model: Entity-Repository-Mapper":http://wiki.nette.org/cs/cookbook/model-entity-repository-mapper
 - "Jak na MVC jednoduše?":http://doc.nette.org/cs/cookbook/jak-na-mvc-jednoduse (HosipLan)
+- "Jednoduchý MODEL s NotORM":http://doc.nette.org/cs/cookbook/jednoduchý-model-s-notorm (srigi)
 
 
 Routování
