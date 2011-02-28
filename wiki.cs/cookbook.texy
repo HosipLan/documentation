@@ -25,14 +25,14 @@ Kategorie
 Model-View-Presenter a problémy kolem návrhu
 ---------------------------------------------
 
-- "Model: Entity-Repository-Mapper":http://wiki.nette.org/cs/cookbook/model-entity-repository-mapper
-- "Jak na MVC jednoduše?":http://doc.nette.org/cs/cookbook/jak-na-mvc-jednoduse (HosipLan)
-- "Jednoduchý MODEL s NotORM":http://doc.nette.org/cs/cookbook/jednoduchý-model-s-notorm (srigi)
+- [Model: Entity-Repository-Mapper | cookbook/Model Entity-Repository-Mapper]
+- [Jak na MVC jednoduše? | cookbook/Jak na MVC jednoduše?] (HosipLan)
+- [Jednoduchý MODEL s NotORM | cookbook/Jednoduchý MODEL s NotORM] (srigi)
 
 
 Routování
 ----------
-- "Jak předat callbacku pro filtrování, více parametrů, třeba jazyk?":http://wiki.nette.org/cs/cookbook/routovani-vice-parametru-ve-filtru
+- [Jak předat callbacku pro filtrování, více parametrů, třeba jazyk? | cookbook/Routování více parametrů ve filtru]
 
 
 Nápadník
