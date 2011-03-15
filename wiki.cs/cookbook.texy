@@ -34,7 +34,7 @@ Model-View-Presenter a problémy kolem návrhu
 Routování
 ----------
 - [Jak předat callbacku pro filtrování, více parametrů, třeba jazyk? | cookbook/Routování více parametrů ve filtru]
-
+- [Deklarace parametru obsahující lomítka (více způsobů).| cookbook/route-deklarace-parametru-obsahujici-lomitka-vice-zpusobu]
 
 Nápadník
 ========
