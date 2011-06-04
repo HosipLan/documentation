@@ -26,7 +26,6 @@ Model-View-Presenter a problémy kolem návrhu
 ---------------------------------------------
 
 - [Model: Entity-Repository-Mapper | cookbook/Model Entity-Repository-Mapper]
-- [Jak na MVC jednoduše? | cookbook/Jak na MVC jednoduše?] (HosipLan)
 - [Jednoduchý MODEL s NotORM | cookbook/Jednoduchý MODEL s NotORM]
 - [Prihlásenie cez Twitter pomocou OAuth | cookbook/Prihlásenie cez Twitter pomocou OAuth] (srigi)
 
