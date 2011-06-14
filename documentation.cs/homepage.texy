@@ -1,81 +1,97 @@
 Dokumentace
 ***********
 
-{{toc:no}}
+.[perex]
+Zde najdete celou řadu zdrojů, které vám pomohou naučit se Nette Framework a vytěžit z něj maximum.
 
 
-/---div .[#left navig]{float: left; width: 49%;}
-Seznámení s frameworkem
+/---div .[column navig]
+
+[* welcome.png *] Seznámení s frameworkem .{margin-top: 0}
 -----------------------
+
 - [Začínáme | Getting Started]
-- [Stažení a instalace | quickstart/Jak stáhnout Nette Framework?]
-- **[Vytvořte si první aplikaci! | quickstart]**
-- [Model-View-Presenter]
-- [Adresářová struktura | Doporučená adresářová struktura]
+- [Stažení a instalace | installation]
+- [Vytvořte si první aplikaci! | quickstart]
 
 
-Další informační zdroje
+[* lamplight.png *] Další informační zdroje
 -----------------------
-- [Fórum | http://forum.nette.org/cs/]
-- [API reference | http://api.nette.org/]
-- [API reference s prefixy tříd | http://api.nette.org/0.9prefixed/]
-- [Příklady | www:examples]
-- [wiki:Tutoriály]
-- [Wiki | wiki:homepage]
+
+- [Fórum | http://forum.nette.org/cs/] máte otázku? zeptejte se na fóru .[icon]{background-image:url(icon-forum.png)}
+- [API reference | http://api.nette.org/] přehled tříd, metod a parametrů
+- [Planette: návody & screencasty | pla:homepage]
 - [Chatovací místnost | http://live.jabbim.cz/chat/nette@conf.netlab.cz]
+- [Dokumentace verze 0.9 | doc09:homepage]
 
 
-Obecné informace
+
+[* question.png *] Obecné informace
 ----------------
+
 - [www:Hlavní přednosti]
-- [www:hlavni-prednosti/Bezpečnost]
-- [FAQ: časté dotazy | wiki:faq]
-- [Přehled pojmů | rychly-prehled]
-- [Slovníček pojmů | slovnik]
-- [Požadavky na server | www:pozadavky-frameworku]
-- [Licence | www:licence]
+- [Zabezpečení před zranitelnostmi | vulnerability protection]
+- [Řešení častých dotazů | Troubleshooting]
+- [Slovníček pojmů | Glossary]
+- [Požadavky na server | Requirements]
+- [Migrace z verze 0.9 | updating-2.0]
+- [Licence | license]
+- [Tvůrci | Credits]
+
+
+[* ruler.png *] Vývoj
+-----
+
+- [Hlášení chyb | Reporting bug]
+- [Zapojení se do vývoje frameworku | Contributing]
+- [Psaní dokumentace | writing]
+
 \--
 
 
-/---div .[#right navig]{margin-left: 50%;}
-Příručka programátora
+
+/---div .[column last navig]
+
+[* guides.png *] Příručka programátora .{margin-top: 0}
 ---------------------
-- [Formuláře | Nette\Forms]
-- [Šablony]
-- [MVC aplikace & presentery | Nette\Application]
-  - [Presenter | Nette\Application\Presenter]
-  - [Generování odkazů] a [Neplatné odkazy]
-  - [AppForm | Nette\Application\AppForm]
-  - [PresenterComponent | Nette\Application\PresenterComponent]
-  - [PresenterRequest | Nette\Application\PresenterRequest]
-  - [Action vs. View]
-- [Routování URL | Routování]
-	- [SimpleRouter | Nette\Application\SimpleRouter], [Route | Nette\Application\Route], [MultiRouter | Nette\Application\MultiRouter]
-- [Autentizace, přihlašování uživatelů | Autentizace]
-	- [Nette\Web\User], [Identity | Nette\Security\Identity], [SimpleAuthenticator | Nette\Security\SimpleAuthenticator]
-- [Autorizace, ověřování oprávnění | Autorizace]
-  - [Permission | Nette\Security\Permission], [Dynamická správa rolí a zdrojů]
-- [AJAX | Ajax & snippety]
-- [Konfigurace prostředí | Nette\Environment]
-- [Komponenty | Nette\Component] a [ovládací prvky | Nette\Application\Control]
-- [Debugování a zpracování chyb | Nette\Debug]
-  - [Logování chyb | Nette\Debug Logování chyb], [Firebug | Nette\Debug Firebug]
-- [Rozšíření jazyka PHP | Nette\Object]
-- [Sessions | Nette\Web\Session]
-- [Odesílání e-mailů | Nette\Mail]
-- [Zpracování obrázků | Nette\Image]
-- [Kešování | Nette\Caching]
-- [HTTP request | Nette\Web\HttpRequest] & [response | Nette\Web\HttpResponse]
-- [Auto-loading tříd | Nette\Loaders]
-- [reflexe/Anotace] &  [reflexe]
-- [Atomické operace‎ | Nette\IO\SafeStream]
-- [FTP | Nette\Web\Ftp]
+
+- [Formuláře| Forms]
+- [Šablony | Templating], [Latte makra | default macros] a [helpery | default helpers]
+- [Tvorba MVC aplikací & presentery | presenters]
+- [Mikro-framework | micro-framework]
+- [Komponenty a ovládací prvky | components]
+- [Routování URL | routing]
+- [Přihlašování & oprávnění uživatelů | security]
+- [Debugování a zpracování chyb | debugging]
+- [AJAX]
+- [Konfigurace prostředí | configuring] a [Dependency Injection]
+- [Rozšíření PHP | PHP Language Enhancements] (Nette\Object, anotace, reflexe)
+- [HTTP request & response]
+- [Databáze & ORM | database]
+- [Sessions | sessions]
+- [Odesílání e-mailů | mailing]
+- [Zpracování obrázků | images]
+- [Cache | Caching]
+- [Lokalizace | Localization]
+- [Testování | Testing]
+- [Stránkování | Pagination]
+- [Auto-loading tříd | Auto-loading]
+- [Procházení soubory na disku | finder]
+- [Atomické operace‎ | atomicity]
+- Funkce pro práci s [řetězci | strings], [poli | arrays], [HTML elementy | HTML elements], [URL | URLs]
+- Nástroje: [Code-Checker]
 
 
-Užitečné nástroje
------------------
-- [Pro řetězce | Nette\String]
-- [HTML elementy | Nette\Web\Html]
+[* search.png *] Vyhledávání tříd
+-----------------------------
+
+<script type="text/javascript" src="http://api.nette.org/2.0/allclasses.js"></script>
+<form action="http://www.google.com/cse" id="docsearch" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:documentation'">
+	<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+</form>
+
 \---
 
-{{themeicon: icon-dictionary.png}}
+
+{{themeicon: icon-help.png}}
+{{toc:no}}
