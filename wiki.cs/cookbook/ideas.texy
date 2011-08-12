@@ -22,5 +22,6 @@ Seznam nápadů
 - jak umožnit stáhnout soubor?
 - jak načítat routy z databáze?
 - jak udělat složitější routy? (/vytvořit vlastní router?)
+- jak implementovat dynamické ACL?
 
-{{tags: cookbook}}
+{{tags: cookbook, acl}}
