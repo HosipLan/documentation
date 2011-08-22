@@ -3,12 +3,14 @@ DateTimePicker
 
 Doplněk se podobá doplňku DatePicker a umožňuje uživatelům vkládání data a času do jednoho pole formuláře. Po odeslání formuláře je k dispozici hodnota vhodná pro uložení do sloupce typu datetime.
 
-|Verze | 1.1.0
-|Download | [DateTimePicker.zip | http://nette.radekdostal.cz/datetimepicker/DateTimePicker-v1.1.0.zip] (233 kB)
+|Verze | 1.2.0
+|Download | [DateTimePicker.zip | http://nette.radekdostal.cz/datetimepicker/DateTimePicker-v1.2.0.zip] (233 kB)
 |GitHub | [https://github.com/radekdostal/Nette-DateTimePicker/ | https://github.com/radekdostal/Nette-DateTimePicker/]
 |Autor | Radek Dostál
 |Licence | GNU Lesser General Public License
 |PHP | 5.3
+|jQuery | 1.6.2
+|jQuery UI | 1.8.16
 
 Ukázka použití
 ---------------
