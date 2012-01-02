@@ -1,0 +1,68 @@
+Welcome to Nette Wiki!
+**********************
+
+.[perex]
+Search, browse and add content! Wiki is here so that you can add knowledge and share it with others. You can create new articles or extend existing, correct language mistakes and so on.
+
+.[note]
+Wiki does not serve as a technical support. Please ask your questions at the "forum":http://forum.nette.org/en/, not trough wiki.
+
+
+Categories and articles at wiki
+-------------------------------
+
+/---div .[bigicons]
+[* icon-faq.png .[icon] *]
+
+[FAQ - Frequently Asked Questions | wiki:faq]
+----------------
+Answers for frequent questions. In case of troubles visit this article first.
+
+
+
+[* lamplight1-48x48.png .[icon] *]
+
+[Tutorials | wiki:tutorialy ]
+-------
+Tutorials for the beginners. The simplest way how to dive into Nette Framework.
+
+
+
+[* movie-48x48.png .[icon] *]
+
+[Screencasts | wiki:screencasty ]
+-------
+Videos for the beginners.
+
+
+
+[* ruler-pen-48x48.png .[icon] *]
+
+[Cookbook | cookbook]
+-------
+Short guides how to solve various problems using the simplest way.
+
+
+\---
+
+
+Rules and recommendations
+---------------------
+
+If you would like to contribute to wiki please read the [help] how to edit pages. Only registered users can contribute so if you don't have an account please "register":http://forum.nette.org/cs/register.php.
+
+
+Copyright and license
+-------------------------------
+
+All content of nette.org is published under "Creative Commons Attribution Share-Alike License":http://creativecommons.org/licenses/by-sa/3.0/.
+
+By contributing to the Nette Framework site, **you agree that your contribution will be published under this license**. All content you enter has to be your creation or has to be taken from source which allows publication here under mentioned license.
+
+Content of Nette Framework website can be copied and edited anytime under the conditions of Creative Commons Attribution Share-Alike License.
+
+The owner has the right to delete, edit or move any part of your content for no reason, especially if it is found out that the content does not comply license rules or breaks the law.
+
+{{title: Wiki}}
+
+{{themeicon: icon-drawing-book.png}}
