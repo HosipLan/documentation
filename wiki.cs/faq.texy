@@ -306,5 +306,13 @@ Jak na moduly
 
 "Adresářová struktura a moduly":http://forum.nette.org/cs/2626-2009-09-25-adresarova-struktura-a-moduly
 
+
+Dependency Injection
+--------------------
+
+[Dependency Injection | wiki:/cs/faq/dependencyinjection]
+
+
+
 {{themeicon: icon-help-button.png}}
 {{toc: no}}
