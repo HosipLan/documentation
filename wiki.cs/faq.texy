@@ -5,10 +5,13 @@ FAQ aneb časté dotazy
 
 Zde naleznete odpovědi na nejčastěji kladené dotazy. Pokud vám nejsou jasné některé používané pojmy koukněte se do [slovníčku pojmů | doc:cs:Slovník]. .[perex]
 
+
 Libs & App v document rootu
 ---------------------------
 Některé webhostingové společnosti nedovolují umístit soubory vaší webové aplikace jinam než do *document rootu*. [* 49.png *]
- Jednoduše přesuneme složky *app* a *libs* do *document_root* a upravíme *index.php*
+
+Jednoduše přesuneme složky *app* a *libs* do *document_root* a upravíme *index.php*
+
 /--php
 <?php
 
@@ -24,92 +27,133 @@ define('LIBS_DIR', WWW_DIR . '/libs');
 // load bootstrap file
 require APP_DIR . '/bootstrap.php';
 \--
-Nezapomeňte zkontrolovat zda *app* a *libs* obsahují *".htaccess"((pokud používáte IIS tak se jedná o web.config))*. Se zákazem přístupu do této složky. Aby vám někdo nemohl přečíst config. (http://example.com/app/config.ini) .[note]
+
+.[warning]
+Nezapomeňte zkontrolovat zda *app* a *libs* obsahují *".htaccess"((pokud používáte IIS tak se jedná o web.config))*. Se zákazem přístupu do této složky. Aby vám někdo nemohl přečíst config. (http://example.com/app/config.ini)
+
 
 Změna adresářové struktury
 --------------------------
-Základní používaná adresářová struktura vám nemusí zcela vyhovovat. Potřebujete ji tedy upravit.
+Základní používaná adresářová struktura vám nemusí zcela vyhovovat, upravíme tedy *boostrap.php*.
 [* 50.png *]
- Upravíme tedy *config.ini*.
-/--code
-; variables
-variable.tempDir = "%appDir%/../temp"
-variable.logDir = "%appDir%/../log"
+
+Cesta ke složce s logy se nastavuje Debuggeru
+/--code php
+Debugger::$logDirectory = __DIR__ . '/../log';
 \--
+
+Temp složka se nastavuje Configuratoru
+/--code php
+$configurator->setTempDirectory(__DIR__ . '/../temp');
+\--
+
 
 Správné vytváření formulářů
 ---------------------------
+
 Formuláře vytváříme pomocí továrniček na komponenty. Jedná se o metodu presenteru začínající `createComponent`.
+
 /--php
 protected function createComponentFooForm($name)
 {
-	$form = new Nette\Application\AppForm($this, $name);
+	$form = new Nette\Application\UI\Form;
 	$form->addText('test', "Test: ");
 	$form->addSubmit('sub', "Uložit");
+	return $form;
 }
 \--
-I když se metoda v presenteru jmenuje createComponent**FooForm** jmenuje se její instance **fooForm** (`$this['fooForm']` nebo `{control fooForm}`) .[note]
+
+.[note]
+I když se metoda v presenteru jmenuje createComponent**FooForm** jmenuje se její instance **fooForm** (`$this['fooForm']` nebo `{control fooForm}`)
+
 
 Bílá stránka po nahrání na hosting
 ----------------------------------
-Postupně projdu tyto kroky:
-1) Smažu *temp*
-2) Zkontroluji zda je povolen zápis tam kam má být povolen
-3) Zkusím odkomentovat `RewriteBase` v *.htaccess*
-4) [zapnu laděnku | #Zapnutí laděnky na produkčním serveru]
+Postupně projdeme tyto kroky:
+
+1) Smažeme obsah složky *temp/cache*
+2) Zkontrolujeme zda je povolen zápis tam kam má být povolen (tj `log/` a `temp/`
+3) Zkusíme odkomentovat `RewriteBase` v *.htaccess*
+4) [zapneme laděnku | #Zapnutí laděnky na produkčním serveru]
+
 
 Zapnutí laděnky na produkčním serveru
 -------------------------------------
+
 Při nasazování aplikace na hosting se nám může hodit dočasně vynutit stejné chování laděnky na jaké jsme zvyklí z vývoje. Upravíme tedy *bootstrap.php*.
+
+Vynutíme si, aby se Debugger choval jako ve vývojovém prostředí (zobrazoval laděnku při chybě)
 /--php
-Nette\Debug::enable(Nette\Debug::DEVELOPMENT);
-//...
-$application = Nette\Environment::getApplication();
+Debugger::enable(Debugger::DEVELOPMENT);
+\--
+
+Zakážeme aplikaci, aby odchytávala výjimky
+/--php
 $application->catchExceptions = FALSE;
 \--
+
 
 Připojení k databázi pomocí dibi a údajů v configu
 --------------------------------------------------
 Mějme v konfiguračním souboru nastaveno:
-/--code
-; database
-[common.database]
-driver = mysqli
-hostname = "localhost"
-username = "root"
-password = "xxx"
-database = "nette"
-charset = "utf8"
+
+/--code neon
+common:
+	parameters:
+		database:
+			driver: mysql
+			host: localhost
+			dbname: test
+			user:
+			password:
+
+	services:
+		connection:
+			class: DibiConnection(%database%)
 \--
-K databázi se poté připojíme pomocí:
+
+
+Databáze je poté přístupná v presenteru jako
+
 /--php
-dibi::connect(Nette\Environment::getConfig('database'));
+$db = $this->context->connection;
+$db->query("SELECT * FROM ...");
 \--
+
 
 Zapnutí dibi profileru
 ----------------------
 Dibi profiler zapneme jednoduše pomocí konfigurační direktivy
-/--code
-; database
-[common.database]
-; ...
-profiler = TRUE
+
+/--code neon
+common:
+	parameters:
+		database:
+			# ...
+			profiler = TRUE
 \--
+
 
 Absolutní odkazy
 ----------------
+
 Používáte šablony třeba pro odesílání e-mailu a potřebujete aby odkazy byly absolutní? Lze toho docílit celkem snadno.
+
 /--html
 <a href="{plink Default:default}">Relativní odkaz</a>
 <a href="{plink //Default:default}">Absolutní odkaz</a>
 \--
 
+
 Modelová část aplikace
 ----------------------
+
 Nette Framework v současné době nedisponuje jednotnou správou modelové části aplikace. Každý si tuto část implementuje sám.
+
 
 Nastavení výchozích hodnot formuláře
 ------------------------------------
+
 /--php
 protected function createComponentFooForm($name)
 {
@@ -126,38 +170,61 @@ public function actionFooEdit($id)
 }
 \--
 
+V článku [Výchozí data pro editační formulář | wiki:/cs/cookbook/vychozi-data-pro-editacni-formular] je příklad rozšířen.
+
+
 Vlastní validace formulářového prvku
 ------------------------------------
+
 /--php
 protected function createComponentFooForm($name)
 {
-	$form = new Nette\Application\AppForm($this, $name);
+	$form = new Nette\Application\AppForm;
 	$form->addText('test', "Test: ")
-		->addRule(function ($control) { return $control->value % 2; }, "Hodnota test musí být sudé číslo");
+		->addRule(function ($control) {
+			return $control->value % 2;
+		}, "Hodnota test musí být sudé číslo");
+
+	return $form;
 }
 \--
+
 
 Nastavení class prvku formuláře
 -------------------------------
+
 /--php
 protected function createComponentFooForm($name)
 {
-	$form = new Nette\Application\AppForm($this, $name);
-	$form->addText('test', "Test: ")->getControlPrototype()->class = "bar";
+	$form = new Nette\Application\AppForm;
+	$form->addText('test', "Test: ")
+		->controlPrototype
+			->class('bar');
+	return $form;
 }
 \--
 
+
 Zrušení persistentního parametru
 --------------------------------
+
+Podíváme se do presenteru, jakou má nastavenou výchozí hodnotu
+
 /--php
 /** @persistent int */
-public $page = 0; // 0 bude výchozí, tudiž místo URL ?param=whatever&page=0 se vygeneruje jen ?param=whatever
-// vynulování persistentního parametru
+public $page;
+\--
+
+a tu mu předáme při vytváření odkazu
+
+/--php
 {link someAction 'page' => NULL}
 \--
 
+
 Odkazování v modulech
 --------------------
+
 /--php
 {* Relativní odkaz na modul *}
 {plink Foo:Default:default}
@@ -165,71 +232,78 @@ Odkazování v modulech
 {plink :Foo:Default:default}
 \--
 
+
 Použítí `{}` v šabloně
 --------------------
+
 Latte filter používá `{}` jako "řídící" znaky. Pokud potřebujete v šabloně napsat `{}` (například u javascriptu) musíte za `{` udělat mezeru pak následující část nebude brána jako makro.
- Lze také použít latte macra `{l}` resp. `{r}` pro vykreslení levé resp. pravé závorky.
+
+Lze také použít latte macra `{l}` resp. `{r}` pro vykreslení levé resp. pravé závorky.
+
 
 Ruční vykreslování formulářů v šabloně
 --------------------------------------
+
 /--html
-{control fooForm begin}
-{control fooForm errors}
-{var form => $control['fooForm']}
-{$form['test']->label}
-{$form['test']->control}
-{control fooForm end}
+{form fooForm}
+{$form->render('errors')}
+{input test} {label test /}<br />
+{input send}
+{/form}
 \--
+
 
 Texy!
 -----
 Na statické *Texy!* je filter:
+
 /--php
 public function templatePrepareFilters($template)
 {
 	parent::templatePrepareFilters($template);
 
 	$texy = new Texy();
-
 	$template->registerFilter(callback($texy, 'process'));
 }
 \--
+
 Na dynamické *Texy!* je helper:
+
 /--php
 protected function createTemplate()
 {
 	$template = parent::createTemplate();
 
-	$texy = new Texy();
-
-	$template->registerHelper('texy', callback($texy, 'process'));
-
+	$template->registerHelper('texy', callback(new Texy(), 'process'));
 	return $template;
 }
 \--
 
+
 Vypnutí automatického odhlašování
 ---------------------------------
+
 /--php
-$user = Nette\Environment::getUser();
-$user->setExpiration("+ 365 days", FALSE);
+// v presenteru
+$this->user->setExpiration("+ 365 days", FALSE);
 \--
-Nezapomeňte že musíte změnit i expiraci samotné session na vyšší časový interval než je u uživatele `Nette\Environment::getSession()->setExpiration("+ 365 days");` .[caution]
 
-Jak na snippety
----------------
-"zavináčová magie":http://forum.nette.org/cs/2451-zavinacova-magie-v-praxi
+Nezapomeňte, že musíte změnit i expiraci samotné session na vyšší časový interval než je u uživatele
 
-Lokalizace aplikace
--------------------
-"Kompletní lokalizace Nette aplikací – GettextExtractor v2":http://forum.nette.org/cs/2798-kompletni-lokalizace-nette-aplikaci-gettextextractor-v2
+/--php
+$this->context->session->setExpiration("+ 365 days", FALSE);
+\--
+
 
 Dynamické formuláře
 -------------------
-"Dynamický počet položek ve formuláři":http://forum.nette.org/cs/3121-dynamicky-pocet-polozek-ve-formulari
+
+"Dynamický počet položek ve formuláři":http://addons.nette.org/cs/form-container-replicator
+
 
 Jak na moduly
 ---------------
+
 "Adresářová struktura a moduly":http://forum.nette.org/cs/2626-2009-09-25-adresarova-struktura-a-moduly
 
 {{themeicon: icon-help-button.png}}
