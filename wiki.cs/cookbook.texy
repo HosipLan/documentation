@@ -41,7 +41,7 @@ Formuláře
 --------
 - [Validace prvků v závislosti na hodnotě jiných prvků] (bojovyletoun)
 - [cookbook/Výchozí data pro editační formulář]
-- [cookbook/Bezpečné předání id editovaného záznamu]
+- [cookbook/Jak předávat id při editaci záznamu]
 - [cookbook/Dynamický závislý select]
 
 
