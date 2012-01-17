@@ -1,12 +1,10 @@
-Bezpečné předání id záznamu
+Jak předávat id při editaci záznamu
 ***************************************
 
-Chcete-li editovat záznam, musíte předat jeho id ukládající funkci. Pokud k tomu používáte `$form->addHidden()`, je to špatně.
-**Jak na to správně?**
+Chcete-li editovat záznam, musíte předat jeho id ukládající funkci. Můžete k tomu použít `$form->addHidden()`, který však zbytečně vytváří formulářový prvek. Vhodnější je použít **persistentní parametr**.
+
 
 /---php
-// cc HosipLan
-
 use Nette\Application\UI\Form;
 
 class recordPresenter extends BasePresenter
@@ -17,56 +15,29 @@ class recordPresenter extends BasePresenter
 
 
 	/**
-	* Check rights to edit record
-	* @int record id
-	* @return go on/go away + redirect
-	*/
-	private function checkId($id)
-	{
-		if(!$id) { // id not set
-			$noRights = TRUE;
-		}
-
-		// check rights to access the record
-		// 1. DB check: $this->model->record->isMine($id);
-		// 2. ACL check
-		// 3. your awesome method...
-		elseif($id == 32) { // demo only
-			$noRights = FALSE;
-		}
-		else { // you have no rights to this record
-			$noRights = TRUE;
-		}
-
-		if($noRights) { // you have no rights to this record
-			$this->flashMessage("You are very nasty boy!","warning");
-			$this->redirect("default", array("id" => NULL)); // unset persistent id
-		}
-	}
-
-
-
-	/**
-	* Edit record
-	*/
+	 * Edit record
+	 */
 	public function renderEdit($id)
 	{
 		$this->id = $id;
 
 		// is this our record?
-		$this->checkId($this->id);
+		$accessGranted = $this->models->record->hanAccess($this->user->id, $this->id); // SQL SELECT COUNT(*) FROM records WHERE user_id = ? AND id = ?
+		if(!$accessGranted) {
+			$this->flashMessage("You are very nasty boy!","warning");
+			$this->redirect("default", array("id" => NULL)); // unset persistent parametr
+		}
 
-		// fetch the record data from database
-		// e.g.: $this->models->record->fetch($id);
-		$defaults = array("myValue" => "myDefaultValue");  // demo only
-
-		$this["recordForm"]->setDefaults($defaults); // set defaults -> see http://wiki.nette.org/cs/cookbook/vychozi-data-pro-editacni-formular
+		// fetch the record data from database and set as defaults
+		// see: http://wiki.nette.org/cs/cookbook/vychozi-data-pro-editacni-formular
+		$defaults = $this->models->record->fetch($id);
+		$this["recordForm"]->setDefaults($defaults); // set defaults
 	}
 
 
 	/**
-	* Form to edit record
-	*/
+	 * Form to edit record
+	 */
 	protected function createComponentRecordForm()
 	{
 		$form = new Form;
@@ -78,17 +49,19 @@ class recordPresenter extends BasePresenter
 
 
 	/**
-	* Record update
-	* @form recordForm
-	*/
+	 * Record update
+	 * @form recordForm
+	 */
 	public function recordUpdate(Form $form)
 	{
 		// is this our record?
-		// we need to check again, this function is
-		$this->checkId($this->id);
+		$accessGranted = $this->models->record->hanAccess($this->user->id, $this->id); // SQL SELECT COUNT(*) FROM records WHERE user_id = ? AND id = ?
+		if(!$accessGranted) {
+			$this->flashMessage("You are very nasty boy!","warning");
+			$this->redirect("default", array("id" => NULL)); // unset persistent parametr
+		}
 
 		$values = $form->getValues();
-		$values = $this->someMagicHere($values);
 		$this->models->record->update($this->id, $values);
 
 		$this->flashMessage("Record updated!","success");
