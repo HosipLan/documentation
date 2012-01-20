@@ -11,7 +11,6 @@ V případě, že si téma vyberete, tak ho prosím z tohoto seznamu odstraňte.
 Seznam nápadů
 =============
 - jak zobrazit stránku pouze pro přihlášené?
-- jak vytvořit a zaregistrovat vlastní helper?
 - webová verze programu textroom - psaní rozsáhlych textů pomoci Texy!
 - jednoduchý statický web  (jeden presenter)
  b) *složitější*: S použitím Navigation, články získává např prohledáním složky "`templates/Static`" (eventuelně cachuje))
