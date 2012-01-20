@@ -48,6 +48,7 @@ Formuláře
 Šablony
 ----
 - [Vlastní makra | cookbook/vlastni-makra]
+- [cookbook/Jak helperu předat proměnné]
 
 Nápadník
 ========
@@ -55,3 +56,5 @@ Nápadník
 Pokud se chcete zapojit a hledáte vhodné téma, podívejte se do našeho "Nápadníku":http://wiki.nette.org/cs/cookbook/ideas. Do nápadníku můžete také připsat nápady na další témata, která by se mohla zpracovat.
 
 {{themeicon: ruler-pen-48x48.png}}
+
+{{tags: $_this = $this;  $this->template->registerhelper(function($text) use($_this) {          return $_this->context->...;  });}}
