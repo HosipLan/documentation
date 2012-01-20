@@ -54,7 +54,7 @@ Správné vytváření formulářů
 Formuláře vytváříme pomocí továrniček na komponenty. Jedná se o metodu presenteru začínající `createComponent`.
 
 /--php
-protected function createComponentFooForm($name)
+protected function createComponentFooForm()
 {
 	$form = new Nette\Application\UI\Form;
 	$form->addText('test', "Test: ");
@@ -155,12 +155,13 @@ Nastavení výchozích hodnot formuláře
 ------------------------------------
 
 /--php
-protected function createComponentFooForm($name)
+protected function createComponentFooForm()
 {
-	$form = new Nette\Application\AppForm($this, $name);
+	$form = new Nette\Application\UI\Form;
 	$form->addHidden('id');
 	$form->addTextArea('text', "Text: ");
 	$form->addSubmit('sub', "Uložit");
+	return $form;
 }
 
 public function actionFooEdit($id)
@@ -177,9 +178,9 @@ Vlastní validace formulářového prvku
 ------------------------------------
 
 /--php
-protected function createComponentFooForm($name)
+protected function createComponentFooForm()
 {
-	$form = new Nette\Application\AppForm;
+	$form = new Nette\Application\UI\Form;
 	$form->addText('test', "Test: ")
 		->addRule(function ($control) {
 			return $control->value % 2;
@@ -194,12 +195,11 @@ Nastavení class prvku formuláře
 -------------------------------
 
 /--php
-protected function createComponentFooForm($name)
+protected function createComponentFooForm()
 {
-	$form = new Nette\Application\AppForm;
+	$form = new Nette\Application\UI\Form;
 	$form->addText('test', "Test: ")
-		->controlPrototype
-			->class('bar');
+		->controlPrototype->class('bar');
 	return $form;
 }
 \--
