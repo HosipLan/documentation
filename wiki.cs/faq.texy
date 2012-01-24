@@ -103,7 +103,7 @@ common:
 		database:
 			driver: mysql
 			host: localhost
-			dbname: test
+			database: test
 			user:
 			password:
 
