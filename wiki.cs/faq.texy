@@ -171,7 +171,10 @@ public function actionFooEdit($id)
 }
 \--
 
-V článku [Výchozí data pro editační formulář | wiki:/cs/cookbook/vychozi-data-pro-editacni-formular] je příklad rozšířen.
+V článku [Výchozí data pro editační formulář | cookbook/vychozi-data-pro-editacni-formular] je příklad rozšířen.
+
+
+
 
 
 Vlastní validace formulářového prvku
