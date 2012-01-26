@@ -47,6 +47,7 @@ Formuláře
 
 Šablony
 ----
+- [cookbook/Jak udělat jiný vzhled v administrační části]
 - [Vlastní makra | cookbook/vlastni-makra]
 - [Zápis vlastních maker v nové  verzi (22.1.2012) | en/cookbook/writing-custom-macros-in-new-revision]
 - [cookbook/Jak helperu předat proměnné]
@@ -57,5 +58,3 @@ Nápadník
 Pokud se chcete zapojit a hledáte vhodné téma, podívejte se do našeho "Nápadníku":http://wiki.nette.org/cs/cookbook/ideas. Do nápadníku můžete také připsat nápady na další témata, která by se mohla zpracovat.
 
 {{themeicon: ruler-pen-48x48.png}}
-
-{{tags: $_this = $this;  $this->template->registerhelper(function($text) use($_this) {          return $_this->context->...;  });}}
