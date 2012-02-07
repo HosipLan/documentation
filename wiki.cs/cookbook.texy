@@ -29,7 +29,6 @@ Model-View-Presenter a problémy kolem návrhu
 - [Jednoduchý MODEL s NotORM | cookbook/Jednoduchý MODEL s NotORM]
 - [Prihlásenie cez Twitter pomocou OAuth | cookbook/Prihlásenie cez Twitter pomocou OAuth] (srigi)
 - [Dynamické načítaní modelů (Nette 2 + Nette\DI + Dibi/Nette\Database) | cookbook/Dynamické načítaní modelů] (Majkl578)
-- [Export do CSV pomocí vlastního Response | cookbook/Export do CSV pomocí vlastního Response]
 
 
 Routování
