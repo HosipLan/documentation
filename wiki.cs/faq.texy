@@ -6,11 +6,13 @@ FAQ aneb časté dotazy
 Zde naleznete odpovědi na nejčastěji kladené dotazy. Pokud vám nejsou jasné některé používané pojmy koukněte se do [slovníčku pojmů | doc:cs:Slovník]. .[perex]
 
 
-Libs & App v document rootu
+Změna adresářové struktury
 ---------------------------
-Některé webhostingové společnosti nedovolují umístit soubory vaší webové aplikace jinam než do *document rootu*. [* 49.png *]
+Některé webhostingové společnosti nedovolují umístit soubory vaší webové aplikace jinam než do složky *www*.
 
-Jednoduše přesuneme složky *app* a *libs* do *document_root* a upravíme *index.php*
+Stačí přesunout složky *app*, *libs*, *log* a *temp* do *www* a následně upravit *index.php*
+
+[* dirs.png *]
 
 /--php
 <?php
@@ -28,24 +30,16 @@ define('LIBS_DIR', WWW_DIR . '/libs');
 require APP_DIR . '/bootstrap.php';
 \--
 
-.[warning]
-Nezapomeňte zkontrolovat zda *app* a *libs* obsahují *".htaccess"((pokud používáte IIS tak se jedná o web.config))*. Se zákazem přístupu do této složky. Aby vám někdo nemohl přečíst config. (http://example.com/app/config.ini)
+A v bootstrapu změníme cesty pro logy a temp.
 
-
-Změna adresářové struktury
---------------------------
-Základní používaná adresářová struktura vám nemusí zcela vyhovovat, upravíme tedy *boostrap.php*.
-[* 50.png *]
-
-Cesta ke složce s logy se nastavuje Debuggeru
 /--code php
-Debugger::$logDirectory = __DIR__ . '/../log';
-\--
+$configurator->enableDebugger(__DIR__ . '/../log');
 
-Temp složka se nastavuje Configuratoru
-/--code php
 $configurator->setTempDirectory(__DIR__ . '/../temp');
 \--
+
+.[warning]
+Nezapomeňte zkontrolovat zda *app*, *libs*, *log* a *temp* obsahují *".htaccess"((pokud používáte IIS tak se jedná o web.config))* se zákazem přístupu do této složky, aby vám někdo nemohl přečíst konfigurační soubory či logy s chybami. (http://example.com/app/config/config.neon)
 
 
 Správné vytváření formulářů
