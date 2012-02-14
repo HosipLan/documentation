@@ -43,4 +43,7 @@ class BasePresenter extends Nette\Application\UI\Presenter
 .[note]
 Nette "továrničkám":http://doc.nette.org/cs/configuring#toc-tovarny tagy nepředává, namísto toho vytvoří sdílenou službu `<továrnička>Factory`, která tagy dostane. Taková služba je pouze instance `Nette\Callback`, která ví, jakou metodu na DI Containeru má zavolat, aby vytvořila novou instanci služby.
 
+
+Dalším krokem by bylo vyčlenění balíčku tříd (komponent) a vytvoření vlastního [rozšíření| doc:cs/configuring#toc-rozsireni-pro-kontejner], které by se tak samo stalo znovupoužitelnou knihovnou.
+
 {{tags: cookbook}}
