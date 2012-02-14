@@ -38,11 +38,6 @@ Routování
 - [HTTP routování v CLI| cookbook/http-routovani-v-cli] (bene)
 
 
-Komponenty
-----------
-- [Konfigurovatelné globální komponenty | cookbook/globalni-komponenty]
-
-
 Formuláře
 --------
 - [Validace prvků v závislosti na hodnotě jiných prvků] (bojovyletoun)
