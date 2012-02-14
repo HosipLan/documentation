@@ -1,0 +1,46 @@
+Globální komponenty
+*******************
+
+.[warning]
+Předně bych upozornil, na "bezpečností problém":http://forum.nette.org/cs/4628-bezpecnost-aplikace-vs-komponenty#p34454, který můžu vzniknout, při nesprávném použití.
+
+Snažíme se tedy o "globální komponenty". Každé komponentě dáme tag a řekneme jí, jak se bude jmenovat.
+
+/--neon
+factories:
+	lorem:
+		class: Lorem
+		tags: {globalComponent: lorem}
+\--
+
+V presenteru pak takové komponenty budeme na požádání vytvářet a připojovat.
+
+/--php
+class BasePresenter extends Nette\Application\UI\Presenter
+{
+	/** @var array */
+	private $globalComponents;
+
+	/**
+	 * @param string $name
+	 * @return Nette\ComponentModel\IComponent
+	 */
+	protected function createComponent($name)
+	{
+		if ($this->globalComponents === NULL) {
+			$this->globalComponents = $this->context->findByTag('globalComponent');
+		}
+
+		if ($service = array_search($name, $this->globalComponents)) {
+			return $this->context->$service->invoke();
+		}
+
+		return parent::createComponent($name);
+	}
+}
+\--
+
+.[note]
+Nette "továrničkám":http://doc.nette.org/cs/configuring#toc-tovarny tagy nepředává, namísto toho vytvoří sdílenou službu `<továrnička>Factory`, která tagy dostane. Taková služba je pouze instance `Nette\Callback`, která ví, jakou metodu na DI Containeru má zavolat, aby vytvořila novou instanci služby.
+
+{{tags: cookbook}}
