@@ -136,6 +136,10 @@ Používáte šablony třeba pro odesílání e-mailu a potřebujete aby odkazy 
 /--html
 <a href="{plink Default:default}">Relativní odkaz</a>
 <a href="{plink //Default:default}">Absolutní odkaz</a>
+
+// nebo n:makrem
+<a n:href="Default:default">Relativní odkaz</a>
+<a n:href="//Default:default">Absolutní odkaz</a>
 \--
 
 
@@ -178,10 +182,10 @@ Vlastní validace formulářového prvku
 protected function createComponentFooForm()
 {
 	$form = new Nette\Application\UI\Form;
-	$form->addText('test', "Test: ")
+	$form->addText('test', 'Test:')
 		->addRule(function ($control) {
 			return $control->value % 2;
-		}, "Hodnota test musí být sudé číslo");
+		}, 'Hodnota test musí být sudé číslo');
 
 	return $form;
 }
@@ -195,8 +199,8 @@ Nastavení class prvku formuláře
 protected function createComponentFooForm()
 {
 	$form = new Nette\Application\UI\Form;
-	$form->addText('test', "Test: ")
-		->controlPrototype->class('bar');
+	$form->addText('test', 'Test:')
+		->setAttribute('class', 'bar');
 	return $form;
 }
 \--
