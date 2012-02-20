@@ -310,6 +310,14 @@ Dependency Injection
 [Dependency Injection | wiki:/cs/faq/dependencyinjection]
 
 
+Nette\Database vs dibi
+--------------------
+
+[Nette\Database vs dibi | wiki:/cs/faq/nette-database-vs-dibi]
+
+
+
+
 
 {{themeicon: icon-help-button.png}}
 {{toc: no}}
