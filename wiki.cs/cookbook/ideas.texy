@@ -10,14 +10,12 @@ V případě, že si téma vyberete, tak ho prosím z tohoto seznamu odstraňte.
 
 Seznam nápadů
 =============
-- jak zobrazit stránku pouze pro přihlášené?
 - webová verze programu textroom - psaní rozsáhlych textů pomoci Texy!
 - jednoduchý statický web  (jeden presenter)
  b) *složitější*: S použitím Navigation, články získává např prohledáním složky "`templates/Static`" (eventuelně cachuje))
 - jak po přihlášení/odhlášení zobrazit stejnou stránku?
 - jak odeslat formulář bez reloadu celé stránky?
-- jak s pomocí formuláře nahrát soubor?
-- jak umožnit stáhnout soubor?
+- jak s pomocí formuláře nahrát soubor? + jak jej umožnit stáhnout?
 - jak načítat routy z databáze?
 - jak udělat složitější routy? (/vytvořit vlastní router?)
 - jak implementovat dynamické ACL?
