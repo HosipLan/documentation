@@ -27,7 +27,7 @@ Model-View-Presenter a problémy kolem návrhu
 
 - [Model: Entity-Repository-Mapper | cookbook/Model Entity-Repository-Mapper]
 - [Jednoduchý MODEL s NotORM | cookbook/Jednoduchý MODEL s NotORM]
-- [Jednoduchý model s NotORM pro Nette 2.0 | codebook/Jednoduchý model pro Nette 2.0]
+- [Jednoduchý model s NotORM pro Nette 2.0 | cookbook/Jednoduchý model pro Nette 2.0]
 - [Prihlásenie cez Twitter pomocou OAuth | cookbook/Prihlásenie cez Twitter pomocou OAuth] (srigi)
 - [Dynamické načítaní modelů (Nette 2 + Nette\DI + Dibi/Nette\Database) | cookbook/Dynamické načítaní modelů] (Majkl578)
 
