@@ -11,7 +11,7 @@ Persistentní parametr
 ====
 * *nastavíme persistentní parametr*
 * *uložíme aktuální request*
-* *přesměrujeme (po zpracování) zpět na uložený reuqest*
+* *přesměrujeme (po zpracování) zpět na uložený request*
 
 Je důležité, aby se zpracování formuláře (requestu) odehrálo **před renderováním šablony**. Uložení requestu tedy nelze provádět v `handle<name>` nebo `action<name>` (viz "životní cyklus presenteru":http://doc.nette.org/cs/presenters#toc-zivotni-cyklus-presenteru).
 
