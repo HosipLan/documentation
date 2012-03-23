@@ -64,13 +64,15 @@ Rovnou v BasePresenter, jelikož už nám nemá co překážet.
 /--php
 class BasePresenter extends Nette\Application\UI\Presetner
 {
-	/** @var Nette\Http\Session */
+	/** @var Nette\Http\SessionSection */
 	public $mySession;
 
 
-	public startup()
+	protected function startup()
 	{
-		// nastartbujeme session
+		parent::startup();
+
+		// nastartujeme session
 		$this->mySession = $this->session->getSection("mySession");
 	}
 
