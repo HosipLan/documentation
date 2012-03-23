@@ -13,7 +13,6 @@ Seznam nápadů
 - webová verze programu textroom - psaní rozsáhlych textů pomoci Texy!
 - jednoduchý statický web  (jeden presenter)
  b) *složitější*: S použitím Navigation, články získává např prohledáním složky "`templates/Static`" (eventuelně cachuje))
-- jak po přihlášení/odhlášení zobrazit stejnou stránku?
 - jak odeslat formulář bez reloadu celé stránky?
 - jak s pomocí formuláře nahrát soubor? + jak jej umožnit stáhnout?
 - jak načítat routy z databáze?
