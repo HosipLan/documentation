@@ -10,10 +10,8 @@ V případě, že si téma vyberete, tak ho prosím z tohoto seznamu odstraňte.
 
 Seznam nápadů
 =============
-- webová verze programu textroom - psaní rozsáhlych textů pomoci Texy!
-- jednoduchý statický web  (jeden presenter)
- b) *složitější*: S použitím Navigation, články získává např prohledáním složky "`templates/Static`" (eventuelně cachuje))
-- jak odeslat formulář bez reloadu celé stránky?
+- jak napsat modul (i s formuláři, modely, komponentami)
+- statický web s použitím Navigation, články získává např prohledáním složky "`templates/Static`" (eventuelně cachuje)
 - jak s pomocí formuláře nahrát soubor? + jak jej umožnit stáhnout?
 - jak načítat routy z databáze?
 - jak udělat složitější routy? (/vytvořit vlastní router?)
