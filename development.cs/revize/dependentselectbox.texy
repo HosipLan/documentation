@@ -1,0 +1,117 @@
+DependentSelectBox in Nette 2.0
+******************
+
+
+
+Registration
+===
+
+**boostrap.php**
+
+/--php
+\Nette\Forms\Container::extensionMethod("addDependentSelectBox", "\DependentSelectBox\DependentSelectBox::formAddDependentSelectBox");
+\Nette\Forms\Container::extensionMethod("addJsonDependentSelectBox", "\DependentSelectBox\DependentSelectBox::formAddJsonDependentSelectBox");
+
+// use
+$form->addDependentSelectBox("...");
+$form->addJsonDependentSelectBox("...");
+\--
+
+.[tip]
+Default method `addSelect()` is much shorter than `addDependentSelectBox`. Let's use **`addDSelect()`** and **`addJSelect`** to it make ourself easier.
+/--php
+\Nette\Forms\Container::extensionMethod("addDSelect", "\DependentSelectBox\DependentSelectBox::formAddDependentSelectBox");
+\Nette\Forms\Container::extensionMethod("addJSelect", "\DependentSelectBox\DependentSelectBox::formAddDependentSelectBox");
+
+// use
+$form->addDSelect("...");
+$form->addJSelect("...");
+\--
+
+
+
+Full examples
+===
+
+
+DependentSelectBox()
+---
+...
+
+
+JsonDependentSelectBox()
+---
+
+
+**BasePresenter.php**
+
+/--php
+
+public function parent beforeRender()
+{
+	parent::beforeRender();
+
+	// register json, enables content change
+	DependentSelectBox\JsonDependentSelectBox::tryJsonResponse($this->presenter);
+}
+
+\--
+
+**MyPresenter.php**
+
+/--php
+/**
+ * Select helper
+ */
+private function getCarModelsByType($form)
+{
+	$id = $form["car_type"]->value;
+	$array = $this->models->car->getModelsByType($id); // return array("key" => "name");
+
+	return $array; // array is required as return type
+}
+
+/**
+ * Form
+ */
+protected function createComponentTestForm($name) {
+
+	$form = new Form($this, $name); // required for full running
+
+	$form->addSelect("car_type", "Car type", array("Opel", "Škoda", "BMW"));
+	$form->addJSelect("car_model","Model", $form["car_type"], array($this, "getCarModelsByType"));
+
+	$form->onSubmit[] = array($this, "testFormSent");
+	$form->addSubmit("submit", "Save");
+
+	return $form;
+}
+
+
+/**
+ * Save form
+ */
+public function testFormSent(Form $form)
+{
+	if ($form["submit"]->isSubmittedBy()) { // required to avoid submit form on select change
+		$values = $form->values;
+		// ...
+	}
+}
+\--
+
+
+Anonymous function
+---
+...
+
+
+Array as data source
+---
+...
+
+
+
+setPrompt()
+---
+...
