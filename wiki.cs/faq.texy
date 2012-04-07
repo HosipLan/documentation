@@ -42,25 +42,6 @@ $configurator->setTempDirectory(__DIR__ . '/../temp');
 Nezapomeňte zkontrolovat zda *app*, *libs*, *log* a *temp* obsahují *".htaccess"((pokud používáte IIS tak se jedná o web.config))* se zákazem přístupu do této složky, aby vám někdo nemohl přečíst konfigurační soubory či logy s chybami. (http://example.com/app/config/config.neon)
 
 
-Správné vytváření formulářů
----------------------------
-
-Formuláře vytváříme pomocí továrniček na komponenty. Jedná se o metodu presenteru začínající `createComponent`.
-
-/--php
-protected function createComponentFooForm()
-{
-	$form = new Nette\Application\UI\Form;
-	$form->addText('test', "Test: ");
-	$form->addSubmit('sub', "Uložit");
-	return $form;
-}
-\--
-
-.[note]
-I když se metoda v presenteru jmenuje createComponent**FooForm** jmenuje se její instance **fooForm** (`$this['fooForm']` nebo `{control fooForm}`)
-
-
 Bílá stránka po nahrání na hosting
 ----------------------------------
 Postupně projdeme tyto kroky:
@@ -70,140 +51,6 @@ Postupně projdeme tyto kroky:
 3) Zkusíme odkomentovat `RewriteBase` v *.htaccess*
 4) [zapneme laděnku | #Zapnutí laděnky na produkčním serveru]
 
-
-Zapnutí laděnky na produkčním serveru
--------------------------------------
-
-Při nasazování aplikace na hosting se nám může hodit dočasně vynutit stejné chování laděnky na jaké jsme zvyklí z vývoje. Upravíme tedy *bootstrap.php*.
-
-Vynutíme si, aby se Debugger choval jako ve vývojovém prostředí (zobrazoval laděnku při chybě)
-/--php
-Debugger::enable(Debugger::DEVELOPMENT);
-\--
-
-Zakážeme aplikaci, aby odchytávala výjimky
-/--php
-$application->catchExceptions = FALSE;
-\--
-
-
-Připojení k databázi pomocí dibi a údajů v configu
---------------------------------------------------
-Mějme v konfiguračním souboru nastaveno:
-
-/--code neon
-common:
-	parameters:
-		database:
-			driver: mysql
-			host: localhost
-			database: test
-			user:
-			password:
-
-	services:
-		connection:
-			class: DibiConnection(%database%)
-\--
-
-
-Databáze je poté přístupná v presenteru jako
-
-/--php
-$db = $this->context->connection;
-$db->query("SELECT * FROM ...");
-\--
-
-
-Zapnutí dibi profileru
-----------------------
-Dibi profiler zapneme jednoduše pomocí konfigurační direktivy
-
-/--code neon
-common:
-	parameters:
-		database:
-			# ...
-			profiler = TRUE
-\--
-
-
-Absolutní odkazy
-----------------
-
-Používáte šablony třeba pro odesílání e-mailu a potřebujete aby odkazy byly absolutní? Lze toho docílit celkem snadno.
-
-/--html
-<a href="{plink Default:default}">Relativní odkaz</a>
-<a href="{plink //Default:default}">Absolutní odkaz</a>
-
-// nebo n:makrem
-<a n:href="Default:default">Relativní odkaz</a>
-<a n:href="//Default:default">Absolutní odkaz</a>
-\--
-
-
-Modelová část aplikace
-----------------------
-
-Nette Framework v současné době nedisponuje jednotnou správou modelové části aplikace. Každý si tuto část implementuje sám.
-
-
-Nastavení výchozích hodnot formuláře
-------------------------------------
-
-/--php
-protected function createComponentFooForm()
-{
-	$form = new Nette\Application\UI\Form;
-	$form->addHidden('id');
-	$form->addTextArea('text', "Text: ");
-	$form->addSubmit('sub', "Uložit");
-	return $form;
-}
-
-public function actionFooEdit($id)
-{
-	//...
-	$this['fooForm']->setDefaults(array('id' => $id, 'text' => $model->text));
-}
-\--
-
-V článku [Výchozí data pro editační formulář | cookbook/vychozi-data-pro-editacni-formular] je příklad rozšířen.
-
-
-
-
-
-Vlastní validace formulářového prvku
-------------------------------------
-
-/--php
-protected function createComponentFooForm()
-{
-	$form = new Nette\Application\UI\Form;
-	$form->addText('test', 'Test:')
-		->addRule(function ($control) {
-			return $control->value % 2;
-		}, 'Hodnota test musí být sudé číslo');
-
-	return $form;
-}
-\--
-
-
-Nastavení class prvku formuláře
--------------------------------
-
-/--php
-protected function createComponentFooForm()
-{
-	$form = new Nette\Application\UI\Form;
-	$form->addText('test', 'Test:')
-		->setAttribute('class', 'bar');
-	return $form;
-}
-\--
 
 
 Zrušení persistentního parametru
@@ -223,16 +70,6 @@ a tu mu předáme při vytváření odkazu
 \--
 
 
-Odkazování v modulech
---------------------
-
-/--php
-{* Relativní odkaz na modul *}
-{plink Foo:Default:default}
-{* Absolutní odkaz na modul *}
-{plink :Foo:Default:default}
-\--
-
 
 Použítí `{}` v šabloně
 --------------------
@@ -241,17 +78,6 @@ Latte filter používá `{}` jako "řídící" znaky. Pokud potřebujete v šabl
 
 Lze také použít latte macra `{l}` resp. `{r}` pro vykreslení levé resp. pravé závorky.
 
-
-Ruční vykreslování formulářů v šabloně
---------------------------------------
-
-/--html
-{form fooForm}
-{$form->render('errors')}
-{input test} {label test /}<br />
-{input send}
-{/form}
-\--
 
 
 Texy!
@@ -281,44 +107,16 @@ protected function createTemplate()
 \--
 
 
-Vypnutí automatického odhlašování
----------------------------------
 
-/--php
-// v presenteru
-$this->user->setExpiration("+ 365 days", FALSE);
-\--
-
-Nezapomeňte, že musíte změnit i expiraci samotné session na vyšší časový interval než je u uživatele
-
-/--php
-$this->context->session->setExpiration("+ 365 days", FALSE);
-\--
-
-
-Dynamické formuláře
--------------------
-
-"Dynamický počet položek ve formuláři":http://addons.nette.org/cs/form-container-replicator
-
-
-Jak na moduly
----------------
-
-"Adresářová struktura a moduly":http://forum.nette.org/cs/2626-2009-09-25-adresarova-struktura-a-moduly
-
-
-Dependency Injection
+Odkazování v modulech
 --------------------
 
-[Dependency Injection | wiki:/cs/faq/dependencyinjection]
-
-
-Nette\Database vs dibi
---------------------
-
-[Nette\Database vs dibi | wiki:/cs/faq/nette-database-vs-dibi]
-
+/--php
+{* Relativní odkaz na modul *}
+{plink Foo:Default:default}
+{* Absolutní odkaz na modul *}
+{plink :Foo:Default:default}
+\--
 
 
 
