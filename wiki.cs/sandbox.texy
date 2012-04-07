@@ -1,7 +1,0 @@
-/--php
-$configurator = new Nette\Config\Configurator;
-$configurator->addConfig($configFile);
-\--
-
-
-[test]
