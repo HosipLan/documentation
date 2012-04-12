@@ -1,6 +1,2 @@
 Sandbox
 *******
-
-/--notexy
-<script>alert('XSS');</script>
-\--
