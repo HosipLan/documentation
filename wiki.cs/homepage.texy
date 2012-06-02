@@ -11,39 +11,22 @@ Wiki neslouží jako technická podpora. Otázky pokládejte prosím na "fóru":
 Kategorie a články na wiki
 --------------------------
 
-Pro úplný výčet všech návodů, tipů & triků a videozáznamů můžete vyzkoušet **[Planette|http://pla.nette.org/cs/]**.
 
 /---div .[bigicons]
+
+[* planette.png .[icon] *]
+
+[Planette|planette]
+----
+Pro úplný výčet všech návodů, tipů & triků a videozáznamů můžete vyzkoušet **[Planette|http://pla.nette.org/cs/]**.
+
+
+
 [* icon-faq.png .[icon] *]
 
 [FAQ aneb časté dotazy | wiki:faq]
 ----------------
 Odpovědi na často kladené otázky. V případě potíží navštivte tento zdroj jako první.
-
-
-
-[* lamplight1-48x48.png .[icon] *]
-
-[Tutoriály | wiki:tutorialy ]
--------
-Návody pro začátečníky, nejsnazší způsob, jak se ponořit do vod Nette Frameworku.
-
-
-
-[* movie-48x48.png .[icon] *]
-
-[Screencasty | wiki:screencasty ]
--------
-Videa pro začátečníky.
-
-
-
-[* ruler-pen-48x48.png .[icon] *]
-
-[Kuchařka | cookbook]
--------
-Krátké návody jak nejsnáze řešit jednotlivé problémy
-
 
 
 [* movie-48x48.png .[icon] *]
