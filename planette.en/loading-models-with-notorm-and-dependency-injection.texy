@@ -1,4 +1,4 @@
-Loading models with notorm and dependency injection
+Loading models with NotORM and Dependency Injection
 ***************************************************
 
 .[warning]
@@ -169,3 +169,6 @@ $results = $this->models->user->getByName("John Doe");
 \--
 
 Simple, right?
+
+
+{{lang: cs/nacitani-modelu-s-notorm-a-dependency-injection}}

@@ -125,4 +125,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 }
 \--
 
+
+{{lang: en/helper-loader}}
+
 {{tags: cookbook}}

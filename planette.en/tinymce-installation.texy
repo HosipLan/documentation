@@ -62,3 +62,8 @@ foreach ($form->getComponents(TRUE, 'SubmitButton') as $button) {
 	$button->getControlPrototype()->onclick('tinyMCE.triggerSave()');
 }
 \--
+
+
+{{lang: cs/zprovozneni-tinymce}}
+
+{{tags: cookbook}}

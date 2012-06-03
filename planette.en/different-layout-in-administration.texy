@@ -80,3 +80,6 @@ See "MVC Applications & Presenters":doc:presenters#toc-modules
 3. Divide into presenters with maintaining modularity (advanced)
 ---
 See [AdminModule vs BackendPresenter | http://www.aceblog.cz/php/adminmodule-vs-backendpresenter/]
+
+
+{{lang: cs/jak-mit-jiny-vzhled-v-administracni-casti}}
