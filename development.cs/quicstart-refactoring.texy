@@ -9,8 +9,7 @@ Quicstart refactoring
 "Začínáme":http://doc.nette.org/cs/quickstart/start
 -------------
 
-- zmínit FAQ pokud se nedaří rozběhat sandbox
-- přepsat "adresář models"
+
 - setDebugMode() povoluje "ladění", špatná formulace
 - poznámka o přepínání je strašně dlouhá, shrnul bych to větou a odkázal do faq
 
