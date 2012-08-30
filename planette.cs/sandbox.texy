@@ -1,2 +1,213 @@
 Sandbox
 *******
+
+
+####### File Downloader #######
+
+.[perex]
+Dopolněk na **jednodušší stahování souborů**. Podporuje **navazování přerušeného stahování**, **segmentové stahování**, **soubory nad 4GB**,  automatické zjištění mimetypu souboru, češtinu a mezery v názvech souborů a obsahuje **omezovač rychlosti** stahování.
+
+|*Verze    | 1.0.0 (Nette 0.9), 1.1.0  (Nette 0.9), dev (trunk na SVN; Nette 2.0, prosím hlaste chyby!)
+|*Download | viz níže
+|*Autor    | Jan Kuchař
+|*Licence  | New BSD License
+|*Stánka doplňku | http://filedownloader.projekty.mujserver.net
+|*Diskuse k doplňku | http://forum.nette.org/cs/1952-addon-file-downloader-file-downloader
+|*Demo | http://filedownloader.projekty.mujserver.net/demo/
+|*Testováno na Nette | 0.9.x (rev. 1-64), 2.0 (rev. 65+)
+|*PHP  | 5.2, 5.3
+|*Namespace | sám je neužívá, však od rev. 65 počítá s namespacovanou verzí Nette 2. U starších revizí můžete zkusit využít "AutoUse":http://addons.nette.org/cs/autouse.
+
+.[caution]
+Pokud plánujete ze serveru **stahovat veliké soubory (>2GB)** přes File Downloader, **povolte** rozšíření **cUrl**. File Downloader sice stahování velikých souborů provede i bez cUrl, ale bude server zbytečně zatěžovat. (kvůli chybě v PHP, se musí obcházet fce `fseek()` použitím `fread()`)
+
+.[caution]
+File Downloader nyní závisí na třídě "BigFileTools":[bigfiletools], kterou najdete v distribuci v adresáři libs.
+
+###### Základní použití ######
+
+Chceme stáhnout soubor.
+
+/---code php
+$filedownload = new FileDownload;
+$filedownload->sourceFile = "source.txt";
+$filedownload->download();
+\---
+
+##### Fluent interface #####
+
+Zde je to samé, za použití fluent interface
+
+/---code php
+FileDownload::getInstance()
+	->setSourceFile("source.txt")
+	->download();
+\---
+
+###### Pokročilé použití ######
+
+##### Omezovač rychlosti #####
+
+/---code php
+$filedownload = new FileDownload;
+$filedownload->sourceFile = "source.txt";
+// Nastavíme rychlost odesílání v bytech
+$filedownload->speedLimit = 5 * FDTools::BYTE;
+$filedownload->download();
+\---
+
+#### Fluent interface ####
+
+/---code php
+FileDownload::getInstance()
+	->setSourceFile("source.txt")
+	// Nastavíme rychlost odesílání v bytech
+	->setSpeedLimit(5*FDTools::BYTE)
+	->download();
+\---
+
+##### Název odesílnaného souboru #####
+
+V tomoto příkladu se soubor odešle jako test.txt
+/---code php
+$filedownload = new FileDownload;
+$filedownload->sourceFile = "source.txt";
+$filedownload->transferFileName = "test.txt";
+$filedownload->download();
+\---
+
+#### Fluent interface ####
+
+/---code php
+FileDownload::getInstance()
+	->setSourceFile("source.txt")
+	->setTransferFileName("test.txt")
+	->download();
+\---
+
+##### Ruční určení mime-typu #####
+
+Soubor se odešle s mime typem pdf souboru
+
+/---code php
+$filedownload = new FileDownload;
+$filedownload->sourceFile = "source.txt";
+$filedownload->mimeType = "application/pdf";
+$filedownload->download();
+\---
+
+#### Fluent interface ####
+
+/---code php
+FileDownload::getInstance()
+->setSourceFile("source.txt")
+->setMimeType("application/pdf")
+->download();
+\---
+
+##### Zobrazení souboru přímo v prohlížeči #####
+
+*Přidáno ve verzi 1.0.0*
+
+/---code php
+$filedownload = new FileDownload;
+$filedownload->sourceFile = "source.txt";
+$filedownload->contentDisposition =
+	FileDownload::CONTENT_DISPOSITION_INLINE;
+$filedownload->download();
+\---
+
+#### Fluent interface ####
+
+/---code php
+FileDownload::getInstance()
+	->setSourceFile("source.txt")
+	->setContentDisposition(
+		FileDownload::CONTENT_DISPOSITION_INLINE
+	)->download();
+\---
+
+##### Callbacky - když ... #####
+
+FileDownloader podporuje callbacky. Tzn. například: když chci něco provést když se přeruší spojení, použiji callback abort. Registrace bude vypadat:
+/---code php
+$filedownload = new FileDownload;
+$filedownload->sourceFile = "source.txt";
+// Registrace callbacku:
+$filedownload->onAbort[] = "názevVolanéFunkce";
+$filedownload->download();
+\---
+nebo
+/---code php
+FileDownload::getInstance()
+->setSourceFile("source.txt")
+// Registrace callbacku
+->addAbortCallback("názevVolanéFunkce")
+->download();
+\---
+
+Tzn. callbacky registrujeme buď `onCallback[] = callback;` nebo `addCallbackCallback(callback);` v fluent interface.
+
+#### Přehled callbacků ####
+
+|----------------------------
+| Název callbacku    | Popis callbacku
+|----------------------------
+|BeforeDownloaderStarts| Než se spustí downloader
+|BeforeOutputStarts| Tesně před začátkem uploadu souboru (poslední možnost odeslat hlavičky)
+|StatusChange|Když se změní stav souboru - když se odešle blok souboru nebo každou sekundu když je stahování souboru bez omezení rychlosti
+|Complete|Když je stahování souboru úspěšně dokončeno
+|Abort|Když je stahování souboru přerušeno (typicky: uživatel klikne na storno)
+|ConnectionLost|Když se přeruší spojení (z jakéhokoli důvodu)
+|TransferContinue|Když se naváže přerušené stahování (začne se stahovat část souboru)
+|NewTransferStart|Když začne nové stahování od začátku souboru
+
+Parametry callbacku jsou následovné:
+/---code php
+function onAbort(FileDownload $download,IDownloader $downloader){
+	/* ... */
+}
+\---
+
+.[note]
+Kdy je který callback volán hezky ukazuje příklad `form` z repozitáře, ve kterém se volané callbacky vypisují na obrazovku.
+
+###### Požadavky na hosting ######
+
+File Downloader používá dva „downloadery“. **AdvancedDownloader** vyžaduje možnost nastavení dlouhého času pro běh skriptu. Pokus se to nezdaří, provede se fallback na **NativePHPDownloader**, který ovšem od PHP 5.3 potřebuje tolik paměti, jaká je velikost souboru. Pokud někdo víte, čím by to mohlo být, prosím napište!
+
+.[caution]
+Callbacky se dají spolehlivě používat pouze u AdvancedDownloaderu, stejně jako nastavení rychlosti a podpora velkých souborů.
+
+###### Krátká video ukázka ######
+
+<OBJECT id='mediaPlayer' width="724" height="517"
+classid='CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95'
+codebase='http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701'
+standby='Loading Microsoft Windows Media Player components...' type='application/x-oleobject'>
+<param name='fileName' value="http://filedownloader.projekty.mujserver.net/filedownloader.avi">
+<param name='animationatStart' value='true'>
+<param name='transparentatStart' value='true'>
+<param name='autoStart' value="false">
+<param name='showControls' value="true">
+<param name='loop' value="false">
+<EMBED type='application/x-mplayer2'
+  pluginspage='http://microsoft.com/windows/mediaplayer/en/download/'
+  id='mediaPlayer' name='mediaPlayer' displaysize='4' autosize='-1'
+  bgcolor='darkblue' showcontrols="true" showtracker='-1'
+  showdisplay='0' showstatusbar='-1' videoborder3d='-1' width="724" height="517"
+  src="http://filedownloader.projekty.mujserver.net/filedownloader.avi" autostart="false" designtimesp='5311' loop="false">
+</EMBED>
+</OBJECT>
+
+[Stáhnout video | http://filedownloader.projekty.mujserver.net/filedownloader.avi]
+
+
+###### Živé demo ######
+http://filedownloader.projekty.mujserver.net/demo/
+<iframe width="100%" height="600" frameborder="3" src="http://filedownloader.projekty.mujserver.net/demo/"></iframe>
+
+
+###### Získat File Downloader ######
+
+https://svn.mujserver.net:8443/svn/Nette_FileDownloader/trunk (verze pro PHP 5.2.x) (uživatel: `guest`, heslo: *(nechat prázdné)*)
