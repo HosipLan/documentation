@@ -4,8 +4,6 @@ Komponenty
 .[perex]
 V této kapitole přesuneme seznam úkolů do komponenty. Budeme jej tak moci snadno použít kdekoliv v aplikaci a také jej budeme moci snadno upravovat.
 
---------
-
 Často se dostaneme do situace, kdy bychom chtěli stejný nebo podobný prvek aplikace využít na více místech. Nette toto řeší pomocí [komponent | cs/components]. Jedná se o třídy, které reprezentují vykreslitelný objekt a je možné je do stránky opakovaně vkládat.
 
 Pojďme tedy naší tabulku s výpisem oddělit do samostatné komponenty.
@@ -17,7 +15,7 @@ Základ komponenty
 Začneme tím, že si vytvoříme složku `app/components`. Do ní budeme ukládat námi vytvořené komponenty, a to včetně šablon. V ní si vytvoříme `TaskList.php`. Třída bude dědit od `Nette\Application\UI\Control` a bude mít pouze konstruktor a metodu `render()`:
 
 /---php
-namespace TaskList;
+namespace Todo;
 use Nette;
 
 class TaskListControl extends Nette\Application\UI\Control
@@ -93,7 +91,7 @@ protected function createComponentTaskList()
 	if ($this->list === NULL) {
 		$this->error('Wrong action');
 	}
-	return new TaskList\TaskListControl($this->taskLists->tasksOf($this->list));
+	return new Todo\TaskListControl($this->taskLists->tasksOf($this->list));
 }
 \---
 
@@ -134,7 +132,7 @@ A to je vše. Nyní podobou úpravu provedeme v `HomepagePresenter`u:
 /---php
 public function createComponentIncompleteTasks()
 {
-	return new TaskList\TaskListControl($this->tasks->findIncomplete());
+	return new Todo\TaskListControl($this->tasks->findIncomplete());
 }
 \---
 
@@ -166,10 +164,10 @@ class TaskList extends UI\Control
 	/** @var \Nette\Database\Table\Selection */
 	private $selected;
 
-	/** @var Tasks */
+	/** @var TaskTable */
 	private $tasks;
 
-	public function __construct(Nette\Database\Table\Selection $selected, Tasks $tasks)
+	public function __construct(Nette\Database\Table\Selection $selected, TaskTable $tasks)
 	{
 		parent::__construct(); // vždy je potřeba volat rodičovský konstruktor
 		$this->selected = $selected;
@@ -182,7 +180,7 @@ Předání modelu také musíme doplnit do metod, které vytvářejí komponentu
 /---php
 protected function createComponentTaskList()
 {
-	return new TaskList\TaskListControl($this->taskLists->tasksOf($this->list), $this->tasks);
+	return new Todo\TaskListControl($this->taskLists->tasksOf($this->list), $this->tasks);
 }
 \---
 
@@ -191,7 +189,7 @@ V `HomepagePresenter`:
 /---php
 public function createComponentIncompleteTasks()
 {
-	return new TaskList\TaskListControl($this->tasks->findIncomplete(), $this->tasks);
+	return new Todo\TaskListControl($this->tasks->findIncomplete(), $this->tasks);
 }
 \---
 
@@ -207,10 +205,10 @@ public function handleMarkDone($taskId)
 }
 \---
 
-Opět si implementujeme metodu v třídě `TaskList\Tasks`.
+Opět si implementujeme metodu v třídě `Todo\TaskTable`.
 
 /--php
-// class Tasks
+// class TaskTable
 
 public function markDone($id)
 {
@@ -282,4 +280,4 @@ Závěr
 
 Vytvořili jsme komponentu, která nám umožní pohodlně zobrazit seznam úkolů kdekoliv v aplikaci. Příště se podíváme na přihlašování a ověřování uživatelů.
 
-Zdrojové kódy aplikace v této fázi naleznete na "githubu ve větvi 05-components":https://github.com/nette/quick-start/tree/05-components.
+Zdrojové kódy aplikace v této fázi naleznete na "githubu":https://github.com/nette/quickstart/tree/5.

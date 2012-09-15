@@ -4,8 +4,6 @@ Přihlašování uživatelů
 .[perex]
 Nyní aplikaci rozšíříme o přihlašování uživatelů. Přístup k úkolům tak bude podmíněn přihlášením, navíc na úvodní stránce každého uživatele můžeme zobrazit úkoly, které mu jsou přiřazeny.
 
---------
-
 Authenticator
 *************
 
@@ -48,10 +46,10 @@ public function authenticate(array $credentials)
 
 Metoda dostane jako argumenty pole s přihlašovacími údaji. Na indexu `0` je uživatelské jméno, na indexu `1` heslo. Nejprve získáme z tabulky uživatelů záznam o uživateli, který se snaží přihlásit. Pokud záznam není nalezen, je vyhozena výjimka. Poté je ověřeno, zda zadané heslo odpovídá heslu uživatele v databázi. Nakonec se vytvoří objekt typu `Identity`. V konstruktoru mu jsou předány jako parametry ID uživatele, seznam rolí (zde `NULL`) a nakonec pole s dalšími informacemi o uživateli. Zde se předá celý záznam bez pole `password`. K těmto datům pak můžeme později přistupovat.
 
-Ještě musíme implementovat metodu `findByName`, ve třídě `Users`.
+Ještě musíme implementovat metodu `findByName`, ve třídě `UserTable`.
 
 /--php
-// class Users
+// class UserTable
 
 public function findByName($username)
 {
@@ -271,7 +269,7 @@ S připravenými komponentami je nyní již výpis všech úkolů, které jsou p
 public function createComponentUserTasks()
 {
 	$incomplete = $this->tasks->findIncompleteByUser($this->getUser()->getId());
-	$control = new TaskList\TaskListControl($incomplete, $this->tasks);
+	$control = new Todo\TaskListControl($incomplete, $this->tasks);
 	$control->displayTaskList = TRUE;
 	$control->displayUser = FALSE;
 	return $control;
@@ -283,7 +281,7 @@ U tohoto výpisu nebudeme chtít zobrazit uživatele, kterému je úkol přiřaz
 Potřebujeme ještě upravit metodu `findIncomplete()` na `findIncompleteByUser($userId)`
 
 /--php
-// class Tasks
+// class TaskTable
 
 public function findIncompleteByUser($userId)
 {
@@ -311,7 +309,7 @@ public function findIncompleteByUser($userId)
 Formulář pro změnu hesla
 ************************
 
-Změna hesla uživatele je také velmi jednoduchá. Pro začátek si do `Users` přidáme pomocnou metodu pro nastavení hesla uživatele:
+Změna hesla uživatele je také velmi jednoduchá. Pro začátek si do `UserTable` přidáme pomocnou metodu pro nastavení hesla uživatele:
 
 /---php
 public function setPassword($id, $password)
@@ -332,10 +330,10 @@ use Nette\Security as NS;
  */
 class UserPresenter extends BasePresenter
 {
-	/** @var TaskList\Users */
+	/** @var Todo\UserTable */
 	private $users;
 
-	/** @var TaskList\Authenticator */
+	/** @var Todo\Authenticator */
 	private $authenticator;
 
 	protected function startup()
@@ -438,4 +436,4 @@ Závěr
 
 Z hlediska přihlašování uživatelů je to vše. Ukázali jsme si základy přihlašování uživatelů a aplikace již začíná být použitelná. Pomalu se chýlíme ke konci, ještě si ukážeme, jak uživateli zpříjemnit práci pomocí AJAXu.
 
-Zdrojové kódy aplikace v této fázi naleznete na "githubu ve vetvi 06-authentication":https://github.com/nette/quick-start/tree/06-authentication.
+Zdrojové kódy aplikace v této fázi naleznete na "githubu":https://github.com/nette/quickstart/tree/6.

@@ -5,9 +5,6 @@ Formuláře
 V této kapitole se seznámíme s formuláři a některými nástrahami, které k nim patří. Vytvoříme si jednoduchý formulář pro zakládání nových úkolů a další pro vytváření nových seznamů.
 
 
---------
-
-
 Formuláře z Nette lze používat samostatně, nezávisle na zbytku frameworku. Pokud se je ale rozhodneme používat v rámci Nette aplikaci ve spojení s presentery a plným komponentovým modelem, bude jejich používání ještě o něco jednodušší a hlavně radostnější.
 
 Základní třídy sídlí ve jmenném prostoru `Nette\Forms`. Je zde jak základní třída formuláře, tak veškeré formulářové komponenty a třídy pro vykreslování. Pokud budeme formulář používat v Nette aplikaci, budeme ještě potřebovat třídu `Nette\Application\UI\Form`, která obsahuje napojení na presenter a využívá [signálů |doc:components#toc-signal-neboli-subrequest] a [událostí |doc:php-language-enhancements#toc-udalosti].
@@ -25,7 +22,7 @@ Abychom mohli vybrat, komu je úkol přiřazen, budeme potřebovat uživatele. M
 /--php
 // class TaskPresenter
 
-/** @var TaskList\Users */
+/** @var Todo\UserTable */
 private $users;
 
 protected function startup()
@@ -152,7 +149,7 @@ Pokud máte Nette starší než 2.0.4, tak bude laděnka křičet `Cannot read a
 Budeme v ní potřebovat zbývající službu `tasks`, takže si ji předáme do presenteru.
 
 /--php
-/** @var TaskList\Tasks */
+/** @var Todo\TaskTable */
 private $tasks;
 
 protected function startup()
@@ -167,7 +164,7 @@ protected function startup()
 A vytvoříme si v ní metodu, která nám zpracuje vložení záznamu
 
 /--php
-// class Tasks
+// class TaskTable
 
 public function createTask($taskListId, $task, $assignedUser)
 {
@@ -249,7 +246,7 @@ public function newTasklistFormSubmitted(Form $form)
 }
 \---
 
-A ještě si implementujeme metodu `createList` ve třídě `TaskLists`
+A ještě si implementujeme metodu `createList` ve třídě `TaskListTable`
 
 /--php
 public function createList($title)
@@ -292,4 +289,4 @@ Závěr
 
 V této kapitole jsme vytvořili formuláře jak pro vkládání úkolů, tak pro zakládání nových seznamů. V další kapitole si napíšeme vlastní komponentu.
 
-Zdrojové kódy aplikace v této fázi naleznete na "githubu ve větvi 04-forms":https://github.com/nette/quick-start/tree/04-forms.
+Zdrojové kódy aplikace v této fázi naleznete na "githubu":https://github.com/nette/quickstart/tree/4.

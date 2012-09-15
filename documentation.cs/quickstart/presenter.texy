@@ -4,9 +4,6 @@ Vytvoření presenteru
 .[perex]
 V této kapitole si představíme presentery a vše, co s nimi souvisí. Ukážeme si, jak napsat vlastní presenter, jak psát v šablonovacím jazyce Latte a jak využívat model, který jsme již dříve napsali.
 
---------
-
-
 Na začátek se bohužel nevyhneme troše teorie. Nette využívá architekturu MVP, [Model-View-Presenter | cs/presenters]. Základními kameny této architektury jsou:
 
 - **Model** - datová a funkční vrstva aplikace, která se stará o ukládání dat a aplikační logiku. Jakoukoliv událost uživatele (přihlášení, zobrazení či změna dat, vložení zboží do košíku) představuje akci modelu. Ten má pevně dané rozhraní, pomocí kterého s ním ostatní části aplikace komunikují, a sám o svém okolí nic neví.
@@ -51,12 +48,12 @@ Nyní ale zpět k psaní kódu. Pokud chceme v šabloně nějaká data zobrazit,
 Spojení s modelem
 =================
 
-Protože jsme naše třídy modelu šikovně definovali jako služby, můžeme je okamžitě použít. Předáme si co potřebujeme do property v metodě `startup()`. V configu máme třídu `TaskList\Tasks` zaregistrovanou jako službu se jménem `tasks`, takže se bude volat pomocí `$this->context->tasks`.
+Protože jsme naše třídy modelu šikovně definovali jako služby, můžeme je okamžitě použít. Předáme si co potřebujeme do property v metodě `startup()`. V configu máme třídu `Todo\TaskTable` zaregistrovanou jako službu se jménem `tasks`, takže se bude volat pomocí `$this->context->tasks`.
 
 /--php
 // class HomepagePresenter
 
-/** @var TaskList\Tasks */
+/** @var Todo\TaskTable */
 private $tasks;
 
 protected function startup()
@@ -66,10 +63,10 @@ protected function startup()
 }
 \--
 
-Budeme chtít zobrazit všechny nesplněné úkoly a seřadit vzestupně je podle času vytvoření. Vytvoříme si tedy metodu na výběr nesplněných úkolů, ve třídě `TaskList\Tasks`
+Budeme chtít zobrazit všechny nesplněné úkoly a seřadit vzestupně je podle času vytvoření. Vytvoříme si tedy metodu na výběr nesplněných úkolů, ve třídě `Todo\TaskTable`
 
 /--php
-	// class Tasks
+	// class TaskTable
 
 	public function findIncomplete()
 	{
@@ -92,7 +89,7 @@ public function renderDefault()
 
 Voláním `where()` nad objektem tabulky definujeme podmínku, podle které chceme záznamy vybírat. Můžeme jí předat asociativní pole ve formátu `sloupec` -> `hodnota`, případně rovnou kus SQL dotazu s parametry pokud nám prosté vybírání podle rovnosti nestačí, nebo chceme použít složitější podmínky. Podobně voláním `order()` zajistíme setřídění dat vzestupně podle sloupce `created`.
 
-Důležitou vlastností těchto objektů je, že jednu instanci je možné použít pouze na jeden dotaz. Pokud bychom nad jedním objektem zkoušeli sestavit dva dotazy, zamíchaly by se nám do druhého dotazu i části z toho prvního. Proto máme taky třídy, které dědí od `TaskList\Table`, která vytváří vždy novou instanci [Selection | api:Nette\Database\Table\Selection], pomocí metody [Connection::table() | api:Nette\Database\Connection::table()]
+Důležitou vlastností těchto objektů je, že jednu instanci je možné použít pouze na jeden dotaz. Pokud bychom nad jedním objektem zkoušeli sestavit dva dotazy, zamíchaly by se nám do druhého dotazu i části z toho prvního. Proto máme taky třídy, které dědí od `Todo\Table`, která vytváří vždy novou instanci [Selection | api:Nette\Database\Table\Selection], pomocí metody [Connection::table() | api:Nette\Database\Connection::table()]
 
 .[note]
 Zvídavé čtenáře opět odkazuji do dokumentace na téma [Databáze & ORM | doc:database].
@@ -190,7 +187,7 @@ class TaskPresenter extends BasePresenter
 /--php
 // class TaskPresenter
 
-/** @var @var TaskList\TaskLists */
+/** @var @var Todo\TaskListTable */
 private $taskLists;
 
 protected function startup()
@@ -216,10 +213,10 @@ public function actionDefault($id)
 
 Parametr `$id` bude obsahovat identifikátor, který bude hledán v databázi. Nette si samo zkontroluje `action<action>()` a `render<view>()` metody a pokud mají nějaké argumenty, které přišly adresou, tak je předá podle jména. Více o tomto mechanismu se dozvíme v [sekci o presenterech | cs/presenters#toc-zpracovani-akce-presenteru], prozatím se spokojíme s, pro programátora nejlepším závěrem, "funguje to a nemusíme se o to starat".
 
-Ve třídě `TaskList\TaskLists` si vytvoříme metodu, která nám z objektu [ ActiveRow | api:Nette\Database\Table\ActiveRow ], obsahujícího řádek z tabulky tasklist, vrátí všechny související úkoly.
+Ve třídě `Todo\TaskListTable` si vytvoříme metodu, která nám z objektu [ ActiveRow | api:Nette\Database\Table\ActiveRow ], obsahujícího řádek z tabulky tasklist, vrátí všechny související úkoly.
 
 /--php
-	// class TaskLists
+	// class TaskListTable
 
 	public function tasksOf(Nette\Database\Table\ActiveRow $taskList)
 	{
@@ -281,12 +278,12 @@ Nyní už bude vše fungovat! Počkat... ale jak se k nově vytvořené stránce
 Navigace
 ********
 
-Menu bude společné pro všechny části aplikace. Žhavý kandidát na umístění do `BasePresenter`u! Budeme jej muset vykreslit na každé stránce, takže použijeme metodu `beforeRender()`, která se provede vždy, nezávisle na view, které má být vykreslováno. Nejprve si ale `TaskList\TaskLists` umístíme do privátní property, abychom s modelem mohli pracovat.
+Menu bude společné pro všechny části aplikace. Žhavý kandidát na umístění do `BasePresenter`u! Budeme jej muset vykreslit na každé stránce, takže použijeme metodu `beforeRender()`, která se provede vždy, nezávisle na view, které má být vykreslováno. Nejprve si ale `Todo\TaskListTable` umístíme do privátní property, abychom s modelem mohli pracovat.
 
 /---php
 // class BasePresenter
 
-/** @var TaskList\TaskLists */
+/** @var Todo\TaskListTable */
 private $taskLists;
 
 protected function startup()
@@ -367,7 +364,7 @@ Pojďme si trošku zaexperimentovat. Co se stane, když změníme ID na neexistu
 
 Ukázala se nám laděnka v celé své kráse. Jedná se o jeden z nejužitečnějších nástrojů v Nette. Ukazuje, kde přesně k chybě došlo a zachycuje stav aplikace v době chyby. Pokud by chyba byla v SQL dotazu, ukáže nám i problematický dotaz.
 
-Chyba `Argument 1 passed to TaskList\TaskLists::tasksOf() must be` `an instance of Nette\Database\Table\ActiveRow, boolean given` nám říká, že jsme se pokusili zavolat metodu `TaskList\TaskLists::tasksOf()` s argumentem, co není objekt. Pokud funkce `fetch()` nenalezne žádný výsledek, vrátí `FALSE`. To můžeme v `TaskPresenter`u snadno ověřit a zareagovat na to změnou view:
+Chyba `Argument 1 passed to Todo\TaskListTable::tasksOf() must be` `an instance of Nette\Database\Table\ActiveRow, boolean given` nám říká, že jsme se pokusili zavolat metodu `Todo\TaskListTable::tasksOf()` s argumentem, co není objekt. Pokud funkce `fetch()` nenalezne žádný výsledek, vrátí `FALSE`. To můžeme v `TaskPresenter`u snadno ověřit a zareagovat na to změnou view:
 
 /---php
 public function actionDefault($id)
@@ -455,4 +452,4 @@ Závěr
 
 To je prozatím vše. Úspěšně jsme vytvořili seznam všech nedokončených úkolů a zobrazení jednotlivých seznamů úkolů. Můžeme se vrhnout do použití formulářů.
 
-Zdrojové kódy aplikace v této fázi naleznete na "githubu ve větvi 03-presenter":https://github.com/nette/quick-start/tree/03-presenter.
+Zdrojové kódy aplikace v této fázi naleznete na "githubu":https://github.com/nette/quickstart/tree/3.

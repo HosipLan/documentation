@@ -5,8 +5,6 @@ AJAX
 Většina moderních aplikací již dnes používá AJAX. Díky Nette je "zajaxování" celé aplikace velmi snadné a téměř nebudete muset měnit původní kód. Nyní si ukážeme, jak na to.
 
 
---------
-
 Největší síla AJAXu v Nette spočívá v použití tzv. snippetů. Tyto speciálně označené bloky kódu se pak při AJAXových požadavcích přenášejí ke klientovi, který si podle nich aktualizuje stránku. Takto je možné posílat jen upravené části stránky. Největší výhodou je, že vše je prakticky bez práce.
 
 
@@ -199,4 +197,4 @@ Závěr
 
 Jak vidíte, je práce s AJAXem v Nette opravdu velmi snadná. Jedním chytrým skriptem a několika málo změnami v kódu jsme převedli klíčové prvky naší aplikace do AJAXu.
 
-Zdrojové kódy aplikace v této fázi naleznete na "githubu ve větvi 07-ajax":https://github.com/nette/quick-start/tree/07-ajax.
+Zdrojové kódy aplikace v této fázi naleznete na "githubu":https://github.com/nette/quickstart/tree/7.
